@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Capitalized Case Converter - Convert Text to Capitalized Case | Rool
+    </title>
+
+    <meta
+      name="description"
+      content="Free online capitalized case converter tool. Capitalize the first letter of each word instantly and analyze text with word count, character count, line count, and sentence support with Unicode."
+    />
+
+    <meta
+      name="keywords"
+      content="capitalized case converter, capitalize words, capitalized text, text case converter, title style capitalization, word counter, character counter, line counter, text analyzer"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="canonical" href="https://rool.com/text/capitalized-case/" />
+
+    <meta name="robots" content="index, follow" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Capitalized Case Converter",
+      "url": "https://rool.com/text/capitalized-case",
+      "description": "Free online capitalized case converter and text analyzer tool.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rool",
+        "url": "https://rool.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Capitalized Case Converter | Rool" />
+
+    <meta
+      property="og:description"
+      content="Capitalize the first letter of each word instantly with Unicode-aware text formatting and analysis."
+    />
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:url" content="https://rool.com/text/capitalized-case" />
+
+    <meta property="og:site_name" content="Rool" />
+
+    <meta property="og:image" content="https://rool.com/og/capitalized-case.png" />
+
+    <meta property="og:image:width" content="1200" />
+
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="Capitalized Case Converter | Rool" />
+
+    <meta
+      name="twitter:description"
+      content="Capitalize the first letter of each word instantly with Unicode-aware text formatting and analysis."
+    />
+
+    <meta name="twitter:image" content="https://rool.com/og/capitalized-case.png" />
+
+  </head>
+  <body>
+    <header class="main-header">
+      <a href="/" aria-label="Rool home page">
+        <img
+          src="/assets/logo.svg"
+          alt="Rool utility tool logo"
+          width="80"
+        >
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              Text
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/text/word-count/">Word Count</a></li>
+              <li><a href="/text/case-convert/">Case Convert</a></li>
+              <li><a href="/text/sentence-case/">Sentence Case</a></li>
+              <li><a href="/text/lower-case/">Lower Case</a></li>
+              <li><a href="/text/upper-case/">Upper Case</a></li>
+              <li><a href="/text/capitalized-case/">Capitalized Case</a></li>
+              <li><a href="/text/title-case/">Title Case</a></li>
+              <li><a href="/text/alternating-case/">Alternating Case</a></li>
+              <li><a href="/text/inverse-case/">Inverse Case</a></li>
+            </ul>
+          </li>
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="qrcode-tools-menu"
+            >
+              Qr Code
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <header class="hero">
+          <h1>
+              Capitalized Case Converter
+          </h1>
+      
+          <p>
+              Free online capitalized case converter and text analyzer tool.
+              Convert text to capitalized case instantly by capitalizing
+              the first letter of each word while counting words,
+              characters, lines, and sentences.
+          </p>
+      </header>
+      <div id="chrInpCont" class="textAreaCont">
+        <div class="textInputCont">
+          <label for="chrInp">
+            Enter text to convert to sentence case,
+             and analyze text
+          </label>
+          <div class="textAndBtns">
+            <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your outputed text here..."></textarea>
+            <div class="action-btns">
+            <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Shara">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <path d="M8.59 13.51 15.42 17.49"></path>
+                  <path d="M15.41 6.51 8.59 10.49"></path>
+                </svg>
+            </button>
+            <button class="copy" id="downloadBtn" aria-label="Download text" title="Download">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <path d="M7 10l5 5 5-5"></path>
+                  <path d="M12 15V3"></path>
+                </svg>
+            </button>
+            <button class="copy" id="clearBtn" aria-label="Clear text" title="Clear">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 6h18"></path>
+                  <path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"></path>
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                </svg>
+            </button>
+          </div>
+          </div>
+        </div>
+        </div>
+        <div class="outCont">
+          <div>
+            <h2>Character Count</h2>
+            <p id="chrOut">0</p>
+          </div>
+          <div>
+            <h2>Word Count</h2>
+            <p id="wrdOut">0</p>
+          </div>
+          <div>
+            <h2>Line Count</h2>
+            <p id="lineOut">0</p>
+          </div>
+        </div>
+        <section>
+            <h2>
+                Free Online Capitalized Case Converter
+            </h2>
+        
+            <p>
+                This free online capitalized case converter helps you
+                instantly convert text so the first letter of each word
+                is capitalized. It supports Unicode text, emojis,
+                multilingual input, and includes word count, character count,
+                line count, and sentence analysis features.
+            </p>
+        </section>
+
+        <section>
+            <h2>
+                How Capitalized Case Conversion Works
+            </h2>
+        
+            <p>
+                Capitalized case conversion automatically transforms text
+                by capitalizing the first letter of each word while keeping
+                the rest of the letters in lowercase. It preserves numbers,
+                punctuation, emojis, and Unicode characters. Unicode-aware
+                processing ensures proper handling of multilingual text and
+                accented characters.
+            </p>
+        </section>
+
+        <section>
+            <h2>
+                Example
+            </h2>
+        
+            <p>
+                The text “hello world” becomes:
+            </p>
+        
+            <ul>
+                <li><strong>Capitalized case:</strong> Hello World</li>
+                <li><strong>Words:</strong> 2</li>
+                <li><strong>Characters:</strong> 11</li>
+                <li><strong>Lines:</strong> 1</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>
+                Frequently Asked Questions
+            </h2>
+        
+            <article>
+                <h3>
+                    What is capitalized case?
+                </h3>
+            
+                <p>
+                    Capitalized case is a text formatting style where
+                    the first letter of each word is converted to uppercase
+                    while the remaining letters are in lowercase. It is commonly
+                    used in headings and titles.
+                </p>
+            </article>
+        
+            <article>
+                <h3>
+                    Does this tool support Unicode text?
+                </h3>
+            
+                <p>
+                    Yes, this tool supports Unicode text,
+                    emojis, multilingual input, and combined characters.
+                </p>
+            </article>
+        
+            <article>
+                <h3>
+                    Does capitalized case affect numbers or symbols?
+                </h3>
+            
+                <p>
+                    No, capitalized case only changes alphabetic characters
+                    and does not modify numbers, punctuation, or symbols.
+                </p>
+            </article>
+        
+            <article>
+                <h3>
+                    Does this tool count words and characters?
+                </h3>
+            
+                <p>
+                    Yes, the tool also includes word count,
+                    character count, line count, and sentence count features.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Tools navigation">
+        <h2>Tools</h2>
+        <ul class="tools-nav-footer">
+          <li><a href="/text/word-count/">Word Count</a></li>
+          <li><a href="/text/case-convert">Case Convert</a></li>
+          <li><a href="/text/sentence-case">Sentence Case</a></li>
+          <li><a href="/text/lower-case">Lower Case</a></li>
+          <li><a href="/text/upper-case">Upper Case</a></li>
+          <li><a href="/text/capitalized-case">Capitalized Case</a></li>
+          <li><a href="/text/title-case">Title Case</a></li>
+          <li><a href="/text/alternating-case">Alternating Case</a></li>
+          <li><a href="/text/inverse-case">Inverse Case</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Site pages">
+        <h2>Company</h2>
+        <ul class="company-nav-footer">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+        </ul>
+      </nav>
+
+      <section aria-label="Contact information">
+        <h2>Contact</h2>
+        <ul class="contact-nav-footer">
+          <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
+          <li><a href="tel:+977 9861086724">Phone</a></li>
+          <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
+          <li><a href="https://github.com/buffbahun-prog">Github</a></li>
+        </ul>
+      </section>
+
+      <section class="copyright">
+        <p>
+            Built with ❤️ by Rool
+        </p>
+        <p>
+          © 2026 Rool. All rights reserved.
+        </p>
+      </section>
+
+    </footer>
+    <script type="module" src="/dist/text/main.js"></script>
+  </body>
+</html>

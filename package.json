@@ -1,0 +1,28 @@
+{
+  "name": "rool",
+  "version": "1.0.0",
+  "description": "a website for utility tools and apps",
+  "keywords": [
+    "utility",
+    "tools"
+  ],
+  "homepage": "https://github.com/buffbahun-prog/rool#readme",
+  "bugs": {
+    "url": "https://github.com/buffbahun-prog/rool/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buffbahun-prog/rool.git"
+  },
+  "license": "ISC",
+  "author": "buffbahun",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
