@@ -1,5 +1,5 @@
 import { downloadTextAsFile } from './utils/download.js';
-import { charCount, lineCount, toAlternatigCase, toCapitalizedCase, toInverseCase, toLowerCase, toSentenceCase, toTitleCase, toUpperCase, wordCount } from './utils/text-converter.js';
+import { charCount, generateSlug, lineCount, toAlternatigCase, toCapitalizedCase, toInverseCase, toLowerCase, toSentenceCase, toTitleCase, toUpperCase, wordCount } from './utils/text-converter.js';
 const url = new URL(window.location.href);
 const pathSegments = url.pathname.split("/").filter(Boolean);
 const caseConvertSubPaths = [
@@ -14,6 +14,7 @@ const caseConvertSubPaths = [
 const textUtilitySubPaths = [
     "word-count",
     "case-convert",
+    "slug-generator",
     ...caseConvertSubPaths,
 ];
 function main() {
@@ -49,6 +50,9 @@ function main() {
         inputTextareaElm.addEventListener("input", () => {
             if (outputTextareaElm && caseConvertSubPaths.includes(pathSegments[1])) {
                 updateCaseConvertUI(outputTextareaElm, pathSegments[1], inputTextareaElm.value);
+            }
+            if (outputTextareaElm && pathSegments[1] === "slug-generator") {
+                outputTextareaElm.value = generateSlug(inputTextareaElm.value);
             }
             const consideringTextareaElm = outputTextareaElm ? outputTextareaElm : inputTextareaElm;
             const currentCharCount = charCount(consideringTextareaElm.value);

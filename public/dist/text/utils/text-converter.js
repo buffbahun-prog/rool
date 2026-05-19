@@ -99,3 +99,31 @@ function inverseAlphabet(char) {
         return char;
     }
 }
+export function generateSlug(str) {
+    const lowerCasedStr = toLowerCase(str.trim());
+    let hyphenRepeat = 0;
+    const alphaNumHypenedStr = lowerCasedStr.split("").map(char => {
+        const charCode = char.charCodeAt(0);
+        if ((charCode >= 97 && charCode <= 122) || (charCode >= 48 && charCode <= 57)) {
+            return char;
+        }
+        else {
+            return "-";
+        }
+    }).filter(char => {
+        if (char === "-") {
+            hyphenRepeat++;
+        }
+        else {
+            hyphenRepeat = 0;
+        }
+        if (hyphenRepeat > 1)
+            return false;
+        else
+            return true;
+    }).join("");
+    if (!alphaNumHypenedStr)
+        return "n-a";
+    else
+        return alphaNumHypenedStr;
+}
