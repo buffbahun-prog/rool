@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/alternating-case/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/capitalized-case/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/case-convert/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/inverse-case/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/lower-case/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/sentence-case/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/title-case/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/upper-case/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/word-count/
+    </loc>
+  </url>
+
+</urlset>
