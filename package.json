@@ -20,9 +20,12 @@
   "main": "index.js",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.94.0"
   }
 }
