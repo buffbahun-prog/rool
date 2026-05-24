@@ -7,64 +7,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
-      Title Case Converter - Convert Text to Title Case | Rool
+      Slug Generator - Generate Clean URL Slugs Online | Rool
     </title>
 
     <meta
       name="description"
-      content="Free online title case converter tool. Convert text to proper title case instantly using smart capitalization rules and analyze text with word count, character count, line count, and sentence support with Unicode."
+      content="Free online slug generator tool. Convert text into clean, SEO-friendly URL slugs instantly with support for lowercase conversion, hyphen formatting, and Unicode-safe text processing."
     />
 
     <meta
       name="keywords"
-      content="title case converter, title capitalization, title case text, capitalize titles, headline capitalization, text case converter, word counter, character counter, line counter, text analyzer"
+      content="slug generator, url slug generator, seo slug generator, generate slug, clean url generator, permalink generator, kebab case converter, url formatter, slugify text, seo friendly urls"
     />
-
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
 
     <link rel="stylesheet" href="/style.css">
 
-    <link rel="canonical" href="https://rool.buffbahun.workers.dev/text/title-case/" />
+    <link rel="canonical" href="https://rool.buffbahun.workers.dev/text/slug-generator/" />
 
     <meta name="robots" content="index, follow" />
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "@id": "https://rool.buffbahun.workers.dev/text/title-case/#tool",
-        "name": "Title Case Converter",
-        "url": "https://rool.buffbahun.workers.dev/text/title-case/",
-        "description": "Convert text to proper title case instantly using smart capitalization rules, Unicode-aware formatting, and built-in text analysis.",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "inLanguage": "en",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Rool",
-          "url": "https://rool.buffbahun.workers.dev/"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "potentialAction": {
-          "@type": "Action",
-          "name": "Convert text to title case",
-          "target": "https://rool.buffbahun.workers.dev/text/title-case/"
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "@id": "https://rool.buffbahun.workers.dev/text/slug-generator/#tool",
+          "name": "Slug Generator",
+          "url": "https://rool.buffbahun.workers.dev/text/slug-generator/",
+          "description": "Generate clean, SEO-friendly URL slugs from text instantly with lowercase conversion, hyphen formatting, and Unicode-safe processing.",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Any",
+          "inLanguage": "en",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Rool",
+            "url": "https://rool.buffbahun.workers.dev/"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "potentialAction": {
+            "@type": "Action",
+            "name": "Generate slug",
+            "target": "https://rool.buffbahun.workers.dev/text/slug-generator/"
+          }
         }
-      }
     </script>
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "@id": "https://rool.buffbahun.workers.dev/text/title-case/#webpage",
-        "url": "https://rool.buffbahun.workers.dev/text/title-case/",
-        "name": "Title Case Converter - Convert Text to Title Case",
-        "description": "Free online title case converter tool with smart capitalization rules, Unicode support, and text analysis features.",
+        "@id": "https://rool.buffbahun.workers.dev/text/slug-generator/#webpage",
+        "url": "https://rool.buffbahun.workers.dev/text/slug-generator/",
+        "name": "Slug Generator - Generate Clean URL Slugs Online",
+        "description": "Convert text into clean, SEO-friendly URL slugs instantly with Unicode-safe processing and hyphen formatting.",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "WebSite",
@@ -72,7 +71,8 @@
           "url": "https://rool.buffbahun.workers.dev/"
         },
         "mainEntity": {
-          "@id": "https://rool.buffbahun.workers.dev/text/title-case/#tool"
+          "@type": "WebApplication",
+          "name": "Slug Generator"
         }
       }
     </script>
@@ -81,14 +81,22 @@
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "@id": "https://rool.buffbahun.workers.dev/text/title-case/#faq",
+        "@id": "https://rool.buffbahun.workers.dev/text/slug-generator/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is title case?",
+            "name": "What is a slug?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Title case is a text formatting style used in headings and titles where major words are capitalized and smaller connector words are often left lowercase depending on style rules."
+              "text": "A slug is the URL-friendly part of a web address. It is commonly used in blog posts, articles, and web pages to create readable, SEO-friendly URLs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are slugs important for SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Clean and descriptive slugs help search engines and users understand page content better. Short, readable URLs can improve usability and search visibility."
             }
           },
           {
@@ -96,23 +104,15 @@
             "name": "Does this tool support Unicode text?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, this tool supports Unicode text, emojis, multilingual input, and combined characters."
+              "text": "Yes, this tool supports Unicode text, multilingual input, accented characters, and emojis during processing."
             }
           },
           {
             "@type": "Question",
-            "name": "What words are not capitalized in title case?",
+            "name": "What characters are removed from a slug?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Small connector words like and, or, of, in, the, to, and for are usually not capitalized unless they appear at the beginning or end of a title."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does this tool count words and characters?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, the tool includes word count, character count, and line count features."
+              "text": "Unsupported symbols, punctuation, and unsafe URL characters are automatically removed or replaced to create a clean web-safe slug format."
             }
           }
         ]
@@ -120,36 +120,66 @@
     </script>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Title Case Converter | Rool" />
+    <meta
+      property="og:title"
+      content="Slug Generator - Create SEO Friendly URLs | Rool"
+    />
 
     <meta
       property="og:description"
-      content="Convert text to proper title case instantly using smart capitalization rules and Unicode-aware formatting."
+      content="Generate clean, SEO-friendly URL slugs instantly with Unicode-aware text processing and formatting."
     />
 
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:type"
+      content="website"
+    />
 
-    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/title-case/" />
+    <meta
+      property="og:url"
+      content="https://rool.buffbahun.workers.dev/text/slug-generator/"
+    />
 
-    <meta property="og:site_name" content="Rool" />
+    <meta
+      property="og:site_name"
+      content="Rool"
+    />
 
-    <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/title-case.png" />
+    <meta
+      property="og:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/slug-generator.png"
+    />
 
-    <meta property="og:image:width" content="1200" />
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
 
-    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:height"
+      content="630"
+    />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
 
-    <meta name="twitter:title" content="Title Case Converter | Rool" />
+    <meta
+      name="twitter:title"
+      content="Slug Generator | Rool"
+    />
 
     <meta
       name="twitter:description"
-      content="Convert text to proper title case instantly with smart capitalization rules and analysis."
+      content="Generate clean, SEO-friendly URL slugs instantly with Unicode-aware text processing and formatting."
     />
 
-    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/title-case.png" />
+    <meta
+      name="twitter:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/slug-generator.png"
+    />
 
   </head>
   <body>
@@ -221,24 +251,24 @@
     <main>
       <header class="hero">
           <h1>
-              Title Case Converter
+            Slug Generator
           </h1>
       
           <p>
-              Free online title case converter and text analyzer tool.
-              Convert text to proper title case instantly using smart capitalization rules
-              while counting words, characters, lines, and sentences.
+            Free online slug generator tool.
+            Convert text into clean, SEO-friendly URL slugs instantly
+            with lowercase conversion, hyphen formatting, and Unicode support.
           </p>
       </header>
       <div id="chrInpCont" class="textAreaCont">
         <div class="textInputCont">
           <label for="chrInp">
-            Enter text to convert to title case,
-             and analyze text
+            Enter text to generate a clean,
+            SEO-friendly URL slug
           </label>
           <div class="textAndBtns">
             <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
-            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Converted text will appear here..."></textarea>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your output text here..."></textarea>
             <div class="action-btns">
             <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
                 <svg
@@ -324,104 +354,112 @@
           </div>
         </div>
         <section>
-            <h2>
-                Free Online Title Case Converter
-            </h2>
-        
-            <p>
-                This free online title case converter helps you
-                instantly convert text into proper title case using
-                smart capitalization rules. It supports Unicode text,
-                emojis, multilingual input, and includes word count,
-                character count, line count, and sentence analysis features.
-            </p>
+          <h2>
+            Free Online Slug Generator
+          </h2>
+      
+          <p>
+            This free online slug generator helps you
+            instantly convert text into clean,
+            SEO-friendly URL slugs.
+            It supports Unicode text, multilingual input,
+            lowercase conversion, hyphen formatting,
+            and automatic removal of unsafe URL characters.
+          </p>
         </section>
 
         <section>
-            <h2>
-                How Title Case Conversion Works
-            </h2>
-        
-            <p>
-                Title case conversion automatically applies capitalization
-                rules used in headlines and titles. Major words are capitalized
-                while small connector words like “and”, “or”, “of”, and “in”
-                are usually kept in lowercase depending on title case rules.
-                It preserves numbers, punctuation, emojis, and Unicode characters.
-            </p>
+          <h2>
+            How Slug Generation Works
+          </h2>
+      
+          <p>
+            Slug generation converts text into a URL-safe format
+            by transforming characters into lowercase letters,
+            replacing spaces with hyphens,
+            removing unsupported symbols,
+            and simplifying text for clean web addresses.
+            Unicode-aware processing helps properly handle
+            multilingual and accented characters.
+          </p>
         </section>
 
         <section>
-            <h2>
-                Example
-            </h2>
-        
-            <p>
-                The text “hello world” becomes:
-            </p>
-        
-            <ul>
-                <li><strong>Title Case:</strong> Hello World</li>
-                <li><strong>Words:</strong> 2</li>
-                <li><strong>Characters:</strong> 11</li>
-                <li><strong>Lines:</strong> 1</li>
-            </ul>
+          <h2>
+            Example
+          </h2>
+      
+          <p>
+            The text “Hello World 2026!” becomes:
+          </p>
+      
+          <ul>
+            <li><strong>Slug:</strong> hello-world-2026</li>
+            <li><strong>Words:</strong> 3</li>
+            <li><strong>Characters:</strong> 17</li>
+            <li><strong>Hyphens:</strong> 2</li>
+          </ul>
         </section>
 
         <section>
-            <h2>
-                Frequently Asked Questions
-            </h2>
+          <h2>
+            Frequently Asked Questions
+          </h2>
+      
+          <article>
+            <h3>
+              What is a slug?
+            </h3>
         
-            <article>
-                <h3>
-                    What is title case?
-                </h3>
-            
-                <p>
-                    Title case is a text formatting style used in headings and titles
-                    where major words are capitalized and small connector words
-                    are often left lowercase depending on style rules.
-                </p>
-            </article>
+            <p>
+              A slug is the URL-friendly part of a web address.
+              It is commonly used in blog posts,
+              articles, and web pages to create readable,
+              SEO-friendly URLs.
+            </p>
+          </article>
+      
+          <article>
+            <h3>
+              Why are slugs important for SEO?
+            </h3>
         
-            <article>
-                <h3>
-                    Does this tool support Unicode text?
-                </h3>
-            
-                <p>
-                    Yes, this tool supports Unicode text,
-                    emojis, multilingual input, and combined characters.
-                </p>
-            </article>
+            <p>
+              Clean and descriptive slugs help search engines
+              and users better understand page content.
+              Short, readable URLs can improve usability
+              and search visibility.
+            </p>
+          </article>
+      
+          <article>
+            <h3>
+              Does this tool support Unicode text?
+            </h3>
         
-            <article>
-                <h3>
-                    What words are NOT capitalized in title case?
-                </h3>
-            
-                <p>
-                    Common small connector words like “and”, “or”, “of”, “in”,
-                    “the”, “to”, and “for” are usually not capitalized unless
-                    they appear at the beginning or end of a title.
-                </p>
-            </article>
+            <p>
+              Yes, this tool supports Unicode text,
+              multilingual input, accented characters,
+              and emojis during processing.
+            </p>
+          </article>
+      
+          <article>
+            <h3>
+              What characters are removed from a slug?
+            </h3>
         
-            <article>
-                <h3>
-                    Does this tool count words and characters?
-                </h3>
-            
-                <p>
-                    Yes, the tool also includes word count,
-                    character count, and line count features.
-                </p>
-            </article>
-            <article>
-              <h3>Other Related Tools</h3>
-              <p>You can also try our <a href="/text/sentence-case/">Sentence Case Converter</a> or <a href="/text/upper-case/">Uppercase Converter</a> for other formatting styles.</p>
-            </article>
+            <p>
+              Unsupported symbols, punctuation,
+              and unsafe URL characters are automatically removed
+              or replaced to create a clean,
+              web-safe slug format.
+            </p>
+          </article>
+          <article>
+            <h3>Other Related Tools</h3>
+            <p>You can also try our <a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a> or <a href="/text/case-convert/">Case Converter</a> for other formatting styles.</p>
+          </article>
         </section>
     </main>
 

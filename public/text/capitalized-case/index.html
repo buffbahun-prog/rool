@@ -33,14 +33,14 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Capitalized Case Converter",
-      "url": "https://rool.buffbahun.workers.dev/text/capitalized-case",
+      "url": "https://rool.buffbahun.workers.dev/text/capitalized-case/",
       "description": "Free online capitalized case converter and text analyzer tool.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
       "publisher": {
         "@type": "Organization",
         "name": "Rool",
-        "url": "https://rool.com"
+        "url": "https://rool.buffbahun.workers.dev/"
       },
       "offers": {
         "@type": "Offer",
@@ -48,6 +48,57 @@
         "priceCurrency": "USD"
       }
     }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Capitalized Case Converter",
+        "url": "https://rool.buffbahun.workers.dev/text/capitalized-case/",
+        "description": "Free online capitalized case converter tool that capitalizes the first letter of each word and analyzes text."
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is capitalized case?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Capitalized case is a text formatting style where the first letter of each word is converted to uppercase while the rest remain lowercase."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool support Unicode text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this tool supports Unicode text including emojis, multilingual input, and special characters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does capitalized case change numbers or symbols?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, this tool only modifies alphabetic characters. Numbers, punctuation, and symbols remain unchanged."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this capitalized case converter free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this tool is completely free to use with no login required."
+            }
+          }
+        ]
+      }
     </script>
 
     <!-- Open Graph -->
@@ -60,7 +111,7 @@
 
     <meta property="og:type" content="website" />
 
-    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/capitalized-case" />
+    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/capitalized-case/" />
 
     <meta property="og:site_name" content="Rool" />
 
@@ -69,6 +120,7 @@
     <meta property="og:image:width" content="1200" />
 
     <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Rool" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -80,7 +132,8 @@
       content="Capitalize the first letter of each word instantly with Unicode-aware text formatting and analysis."
     />
 
-    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/og/capitalized-case.png" />
+    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/capitalized-case.png" />
+    <meta name="twitter:image:alt" content="Capitalized Case Converter tool by Rool" />
 
   </head>
   <body>
@@ -122,8 +175,8 @@
               id="text-tools-menu"
               class="menu-card"
             >
-              <li><a href="/text/word-count/">Word Count</a></li>
-              <li><a href="/text/case-convert/">Case Convert</a></li>
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
               <li><a href="/text/sentence-case/">Sentence Case</a></li>
               <li><a href="/text/lower-case/">Lower Case</a></li>
               <li><a href="/text/upper-case/">Upper Case</a></li>
@@ -131,6 +184,9 @@
               <li><a href="/text/title-case/">Title Case</a></li>
               <li><a href="/text/alternating-case/">Alternating Case</a></li>
               <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
             </ul>
           </li>
           <li>
@@ -162,12 +218,11 @@
       <div id="chrInpCont" class="textAreaCont">
         <div class="textInputCont">
           <label for="chrInp">
-            Enter text to convert to sentence case,
-             and analyze text
+            Enter text to convert to capitalized case, and analyze text
           </label>
           <div class="textAndBtns">
             <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
-            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your outputed text here..."></textarea>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your output text here..."></textarea>
             <div class="action-btns">
             <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
                 <svg
@@ -185,7 +240,7 @@
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
             </button>
-            <button class="copy" id="shareBtn" aria-label="Share text" title="Shara">
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Share">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -345,8 +400,12 @@
             
                 <p>
                     Yes, the tool also includes word count,
-                    character count, line count, and sentence count features.
+                    character count, line count features.
                 </p>
+            </article>
+            <article>
+              <h3>Other Related Tools</h3>
+              <p>You can also try our <a href="/text/lower-case/">Lower Case Converter</a> or <a href="/text/title-case/">Title Case Converter</a> for other formatting styles.</p>
             </article>
         </section>
     </main>
@@ -355,33 +414,21 @@
       <nav aria-label="Tools navigation">
         <h2>Tools</h2>
         <ul class="tools-nav-footer">
-          <li><a href="/text/word-count/">Word Count</a></li>
-          <li><a href="/text/case-convert">Case Convert</a></li>
-          <li><a href="/text/sentence-case">Sentence Case</a></li>
-          <li><a href="/text/lower-case">Lower Case</a></li>
-          <li><a href="/text/upper-case">Upper Case</a></li>
-          <li><a href="/text/capitalized-case">Capitalized Case</a></li>
-          <li><a href="/text/title-case">Title Case</a></li>
-          <li><a href="/text/alternating-case">Alternating Case</a></li>
-          <li><a href="/text/inverse-case">Inverse Case</a></li>
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
         </ul>
       </nav>
 
-      <nav aria-label="Site pages">
-        <h2>Company</h2>
-        <ul class="company-nav-footer">
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
+       
 
       <section aria-label="Contact information">
         <h2>Contact</h2>
         <ul class="contact-nav-footer">
           <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
-          <li><a href="tel:+977 9861086724">Phone</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
           <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
           <li><a href="https://github.com/buffbahun-prog">Github</a></li>
         </ul>

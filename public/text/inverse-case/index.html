@@ -33,14 +33,14 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Inverse Case Converter",
-      "url": "https://rool.buffbahun.workers.dev/text/inverse-case",
+      "url": "https://rool.buffbahun.workers.dev/text/inverse-case/",
       "description": "Free online inverse case converter and text analyzer tool.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
       "publisher": {
         "@type": "Organization",
         "name": "Rool",
-        "url": "https://rool.com"
+        "url": "https://rool.buffbahun.workers.dev/"
       },
       "offers": {
         "@type": "Offer",
@@ -48,6 +48,57 @@
         "priceCurrency": "USD"
       }
     }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Inverse Case Converter",
+        "url": "https://rool.buffbahun.workers.dev/text/inverse-case/",
+        "description": "Free online inverse case converter tool that inverses lowercase to uppercase and vice-versa and analyzes text."
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is inverse case?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Inverse case is a text formatting style where uppercase letters are converted to lowercase and lowercase letters are converted to uppercase. It is also known as swap case."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool support Unicode text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this tool supports Unicode text, emojis, multilingual input, and combined characters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does inverse case affect numbers or symbols?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, inverse case only changes alphabetic characters and does not modify numbers, punctuation, or symbols."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool count words and characters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the tool also includes word count, character count, line count features."
+            }
+          }
+        ]
+      }
     </script>
 
     <!-- Open Graph -->
@@ -60,11 +111,11 @@
 
     <meta property="og:type" content="website" />
 
-    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/inverse-case" />
+    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/inverse-case/" />
 
     <meta property="og:site_name" content="Rool" />
 
-    <meta property="og:image" content="https://rool.buffbahun.workers.dev/og/inverse-case.png" />
+    <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/inverse-case.png" />
 
     <meta property="og:image:width" content="1200" />
 
@@ -80,8 +131,8 @@
       content="Swap uppercase to lowercase and lowercase to uppercase instantly with Unicode-aware formatting and analysis."
     />
 
-    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/og/inverse-case.png" />
-
+    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/inverse-case.png" />
+    <meta name="twitter:image:alt" content="Inverse Case Converter tool by Rool" />
   </head>
   <body>
     <header class="main-header">
@@ -122,8 +173,8 @@
               id="text-tools-menu"
               class="menu-card"
             >
-              <li><a href="/text/word-count/">Word Count</a></li>
-              <li><a href="/text/case-convert/">Case Convert</a></li>
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
               <li><a href="/text/sentence-case/">Sentence Case</a></li>
               <li><a href="/text/lower-case/">Lower Case</a></li>
               <li><a href="/text/upper-case/">Upper Case</a></li>
@@ -131,6 +182,9 @@
               <li><a href="/text/title-case/">Title Case</a></li>
               <li><a href="/text/alternating-case/">Alternating Case</a></li>
               <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
             </ul>
           </li>
           <li>
@@ -166,7 +220,7 @@
           </label>
           <div class="textAndBtns">
             <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
-            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your outputed text here..."></textarea>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your output text here..."></textarea>
             <div class="action-btns">
             <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
                 <svg
@@ -184,7 +238,7 @@
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
             </button>
-            <button class="copy" id="shareBtn" aria-label="Share text" title="Shara">
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Share">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -341,8 +395,12 @@
             
                 <p>
                     Yes, the tool also includes word count,
-                    character count, line count, and sentence count features.
+                    character count, line count features.
                 </p>
+            </article>
+            <article>
+              <h3>Other Related Tools</h3>
+              <p>You can also try our <a href="/text/alternating-case/">Alternative Case Converter</a> or <a href="/text/case-convert/">Case Converter</a> for other formatting styles.</p>
             </article>
         </section>
     </main>
@@ -351,33 +409,21 @@
       <nav aria-label="Tools navigation">
         <h2>Tools</h2>
         <ul class="tools-nav-footer">
-          <li><a href="/text/word-count/">Word Count</a></li>
-          <li><a href="/text/case-convert">Case Convert</a></li>
-          <li><a href="/text/sentence-case">Sentence Case</a></li>
-          <li><a href="/text/lower-case">Lower Case</a></li>
-          <li><a href="/text/upper-case">Upper Case</a></li>
-          <li><a href="/text/capitalized-case">Capitalized Case</a></li>
-          <li><a href="/text/title-case">Title Case</a></li>
-          <li><a href="/text/alternating-case">Alternating Case</a></li>
-          <li><a href="/text/inverse-case">Inverse Case</a></li>
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
         </ul>
       </nav>
 
-      <nav aria-label="Site pages">
-        <h2>Company</h2>
-        <ul class="company-nav-footer">
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
+       
 
       <section aria-label="Contact information">
         <h2>Contact</h2>
         <ul class="contact-nav-footer">
           <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
-          <li><a href="tel:+977 9861086724">Phone</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
           <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
           <li><a href="https://github.com/buffbahun-prog">Github</a></li>
         </ul>

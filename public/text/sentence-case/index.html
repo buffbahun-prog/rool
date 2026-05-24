@@ -32,15 +32,15 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Sentence Case Converter",
-      "url": "https://rool.buffbahun.workers.dev/text/sentence-case",
-      "description": "Free online sentence case converter and text analyzer tool.",
+      "name": "name": "Sentence Case Converter - Rool",
+      "url": "https://rool.buffbahun.workers.dev/text/sentence-case/",
+      "description": "Free online sentence case converter that capitalizes the first letter of each sentence and provides text analysis including word, character, lines.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
       "publisher": {
         "@type": "Organization",
         "name": "Rool",
-        "url": "https://rool.com"
+        "url": "https://rool.buffbahun.workers.dev/"
       },
       "offers": {
         "@type": "Offer",
@@ -48,6 +48,64 @@
         "priceCurrency": "USD"
       }
     }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://rool.buffbahun.workers.dev/text/sentence-case/#webpage",
+        "url": "https://rool.buffbahun.workers.dev/text/sentence-case/",
+        "name": "Sentence Case Converter",
+        "description": "Free sentence case converter tool for capitalizing sentences and analyzing text.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Rool",
+          "url": "https://rool.buffbahun.workers.dev/"
+        },
+        "inLanguage": "en"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is sentence case?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sentence case is a formatting style where only the first letter of each sentence is capitalized while the rest remains lowercase."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool support Unicode text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it supports Unicode text including emojis, multilingual input, and accented characters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are sentences detected?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sentences are detected using punctuation-based and Unicode-aware sentence segmentation logic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool count words and characters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it includes word count, character count, line count features."
+            }
+          }
+        ]
+      }
     </script>
 
     <!-- Open Graph -->
@@ -58,7 +116,7 @@
 
     <meta
       property="og:description"
-      content="Convert text to sentence case instantly with Unicode-aware text formatting and analysis."
+      content="Convert text to sentence case instantly by capitalizing the first letter of each sentence. Includes text analysis tools for words, characters, and sentences."
     />
 
     <meta
@@ -68,7 +126,7 @@
 
     <meta
       property="og:url"
-      content="https://rool.buffbahun.workers.dev/text/sentence-case"
+      content="https://rool.buffbahun.workers.dev/text/sentence-case/"
     />
 
     <meta
@@ -78,7 +136,7 @@
 
     <meta
       property="og:image"
-      content="https://rool.buffbahun.workers.dev/og/sentence-case.png"
+      content="https://rool.buffbahun.workers.dev/assets/og/sentence-case.png"
     />
 
     <meta
@@ -109,7 +167,7 @@
 
     <meta
       name="twitter:image"
-      content="https://rool.buffbahun.workers.dev/og/sentence-case.png"
+      content="https://rool.buffbahun.workers.dev/assets/og/sentence-case.png"
     />
 
   </head>
@@ -152,8 +210,8 @@
               id="text-tools-menu"
               class="menu-card"
             >
-              <li><a href="/text/word-count/">Word Count</a></li>
-              <li><a href="/text/case-convert/">Case Convert</a></li>
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
               <li><a href="/text/sentence-case/">Sentence Case</a></li>
               <li><a href="/text/lower-case/">Lower Case</a></li>
               <li><a href="/text/upper-case/">Upper Case</a></li>
@@ -161,6 +219,9 @@
               <li><a href="/text/title-case/">Title Case</a></li>
               <li><a href="/text/alternating-case/">Alternating Case</a></li>
               <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
             </ul>
           </li>
           <li>
@@ -196,7 +257,7 @@
           </label>
           <div class="textAndBtns">
             <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
-            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your outputed text here..."></textarea>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your output text here..."></textarea>
             <div class="action-btns">
             <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
                 <svg
@@ -214,7 +275,7 @@
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
             </button>
-            <button class="copy" id="shareBtn" aria-label="Share text" title="Shara">
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Share">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -373,8 +434,12 @@
             
                 <p>
                     Yes, the tool also includes word count,
-                    character count, line count, and sentence count features.
+                    character count, line count features.
                 </p>
+            </article>
+            <article>
+              <h3>Other Related Tools</h3>
+              <p>You can also try our <a href="/text/title-case/">Title Case Converter</a> or <a href="/text/case-convert/">Case Converter</a> for other formatting styles.</p>
             </article>
         </section>
     </main>
@@ -383,33 +448,21 @@
       <nav aria-label="Tools navigation">
         <h2>Tools</h2>
         <ul class="tools-nav-footer">
-          <li><a href="/text/word-count/">Word Count</a></li>
-          <li><a href="/text/case-convert">Case Convert</a></li>
-          <li><a href="/text/sentence-case">Sentence Case</a></li>
-          <li><a href="/text/lower-case">Lower Case</a></li>
-          <li><a href="/text/upper-case">Upper Case</a></li>
-          <li><a href="/text/capitalized-case">Capitalized Case</a></li>
-          <li><a href="/text/title-case">Title Case</a></li>
-          <li><a href="/text/alternating-case">Alternating Case</a></li>
-          <li><a href="/text/inverse-case">Inverse Case</a></li>
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
         </ul>
       </nav>
 
-      <nav aria-label="Site pages">
-        <h2>Company</h2>
-        <ul class="company-nav-footer">
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
+       
 
       <section aria-label="Contact information">
         <h2>Contact</h2>
         <ul class="contact-nav-footer">
           <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
-          <li><a href="tel:+977 9861086724">Phone</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
           <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
           <li><a href="https://github.com/buffbahun-prog">Github</a></li>
         </ul>

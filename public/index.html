@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
-      Rool - Free Online Utility Tools (Text, QR, Barcode & More)
+      Free Online Developer & Text Tools | Rool
     </title>
 
     <meta name="google-site-verification" content="sGtletqUOlQ4XQndEF5VbYockaA8koXUEloxI5RBFnQ" />
 
     <meta
       name="description"
-      content="Free online utility tools including word counter, case converter, QR code generator, barcode generator and more. Fast, simple and privacy-friendly."
+      content="Free online developer and text tools including Lorem Ipsum generators, slug generators, case converters, word counters, QR code generators, and more. Fast, simple and privacy-friendly."
     />
 
     <meta
@@ -22,7 +22,7 @@
       content="online tools, free tools, utility tools, word counter, case converter, text tools, developer tools, json formatter, slug generator"
     />
 
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="stylesheet" href="/style.css">
 
     <link rel="canonical" href="https://rool.buffbahun.workers.dev/" />
@@ -32,27 +32,41 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Rool",
-        "url": "https://rool.buffbahun.workers.dev/",
-        "description": "Free online utility tools including word counter, case converter, QR code generator, barcode generator and more. Fast, simple and privacy-friendly.",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "browserRequirements": "Requires JavaScript",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Rool",
+            "url": "https://rool.buffbahun.workers.dev/"
+          },
+          {
+            "@type": "Organization",
+            "name": "Rool",
+            "url": "https://rool.buffbahun.workers.dev/",
+            "logo": "https://rool.buffbahun.workers.dev/assets/logo.svg"
+          },
+          {
+            "@type": "WebApplication",
+            "name": "Rool",
+            "url": "https://rool.buffbahun.workers.dev/",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Any",
+            "description": "Free online developer and text tools.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
       }
     </script>
 
-    <!-- Open Graph (for social sharing) -->
     <meta property="og:title" content="Rool - Free Online Utility Tools" />
     <meta property="og:description" content="Text tools, QR generator, barcode tools and more." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rool.buffbahun.workers.dev/" />
-    <meta property="og:image" content="https://rool.buffbahun.workers.dev/og-image.png" />
+    <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/home.png" />
+    <meta property="og:image:alt" content="Rool free online developer and text tools" />
 
     <!-- Twitter Card -->
     <meta name="twitter:title" content="Rool - Free Online Utility Tools" />
@@ -62,13 +76,17 @@
       content="Text tools, QR generators, barcode tools and more."
     />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/home.png" />
+    <meta name="twitter:image:alt"
+      content="Rool developer and text utility tools" />
 
   </head>
   <body>
-    <header class="main-header">
+    <header id="mainHeader" class="main-header">
       <a href="/" aria-label="Rool home page">
         <img
-          src="assets/logo.svg"
+          src="/assets/logo.svg"
           alt="Rool utility tool logo"
           width="80"
         >
@@ -104,7 +122,7 @@
               class="menu-card"
             >
               <li><a href="/text/word-count/">Word Count</a></li>
-              <li><a href="/text/case-convert/">Case Convert</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
               <li><a href="/text/sentence-case/">Sentence Case</a></li>
               <li><a href="/text/lower-case/">Lower Case</a></li>
               <li><a href="/text/upper-case/">Upper Case</a></li>
@@ -113,6 +131,8 @@
               <li><a href="/text/alternating-case/">Alternating Case</a></li>
               <li><a href="/text/inverse-case/">Inverse Case</a></li>
               <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
             </ul>
           </li>
           <li>
@@ -131,38 +151,238 @@
     <main>
       <header class="hero">
         <h1>
-        rool
+          Free Online Developer & Text Tools
         </h1>
         <p>
-          rool is an utility tools website.
+          Generate Lorem Ipsum, create SEO-friendly slugs,
+          convert text case, analyze text, and more with
+          free online utility tools.
         </p>
       </header>
+      <section class="tool-grid">
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/alternating-case/">
+              Alternating Case Converter
+            </a>
+          </h2>
+        
+          <p>
+            Convert text to alternating case online instantly.
+            This free alternating case converter helps format
+            text into aLtErNaTiNg CaSe while analyzing word count,
+            character count, sentences, and lines.
+          </p>
+        
+          <a class="tool-link" href="/text/alternating-case/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/capitalized-case/">
+              Capitalized Case Converter
+            </a>
+          </h2>
+        
+          <p>
+            Convert text to capitalized case instantly by capitalizing
+            the first letter of each word while counting words,
+            characters, lines, and sentences.
+          </p>
+        
+          <a class="tool-link" href="/text/capitalized-case/">
+            Use Tool
+          </a>
+        </article>
+      
+        <article class="tool-card">
+          <h2>
+            <a href="/text/case-convert/">
+              Case Converter
+            </a>
+          </h2>
+        
+          <p>
+            Convert text to uppercase, lowercase, sentence case,
+            title case, inverse case, alternating case, and more
+            instantly with Unicode support.
+          </p>
+        
+          <a class="tool-link" href="/text/case-convert/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/inverse-case/">
+              Inverse Case Converter
+            </a>
+          </h2>
+        
+          <p>
+            Swap uppercase to lowercase and lowercase to uppercase instantly
+            while counting words, characters, lines, and sentences.
+          </p>
+        
+          <a class="tool-link" href="/text/inverse-case/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/lorem-ipsum-generator/">
+              Lorem Ipsum Generator
+            </a>
+          </h2>
+        
+          <p>
+            Generate random placeholder text, dummy paragraphs,
+            sentences, and words instantly for websites, UI mockups,
+            apps, typography, and development projects.
+          </p>
+        
+          <a class="tool-link" href="/text/lorem-ipsum-generator/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/lower-case/">
+              Lowercase Converter
+            </a>
+          </h2>
+        
+          <p>
+            Convert text to lowercase instantly while counting
+            words, characters, lines, and sentences.
+          </p>
+        
+          <a class="tool-link" href="/text/lower-case/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/nepali-lorem-ipsum-generator/">
+              Nepali Lorem Ipsum Generator
+            </a>
+          </h2>
+        
+          <p>
+            Generate Nepali placeholder text, dummy paragraphs,
+            sentences, and Unicode filler text instantly for websites,
+            UI mockups, typography, apps, and development projects.
+          </p>
+        
+          <a class="tool-link" href="/text/nepali-lorem-ipsum-generator/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/sentence-case/">
+              Sentence Case Converter
+            </a>
+          </h2>
+        
+          <p>
+            Capitalize the first letter of each sentence instantly while
+            counting words, characters, lines, and sentences.
+          </p>
+        
+          <a class="tool-link" href="/text/sentence-case/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/slug-generator/">
+              Slug Generator
+            </a>
+          </h2>
+        
+          <p>
+            Convert text into clean, SEO-friendly URL slugs instantly
+            with lowercase conversion, hyphen formatting, and Unicode support.
+          </p>
+        
+          <a class="tool-link" href="/text/slug-generator/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/title-case/">
+              Title Case Converter
+            </a>
+          </h2>
+        
+          <p>
+            Convert text to proper title case instantly using smart capitalization rules
+            while counting words, characters, lines, and sentences.
+          </p>
+        
+          <a class="tool-link" href="/text/title-case/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/upper-case/">
+              Uppercase Converter
+            </a>
+          </h2>
+        
+          <p>
+            Convert text to uppercase instantly while counting
+            words, characters, lines, and sentences.
+          </p>
+        
+          <a class="tool-link" href="/text/upper-case/">
+            Use Tool
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <h2>
+            <a href="/text/word-count/">
+              Word Counter
+            </a>
+          </h2>
+        
+          <p>
+            Count words, characters, lines, sentences,
+            and paragraphs instantly with Unicode support.
+          </p>
+        
+          <a class="tool-link" href="/text/word-count/">
+            Use Tool
+          </a>
+        </article>
+      
+      </section>
     </main>
 
-    <footer>
+    <footer id="mainFooter" >
       <nav aria-label="Tools navigation">
         <h2>Tools</h2>
         <ul class="tools-nav-footer">
           <li><a href="/text/word-count/">Word Count</a></li>
-          <li><a href="/text/case-convert/">Case Convert</a></li>
-          <li><a href="/text/sentence-case/">Sentence Case</a></li>
-          <li><a href="/text/lower-case/">Lower Case</a></li>
-          <li><a href="/text/upper-case/">Upper Case</a></li>
-          <li><a href="/text/capitalized-case/">Capitalized Case</a></li>
-          <li><a href="/text/title-case/">Title Case</a></li>
-          <li><a href="/text/alternating-case/">Alternating Case</a></li>
-          <li><a href="/text/inverse-case/">Inverse Case</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
           <li><a href="/text/slug-generator/">Slug Generator</a></li>
-        </ul>
-      </nav>
-
-      <nav aria-label="Site pages">
-        <h2>Company</h2>
-        <ul class="company-nav-footer">
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
         </ul>
       </nav>
 
@@ -170,7 +390,7 @@
         <h2>Contact</h2>
         <ul class="contact-nav-footer">
           <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
-          <li><a href="tel:+977 9861086724">Phone</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
           <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
           <li><a href="https://github.com/buffbahun-prog">Github</a></li>
         </ul>
@@ -186,66 +406,5 @@
       </section>
 
     </footer>
-    <template id="characterCounter">
-        <h1 id="chrCntTitle">Word Counter</h1>
-        <div id="chrInpCont" class="textAreaCont">
-          <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
-          <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your outputed text here..."></textarea>
-          <div class="action-btns">
-            <div class="copy" id="copyBtn" title="Copy">CP</div>
-            <div class="copy" id="shareBtn" title="Shara">Shr</div>
-            <div class="copy" id="downloadBtn" title="Download">Dwn</div>
-            <div class="copy" id="clearBtn" title="Clear">Clr</div>
-          </div>
-        </div>
-        <div id="transformerSlot"></div>
-        <div class="outCont">
-          <div>
-            <h2>Character Count</h2>
-            <p id="chrOut">0</p>
-          </div>
-          <div>
-            <h2>Word Count</h2>
-            <p id="wrdOut">0</p>
-          </div>
-          <div>
-            <h2>Line Count</h2>
-            <p id="lineOut">0</p>
-          </div>
-        </div>
-      </template>
-      <template id="transformer">
-        <div class="transformerCont">
-          <div id="sc">
-            <!-- <span>Sc</span> -->
-            <span>Sentence case</span>
-          </div>
-          <div id="lc">
-            <!-- <span>lc</span> -->
-            <span>lower case</span>
-          </div>
-          <div id="uc">
-            <!-- <span>UC</span> -->
-            <span>UPPER CASE</span>
-          </div>
-          <div id="cc">
-            <!-- <span>CC</span> -->
-            <span>Capitalized Case</span>
-          </div>
-          <div id="tc">
-            <!-- <span>TC</span> -->
-            <span>Title Case</span>
-          </div>
-          <div id="ac">
-            <!-- <span>aC</span> -->
-            <span>aLtErNaTiNg cAsE</span>
-          </div>
-          <div id="ic">
-            <!-- <span>iC</span> -->
-            <span>iNVERSE cASE</span>
-          </div>
-        </div>
-      </template>
-    <!-- <script type="module" src="/src/main.ts"></script> -->
   </body>
 </html>

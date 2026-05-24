@@ -62,4 +62,22 @@
     </loc>
   </url>
 
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/slug-generator/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/lorem-ipsum-generator/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/text/nepali-lorem-ipsum-generator/
+    </loc>
+  </url>
+
 </urlset>

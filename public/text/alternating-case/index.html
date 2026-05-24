@@ -33,14 +33,18 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Alternating Case Converter",
-      "url": "https://rool.buffbahun.workers.dev/text/alternating-case",
+      "url": "https://rool.buffbahun.workers.dev/text/alternating-case/",
       "description": "Free online alternating case converter and text analyzer tool.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
       "publisher": {
         "@type": "Organization",
         "name": "Rool",
-        "url": "https://rool.com"
+        "url": "https://rool.buffbahun.workers.dev/"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Alternating Case Converter"
       },
       "offers": {
         "@type": "Offer",
@@ -49,6 +53,41 @@
       }
     }
     </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is alternating case?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alternating case is a text format where letters switch between lowercase and uppercase in sequence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool support Unicode text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it supports Unicode, emojis, and multilingual input."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this alternating case converter is completely free to use."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <meta property="og:site_name" content="Rool" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Alternating Case Converter | Rool" />
@@ -60,11 +99,11 @@
 
     <meta property="og:type" content="website" />
 
-    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/alternating-case" />
+    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/alternating-case/" />
 
     <meta property="og:site_name" content="Rool" />
 
-    <meta property="og:image" content="https://rool.buffbahun.workers.dev/og/alternating-case.png" />
+    <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/alternating-case.png" />
 
     <meta property="og:image:width" content="1200" />
 
@@ -80,7 +119,8 @@
       content="Convert text to aLtErNaTiNg CaSe instantly with Unicode-aware formatting and analysis."
     />
 
-    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/og/alternating-case.png" />
+    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/alternating-case.png" />
+    <meta name="twitter:image:alt" content="Alternating Case Converter tool by Rool" />
 
   </head>
   <body>
@@ -90,6 +130,7 @@
           src="/assets/logo.svg"
           alt="Rool utility tool logo"
           width="80"
+          loading="lazy"
         >
       </a>
 
@@ -123,7 +164,7 @@
               class="menu-card"
             >
               <li><a href="/text/word-count/">Word Count</a></li>
-              <li><a href="/text/case-convert/">Case Convert</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
               <li><a href="/text/sentence-case/">Sentence Case</a></li>
               <li><a href="/text/lower-case/">Lower Case</a></li>
               <li><a href="/text/upper-case/">Upper Case</a></li>
@@ -131,6 +172,9 @@
               <li><a href="/text/title-case/">Title Case</a></li>
               <li><a href="/text/alternating-case/">Alternating Case</a></li>
               <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
             </ul>
           </li>
           <li>
@@ -166,7 +210,7 @@
           </label>
           <div class="textAndBtns">
             <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
-            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your outputed text here..."></textarea>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your output text here..."></textarea>
             <div class="action-btns">
             <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
                 <svg
@@ -184,7 +228,7 @@
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
             </button>
-            <button class="copy" id="shareBtn" aria-label="Share text" title="Shara">
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Share">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -341,8 +385,12 @@
             
                 <p>
                     Yes, the tool also includes word count,
-                    character count, line count, and sentence count features.
+                    character count, line count features.
                 </p>
+            </article>
+            <article>
+              <h3>Other Related Tools</h3>
+              <p>You can also try our <a href="/text/inverse-case/">Inverse Case Converter</a> or <a href="/text/title-case/">Title Case Converter</a> for other formatting styles.</p>
             </article>
         </section>
     </main>
@@ -352,32 +400,20 @@
         <h2>Tools</h2>
         <ul class="tools-nav-footer">
           <li><a href="/text/word-count/">Word Count</a></li>
-          <li><a href="/text/case-convert">Case Convert</a></li>
-          <li><a href="/text/sentence-case">Sentence Case</a></li>
-          <li><a href="/text/lower-case">Lower Case</a></li>
-          <li><a href="/text/upper-case">Upper Case</a></li>
-          <li><a href="/text/capitalized-case">Capitalized Case</a></li>
-          <li><a href="/text/title-case">Title Case</a></li>
-          <li><a href="/text/alternating-case">Alternating Case</a></li>
-          <li><a href="/text/inverse-case">Inverse Case</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
         </ul>
       </nav>
 
-      <nav aria-label="Site pages">
-        <h2>Company</h2>
-        <ul class="company-nav-footer">
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
+       
 
       <section aria-label="Contact information">
         <h2>Contact</h2>
         <ul class="contact-nav-footer">
           <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
-          <li><a href="tel:+977 9861086724">Phone</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
           <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
           <li><a href="https://github.com/buffbahun-prog">Github</a></li>
         </ul>

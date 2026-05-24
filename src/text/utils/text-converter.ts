@@ -26,6 +26,7 @@ export function wordCount(textCont: string) {
 }
 
 export function lineCount(textCont: string) {
+    if (!textCont) return 0;
     return textCont.split(/\r\n|\r|\n/).length;
 }
 

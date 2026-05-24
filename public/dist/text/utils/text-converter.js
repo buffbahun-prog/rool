@@ -21,6 +21,8 @@ export function wordCount(textCont) {
         .filter(x => x.isWordLike).length;
 }
 export function lineCount(textCont) {
+    if (!textCont)
+        return 0;
     return textCont.split(/\r\n|\r|\n/).length;
 }
 export function toSentenceCase(textCont) {

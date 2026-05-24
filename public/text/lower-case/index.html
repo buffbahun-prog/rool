@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
-      Lowercase Converter - Convert Text to Lowercase | Rool
+      Convert Text to Lowercase Online - Free Lowercase Converter | Rool
     </title>
 
     <meta
       name="description"
-      content="Free online lowercase converter tool. Convert text to lowercase instantly and analyze words, characters, lines, and sentences with Unicode support."
+      content="Convert text to lowercase instantly with this free online lowercase converter. Supports Unicode text, emojis, and multilingual input with word, character, and line analysis."
     />
 
     <meta
@@ -32,14 +32,14 @@
           "@context": "https://schema.org",
           "@type": "WebApplication",
           "name": "Lowercase Converter",
-          "url": "https://rool.buffbahun.workers.dev/text/lower-case",
+          "url": "https://rool.buffbahun.workers.dev/text/lower-case/",
           "description": "Free online lowercase converter and text analyzer tool.",
           "applicationCategory": "UtilityApplication",
           "operatingSystem": "Any",
           "publisher": {
             "@type": "Organization",
             "name": "Rool",
-            "url": "https://rool.com"
+            "url": "https://rool.buffbahun.workers.dev/"
           },
           "offers": {
             "@type": "Offer",
@@ -47,6 +47,68 @@
             "priceCurrency": "USD"
           }
         }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://rool.buffbahun.workers.dev/text/lower-case/#webpage",
+        "url": "https://rool.buffbahun.workers.dev/text/lower-case/",
+        "name": "Lowercase Converter - Convert Text to Lowercase Online",
+        "description": "Free online lowercase converter tool to instantly convert text to lowercase with Unicode support and text analysis including word, character, and line counts.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Rool",
+          "url": "https://rool.buffbahun.workers.dev/"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://rool.buffbahun.workers.dev/assets/og/lower-case.png"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I convert text to lowercase in JavaScript?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can use the .toLowerCase() function in JavaScript to convert strings into lowercase format."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does lowercase conversion affect emojis or numbers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, only alphabetic characters are affected. Numbers, emojis, and symbols remain unchanged."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is lowercase text important?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lowercase text is used for consistent formatting, database storage, and search engine normalization."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is lowercase conversion safe for Unicode text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, modern Unicode-aware conversion safely handles multilingual text and accented characters."
+            }
+          }
+        ]
+      }
     </script>
 
     <!-- Open Graph -->
@@ -67,7 +129,7 @@
 
     <meta
       property="og:url"
-      content="https://rool.buffbahun.workers.dev/text/lower-case"
+      content="https://rool.buffbahun.workers.dev/text/lower-case/"
     />
 
     <meta
@@ -77,7 +139,7 @@
 
     <meta
       property="og:image"
-      content="https://rool.buffbahun.workers.dev/og/lower-case.png"
+      content="https://rool.buffbahun.workers.dev/assets/og/lower-case.png"
     />
 
     <meta
@@ -108,7 +170,7 @@
 
     <meta
       name="twitter:image"
-      content="https://rool.buffbahun.workers.dev/og/lower-case.png"
+      content="https://rool.buffbahun.workers.dev/assets/og/lower-case.png"
     />
 
   </head>
@@ -151,8 +213,8 @@
               id="text-tools-menu"
               class="menu-card"
             >
-              <li><a href="/text/word-count/">Word Count</a></li>
-              <li><a href="/text/case-convert/">Case Convert</a></li>
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
               <li><a href="/text/sentence-case/">Sentence Case</a></li>
               <li><a href="/text/lower-case/">Lower Case</a></li>
               <li><a href="/text/upper-case/">Upper Case</a></li>
@@ -160,6 +222,9 @@
               <li><a href="/text/title-case/">Title Case</a></li>
               <li><a href="/text/alternating-case/">Alternating Case</a></li>
               <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
             </ul>
           </li>
           <li>
@@ -182,9 +247,7 @@
         </h1>
 
         <p>
-            Free online lowercase converter and text analyzer tool.
-            Convert text to lowercase instantly while counting
-            words, characters, lines, and sentences.
+            Free online tool to instantly convert text into lowercase while analyzing word count, character count, and line structure. Useful for formatting, cleaning text input, and developer workflows.
         </p>
       </header>
       <div id="chrInpCont" class="textAreaCont">
@@ -195,7 +258,7 @@
           </label>
           <div class="textAndBtns">
             <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
-            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your outputed text here..."></textarea>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Your output text here..."></textarea>
             <div class="action-btns">
             <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
                 <svg
@@ -213,7 +276,7 @@
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
             </button>
-            <button class="copy" id="shareBtn" aria-label="Share text" title="Shara">
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Share">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -309,6 +372,23 @@
         </section>
 
         <section>
+          <h2>When to Use Lowercase Conversion</h2>
+          <p>
+            Lowercase conversion is commonly used in data cleaning, form processing, email formatting,
+            database normalization, and preparing text for search indexing. Developers often use it
+            to ensure consistent text input handling.
+          </p>
+        </section>
+
+        <section>
+          <h2>Lowercase vs Other Text Cases</h2>
+          <p>
+            Lowercase converts all letters to small letters, unlike sentence case or title case
+            which apply capitalization rules. It is mainly used for normalization rather than formatting.
+          </p>
+        </section>
+
+        <section>
             <h2>
                 Example
             </h2>
@@ -343,37 +423,28 @@
             </article>
         
             <article>
-                <h3>
-                    Does this tool support Unicode text?
-                </h3>
-            
-                <p>
-                    Yes, this tool supports Unicode text,
-                    emojis, multilingual input, and combined characters.
-                </p>
+              <h3>How do I convert text to lowercase in JavaScript?</h3>
+              <p>You can use the .toLowerCase() function in JavaScript to convert strings into lowercase format.</p>
             </article>
-        
+
             <article>
-                <h3>
-                    Does lowercase conversion affect numbers or symbols?
-                </h3>
-            
-                <p>
-                    No, lowercase conversion only changes alphabetic
-                    characters and does not modify numbers,
-                    punctuation, or symbols.
-                </p>
+              <h3>Does lowercase conversion affect emojis or numbers?</h3>
+              <p>No, only alphabetic characters are affected. Numbers, emojis, and symbols remain unchanged.</p>
             </article>
-        
+
             <article>
-                <h3>
-                    Does this tool count words and characters?
-                </h3>
-            
-                <p>
-                    Yes, the tool also includes word count,
-                    character count, line count, and sentence count features.
-                </p>
+              <h3>Why is lowercase text important?</h3>
+              <p>Lowercase text is used for consistent formatting, database storage, and search engine normalization.</p>
+            </article>
+
+            <article>
+              <h3>Is lowercase conversion safe for Unicode text?</h3>
+              <p>Yes, modern Unicode-aware conversion safely handles multilingual text and accented characters.</p>
+            </article>
+
+            <article>
+              <h3>Other Related Tools</h3>
+              <p>You can also try our <a href="/text/upper-case/">Uppercase Converter</a> or <a href="/text/word-count/">Word Counter</a> for other formatting styles.</p>
             </article>
         </section>
     </main>
@@ -383,32 +454,20 @@
         <h2>Tools</h2>
         <ul class="tools-nav-footer">
           <li><a href="/text/word-count/">Word Count</a></li>
-          <li><a href="/text/case-convert">Case Convert</a></li>
-          <li><a href="/text/sentence-case">Sentence Case</a></li>
-          <li><a href="/text/lower-case">Lower Case</a></li>
-          <li><a href="/text/upper-case">Upper Case</a></li>
-          <li><a href="/text/capitalized-case">Capitalized Case</a></li>
-          <li><a href="/text/title-case">Title Case</a></li>
-          <li><a href="/text/alternating-case">Alternating Case</a></li>
-          <li><a href="/text/inverse-case">Inverse Case</a></li>
+          <li><a href="/text/case-convert/">Case Convert</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
         </ul>
       </nav>
 
-      <nav aria-label="Site pages">
-        <h2>Company</h2>
-        <ul class="company-nav-footer">
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
+       
 
       <section aria-label="Contact information">
         <h2>Contact</h2>
         <ul class="contact-nav-footer">
           <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
-          <li><a href="tel:+977 9861086724">Phone</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
           <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
           <li><a href="https://github.com/buffbahun-prog">Github</a></li>
         </ul>
