@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Text Sorter Online - Sort Lines Alphabetically, Naturally & Numerically | Rool
+    </title>
+
+    <meta
+      name="description"
+      content="Free online text sorter tool to sort lines alphabetically, naturally, numerically, randomly, or by length. Remove duplicate lines, ignore case, trim whitespace, reverse order, and organize text instantly."
+    />
+
+    <meta
+      name="keywords"
+      content="text sorter, sort lines online, alphabetical sorter, natural sort tool, numeric sort, line sorter, sort text alphabetically, remove duplicate lines, random line shuffle, organize text online"
+    />
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="canonical" href="https://rool.buffbahun.workers.dev/text/text-sorter/" />
+
+    <meta name="robots" content="index, follow" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Text Sorter",
+        "url": "https://rool.buffbahun.workers.dev/text/text-sorter/",
+        "description": "Free online text sorter tool to sort lines alphabetically, naturally, numerically, randomly, or by length. Remove duplicate lines, trim whitespace, ignore case differences, and organize text instantly.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Rool",
+          "url": "https://rool.buffbahun.workers.dev/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Alphabetical sorting",
+          "Natural sorting",
+          "Numeric sorting",
+          "Sort by length",
+          "Random line shuffle",
+          "Remove duplicate lines",
+          "Trim whitespace",
+          "Remove empty lines",
+          "Case-sensitive sorting",
+          "Reverse order sorting"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Text Sorter Online",
+        "url": "https://rool.buffbahun.workers.dev/text/text-sorter/",
+        "description": "Sort text lines alphabetically, naturally, numerically, randomly, or by length using this free online Text Sorter tool.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Rool",
+          "url": "https://rool.buffbahun.workers.dev/"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Text Sorting"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Text Sorter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Text Sorter is an online utility tool that rearranges lines of text into alphabetical, natural, numeric, random, or custom order."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is natural sorting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Natural sorting treats numbers inside text like real numbers. For example, file2 appears before file10."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I remove duplicate lines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The tool can automatically detect and remove repeated lines from your text."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the Text Sorter free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The Text Sorter is completely free and works directly in your browser."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Text Sorter Online - Sort & Organize Text Instantly"
+    />
+    <meta
+      property="og:description"
+      content="Sort text alphabetically, naturally, numerically, randomly, or by length. Remove duplicates, ignore case, trim whitespace, and organize text online for free."
+    />
+    <meta property="og:site_name" content="Rool" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Free Online Text Sorter Tool | Rool"
+    />
+    <meta
+      name="twitter:description"
+      content="Sort lines alphabetically, naturally, numerically, or randomly. Remove duplicates and organize text instantly."
+    />
+    <meta
+      property="og:url"
+      content="https://rool.buffbahun.workers.dev/text/text-sorter/"
+    />
+    <meta
+      property="og:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/text-sorter.png"
+    />
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+    <meta
+      property="og:image:height"
+      content="630"
+    />
+    <meta
+      name="twitter:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/text-sorter.png"
+    />
+    <meta name="twitter:image:alt" content="Duplicate line remover utility tool layout by Rool" />
+  </head>
+  <body>
+    <header class="main-header">
+      <a href="/" aria-label="Rool home page">
+        <img
+          src="/assets/logo.svg"
+          alt="Rool utility tool logo"
+          width="80"
+        >
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              Text
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
+              <li><a href="/text/sentence-case/">Sentence Case</a></li>
+              <li><a href="/text/lower-case/">Lower Case</a></li>
+              <li><a href="/text/upper-case/">Upper Case</a></li>
+              <li><a href="/text/capitalized-case/">Capitalized Case</a></li>
+              <li><a href="/text/title-case/">Title Case</a></li>
+              <li><a href="/text/alternating-case/">Alternating Case</a></li>
+              <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+              <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+              <li><a href="/text/text-sorter/">Text Sorter</a></li>
+            </ul>
+          </li>
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="qrcode-tools-menu"
+            >
+              Qr Code
+            </button>
+          </li>
+        </ul>
+      </nav>
+      </header>
+  
+      <main>
+        <header class="hero">
+        <h1>Text Sorter Online</h1>
+            <p>
+                Sort text lines alphabetically, naturally, numerically, randomly, or by
+                length with this free online Text Sorter tool. Instantly organize lists,
+                remove duplicate lines, ignore case differences, trim whitespace, reverse
+                order, and clean up text data directly in your browser.
+            </p>
+        </header>
+      <div id="chrInpCont" class="textAreaCont">
+        <div class="textInputCont">
+            <p>
+              Paste your raw content below to sort text rows.
+            </p>
+          <div class="textAndBtns">
+            <textarea id="chrInp" rows="10" placeholder="Enter your text here..."></textarea>
+            <div class="fomrInpCont">
+              <div>
+                <label for="sortType">Sort: </label>
+                <select name="sortType" id="sortType">
+                  <option value="alphabetic">Alphabetical</option>
+                  <option value="numeric">Numeric</option>
+                  <option selected value="natural">Natural Sort</option>
+                  <option value="byLen">By Length</option>
+                  <option value="random">Random / Shuffle</option>
+                </select>
+              </div>
+              <div>
+                <input type="radio" id="caseSensitive" name="caseType" value="caseSensitive">
+                <label for="caseSensitive">Case Sensitive</label>
+              </div>
+
+              <div>
+                <input type="radio" id="ignoreCase" name="caseType" value="ignoreCase" checked>
+                <label for="ignoreCase">Ignore Case</label>
+              </div>
+              <div>
+                <input type="checkbox" checked name="trimWhitespace" id="trimWhitespace">
+                <label for="trimWhitespace">Trim Whitespace</label>
+              </div>
+              <div>
+                <input type="checkbox" checked name="removeEmptyLines" id="removeEmptyLines">
+                <label for="removeEmptyLines">Remove Empty Lines</label>
+              </div>
+              <div>
+                <input type="checkbox" name="rmDup" id="rmDup">
+                <label for="removeEmptyLines">Remove Duplicate Lines</label>
+              </div>
+              <div>
+                <input type="checkbox" name="reverseOrder" id="reverseOrder">
+                <label for="reverseOrder">Reverse Order</label>
+              </div>
+              <button id="applyBtn">Generate</button>
+              <div id="errorPop">
+                <h3>Error</h3>
+                <p id="errPopMsg"></p>
+              </div>
+            </div>
+            <textarea disabled id="chrOutTextElm" rows="10" placeholder="Generated text will appear here..."></textarea>
+            <div class="action-btns">
+            <button class="copy" id="copyBtn" aria-label="Copy text" title="Copy">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Share">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <path d="M8.59 13.51 15.42 17.49"></path>
+                  <path d="M15.41 6.51 8.59 10.49"></path>
+                </svg>
+            </button>
+            <button class="copy" id="downloadBtn" aria-label="Download text" title="Download">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <path d="M7 10l5 5 5-5"></path>
+                  <path d="M12 15V3"></path>
+                </svg>
+            </button>
+            <button class="copy" id="clearBtn" aria-label="Clear text" title="Clear">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 6h18"></path>
+                  <path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"></path>
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                </svg>
+            </button>
+          </div>
+          </div>
+          <div class="transformerCont">
+            <div id="sc">
+              <span>Sentence case</span>
+            </div>
+            <div id="lc">
+              <span>lower case</span>
+            </div>
+            <div id="uc">
+              <span>UPPER CASE</span>
+            </div>
+            <div id="cc">
+              <span>Capitalized Case</span>
+            </div>
+            <div id="tc">
+              <span>Title Case</span>
+            </div>
+            <div id="ac">
+              <span>aLtErNaTiNg cAsE</span>
+            </div>
+            <div id="ic">
+              <span>iNVERSE cASE</span>
+            </div>
+            <div id="oc">
+              <span>Original case</span>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="outCont">
+          <div>
+            <h2>Character Count</h2>
+            <p id="chrOut">0</p>
+          </div>
+          <div>
+            <h2>Word Count</h2>
+            <p id="wrdOut">0</p>
+          </div>
+          <div>
+            <h2>Line Count</h2>
+            <p id="lineOut">0</p>
+          </div>
+        </div>
+        <section>
+          <h2>
+            Free Online Text Sorter Tool
+          </h2>
+        
+          <p>
+            This free online Text Sorter helps you quickly organize and clean text by sorting lines
+            alphabetically, naturally, numerically, randomly, or by length. Whether you are managing
+            keyword lists, usernames, file names, logs, datasets, spreadsheet exports, or raw text,
+            the tool makes it easy to rearrange and structure content in seconds.
+          </p>
+        
+          <p>
+            Advanced options such as ignore case, case-sensitive sorting, duplicate line removal,
+            whitespace trimming, empty line cleanup, and reverse ordering help you normalize messy
+            text and prepare it for development, SEO, research, content writing, or data processing
+            workflows. All processing happens directly in your browser for fast and privacy-friendly
+            text sorting without uploads or registration.
+          </p>
+        </section>
+
+        <section class="how-it-works-section">
+
+          <h2>How the Text Sorter Works</h2>
+
+          <p>
+            The Text Sorter processes your content line-by-line directly in your
+            browser. It can organize, clean, and rearrange text using multiple
+            sorting methods and formatting options without uploading your data to a
+            server.
+          </p>
+        
+          <div class="how-step">
+            <h3>1. Paste Your Text</h3>
+          
+            <p>
+              Enter or paste your raw text into the input box. Each line is treated
+              as an individual sortable item.
+            </p>
+          
+            <pre><code>
+        banana
+        Apple
+        cat
+        dog</code></pre>
+          </div>
+        
+          <div class="how-step">
+            <h3>2. Choose a Sorting Method</h3>
+          
+            <p>
+              Select the sorting mode that best fits your needs:
+            </p>
+          
+            <ul>
+              <li><strong>Alphabetical:</strong> Standard dictionary-style sorting</li>
+              <li><strong>Natural Sort:</strong> Human-friendly sorting with numbers</li>
+              <li><strong>Numeric:</strong> Sort based on numerical values</li>
+              <li><strong>By Length:</strong> Sort from shortest to longest lines</li>
+              <li><strong>Random / Shuffle:</strong> Randomize line order</li>
+            </ul>
+          </div>
+        
+          <div class="how-step">
+            <h3>3. Apply Optional Cleanup Rules</h3>
+          
+            <p>
+              You can enable additional processing options to clean and normalize your
+              text before sorting.
+            </p>
+          
+            <ul>
+              <li><strong>Ignore Case:</strong> Treat uppercase and lowercase equally</li>
+              <li><strong>Case Sensitive:</strong> Preserve exact letter casing</li>
+              <li><strong>Trim Whitespace:</strong> Remove extra spaces and tabs</li>
+              <li><strong>Remove Empty Lines:</strong> Delete blank rows</li>
+              <li><strong>Remove Duplicate Lines:</strong> Keep only unique entries</li>
+              <li><strong>Reverse Order:</strong> Reverse the final sorted output</li>
+            </ul>
+          </div>
+        
+          <div class="how-step">
+            <h3>4. Generate the Sorted Output</h3>
+          
+            <p>
+              Click the Generate button to instantly process your text and display the
+              cleaned and sorted result in the output area.
+            </p>
+          </div>
+        
+          <div class="how-step">
+            <h3>5. Copy, Share, or Download</h3>
+          
+            <p>
+              Once processing is complete, you can copy the sorted text, share it, or
+              download it as a text file for later use.
+            </p>
+          </div>
+        
+          <div class="how-step">
+            <h3>Privacy-Friendly Processing</h3>
+          
+            <p>
+              All sorting and text processing happens locally in your browser. Your
+              text is not uploaded, stored, or shared with external servers.
+            </p>
+          </div>
+        
+        </section>
+
+        <section>
+          <h2>
+            Key Features
+          </h2>
+          <ul>
+            <li>Alphabetical & Natural Sorting</li>
+            <li>Numeric & Length-Based Sorting</li>
+            <li>Random Line Shuffle</li>
+            <li>Remove Duplicate Lines</li>
+            <li>Case Sensitive & Ignore Case Modes</li>
+            <li>Trim Whitespace & Remove Empty Lines</li>
+            <li>Reverse Sorting Order</li>
+            <li>Instant Copy, Share & Download</li>
+          </ul>
+        </section>
+
+        <section class="use-cases-section">
+
+          <h2>Common Text Sorter Use Cases</h2>
+
+          <p>
+            The Text Sorter tool can be used for organizing, cleaning, and managing
+            text data across many different industries and workflows. Below are some
+            of the most common real-world use cases.
+          </p>
+        
+          <!-- SEO -->
+          <div class="use-case-item">
+            <h3>SEO Keyword Organization</h3>
+          
+            <p>
+              SEO professionals often use text sorting tools to organize keyword
+              lists alphabetically, remove duplicate keywords, clean exported search
+              data, and prepare keyword sets for spreadsheets, PPC campaigns, and
+              content planning.
+            </p>
+          </div>
+        
+          <!-- Developers -->
+          <div class="use-case-item">
+            <h3>Programming & Development</h3>
+          
+            <p>
+              Developers use text sorters to organize variable names, CSS classes,
+              log files, JSON data, configuration entries, API responses, file names,
+              package lists, and code snippets for easier debugging and maintenance.
+            </p>
+          </div>
+        
+          <!-- Students -->
+          <div class="use-case-item">
+            <h3>Student & Academic Work</h3>
+          
+            <p>
+              Students and researchers use text sorting tools to organize references,
+              study notes, vocabulary lists, glossary terms, research datasets, and
+              educational content quickly and accurately.
+            </p>
+          </div>
+        
+          <!-- Spreadsheet -->
+          <div class="use-case-item">
+            <h3>Spreadsheet & Data Cleanup</h3>
+          
+            <p>
+              Text sorting helps clean raw exported spreadsheet data by removing
+              duplicate entries, sorting values, trimming whitespace, and organizing
+              rows before importing them into Excel, Google Sheets, or databases.
+            </p>
+          </div>
+        
+          <!-- E-commerce -->
+          <div class="use-case-item">
+            <h3>E-commerce Product Management</h3>
+          
+            <p>
+              Online store owners use text sorters to organize product names, SKU
+              lists, inventory exports, categories, tags, and supplier data for
+              better catalog management.
+            </p>
+          </div>
+        
+          <!-- Content -->
+          <div class="use-case-item">
+            <h3>Content Writing & Editing</h3>
+          
+            <p>
+              Writers and editors use text sorting tools to organize outlines,
+              headings, tag lists, glossary entries, content ideas, and publishing
+              metadata more efficiently.
+            </p>
+          </div>
+        
+          <!-- Marketing -->
+          <div class="use-case-item">
+            <h3>Marketing & Lead Management</h3>
+          
+            <p>
+              Marketing teams often sort customer lists, email databases, campaign
+              data, hashtags, and audience exports to improve organization and remove
+              repeated entries.
+            </p>
+          </div>
+        
+          <!-- Randomization -->
+          <div class="use-case-item">
+            <h3>Random Selection & Giveaways</h3>
+          
+            <p>
+              Random shuffle mode can be used for giveaways, classroom activities,
+              random team generation, contests, raffle entries, quiz ordering, and
+              fair participant selection.
+            </p>
+          </div>
+        
+          <!-- File management -->
+          <div class="use-case-item">
+            <h3>File & Folder Organization</h3>
+          
+            <p>
+              Natural sorting is especially useful for organizing file names like
+              file1, file2, and file10 in a human-friendly order instead of standard
+              alphabetical ordering.
+            </p>
+          </div>
+        
+          <!-- Data analysts -->
+          <div class="use-case-item">
+            <h3>Data Analysis & Reporting</h3>
+          
+            <p>
+              Analysts use text sorting to structure raw datasets, clean reports,
+              organize identifiers, normalize exported records, and simplify data
+              preprocessing workflows.
+            </p>
+          </div>
+        
+        </section>
+
+        <section class="examples-section">
+
+          <h2>Text Sorting Examples</h2>
+
+          <p>
+            Below are some real examples showing how the Text Sorter organizes and
+            cleans text using different sorting methods and options.
+          </p>
+        
+          <!-- Alphabetical Sort -->
+          <div class="example-item">
+            <h3>Alphabetical Sorting Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>banana
+        Apple
+        cat
+        dog</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>Apple
+        banana
+        cat
+        dog</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Alphabetical sorting arranges lines in dictionary order from A to Z.
+            </p>
+          </div>
+        
+          <!-- Natural Sort -->
+          <div class="example-item">
+            <h3>Natural Sorting Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>file1
+        file10
+        file2
+        file20</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>file1
+        file2
+        file10
+        file20</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Natural sorting treats numbers like actual numeric values instead of
+              plain text characters.
+            </p>
+          </div>
+        
+          <!-- Numeric Sort -->
+          <div class="example-item">
+            <h3>Numeric Sorting Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>100
+        5
+        20
+        1</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>1
+        5
+        20
+        100</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Numeric sorting arranges lines according to numerical value rather than
+              character order.
+            </p>
+          </div>
+        
+          <!-- By Length -->
+          <div class="example-item">
+            <h3>Sort by Length Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>watermelon
+        cat
+        apple
+        kiwi</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>cat
+        kiwi
+        apple
+        watermelon</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Length sorting organizes text from shortest to longest line.
+            </p>
+          </div>
+        
+          <!-- Remove Duplicates -->
+          <div class="example-item">
+            <h3>Remove Duplicate Lines Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>apple
+        banana
+        apple
+        cat
+        banana</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>apple
+        banana
+        cat</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Duplicate removal keeps only unique lines and removes repeated entries.
+            </p>
+          </div>
+        
+          <!-- Ignore Case -->
+          <div class="example-item">
+            <h3>Ignore Case Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>Apple
+        apple
+        APPLE
+        Banana</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>Apple
+        apple
+        APPLE
+        Banana</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Ignore Case mode treats uppercase and lowercase letters as equal during
+              sorting comparisons.
+            </p>
+          </div>
+        
+          <!-- Trim Whitespace -->
+          <div class="example-item">
+            <h3>Trim Whitespace Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code> apple
+        apple
+        apple </code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>apple
+        apple
+        apple</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Trimming removes extra spaces and tabs from the beginning and end of
+              lines.
+            </p>
+          </div>
+        
+          <!-- Remove Empty Lines -->
+          <div class="example-item">
+            <h3>Remove Empty Lines Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>apple
+                
+        banana
+                
+                
+        cat</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>apple
+        banana
+        cat</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Empty line removal cleans unnecessary blank lines from text.
+            </p>
+          </div>
+        
+          <!-- Reverse Order -->
+          <div class="example-item">
+            <h3>Reverse Order Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>Apple
+        Banana
+        Cat
+        Dog</code></pre>
+              </div>
+            
+              <div>
+                <h4>Output</h4>
+                <pre><code>Dog
+        Cat
+        Banana
+        Apple</code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Reverse Order flips the final sorted result into descending order.
+            </p>
+          </div>
+        
+          <!-- Random Shuffle -->
+          <div class="example-item">
+            <h3>Random Shuffle Example</h3>
+          
+            <div class="example-grid">
+            
+              <div>
+                <h4>Input</h4>
+                <pre><code>
+        John
+        Sarah
+        Mike
+        Emma</code></pre>
+              </div>
+            
+              <div>
+                <h4>Possible Output</h4>
+                <pre><code>
+        Emma
+        John
+        Mike
+        Sarah
+                      </code></pre>
+              </div>
+            
+            </div>
+          
+            <p>
+              Random shuffle rearranges lines into a completely random order using a
+              fair shuffling algorithm.
+            </p>
+          </div>
+        
+        </section>
+
+        <section class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>What is a Text Sorter?</h3>
+            <p>
+              A Text Sorter is an online utility tool that rearranges lines of text
+              into a specific order such as alphabetical, natural, numeric, random,
+              or length-based order. It helps organize large text lists quickly and
+              efficiently.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>How does alphabetical sorting work?</h3>
+            <p>
+              Alphabetical sorting arranges text line-by-line according to dictionary
+              order. For example, "Apple" appears before "Banana" and "Cat". This is
+              useful for organizing names, keywords, tags, and lists.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>What is natural sorting?</h3>
+            <p>
+              Natural sorting treats numbers inside text like actual numbers instead
+              of plain characters. For example, "file2" will appear before "file10",
+              which feels more natural to humans compared to standard alphabetical
+              sorting.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>What is numeric sorting?</h3>
+            <p>
+              Numeric sorting organizes lines based on numerical value instead of text
+              order. For example, 2 comes before 10 and 100 regardless of character
+              order.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Can I sort text in reverse order?</h3>
+            <p>
+              Yes. The Reverse Order option allows you to flip the sorted results so
+              they appear in descending order instead of ascending order.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>What does “Ignore Case” mean?</h3>
+            <p>
+              Ignore Case mode treats uppercase and lowercase letters as equal during
+              sorting. For example, "Apple" and "apple" are considered the same for
+              ordering purposes.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>What does “Case Sensitive” sorting do?</h3>
+            <p>
+              Case Sensitive sorting distinguishes between uppercase and lowercase
+              letters. In this mode, uppercase letters may appear before lowercase
+              letters depending on sorting rules.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>How does duplicate line removal work?</h3>
+            <p>
+              The Remove Duplicate Lines feature detects repeated lines and keeps only
+              one instance of each unique line. This is useful for cleaning lists,
+              datasets, keywords, and copied content.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Why should I trim whitespace?</h3>
+            <p>
+              Trimming whitespace removes extra spaces or tabs from the beginning and
+              end of each line. This helps prevent accidental duplicates and improves
+              sorting accuracy.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>What happens when I remove empty lines?</h3>
+            <p>
+              The tool removes blank or empty lines from your text, making the output
+              cleaner and easier to organize.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>What is random text shuffling?</h3>
+            <p>
+              Random shuffle mode rearranges lines into a completely random order.
+              This is useful for giveaways, random selections, quizzes, team
+              assignments, and sampling data.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Can I sort lines by length?</h3>
+            <p>
+              Yes. Length sorting organizes lines based on the number of characters
+              they contain, either from shortest to longest or longest to shortest.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Does this tool support Unicode and special characters?</h3>
+            <p>
+              Yes. The Text Sorter supports Unicode text including accented letters,
+              emojis, international languages, and special symbols.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Is my data uploaded to a server?</h3>
+            <p>
+              No. All text processing happens directly in your browser. Your data is
+              not uploaded or stored on external servers, making the tool fast and
+              privacy-friendly.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Can I use this tool for SEO keyword organization?</h3>
+            <p>
+              Absolutely. Many SEO professionals use text sorting tools to organize
+              keywords, remove duplicates, clean keyword lists, and prepare data for
+              spreadsheets or campaigns.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Who can use this Text Sorter?</h3>
+            <p>
+              This tool is useful for developers, students, writers, SEO experts,
+              researchers, spreadsheet users, data analysts, marketers, and anyone
+              who needs to organize or clean text quickly.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Does the tool work on mobile devices?</h3>
+            <p>
+              Yes. The Text Sorter works on desktops, tablets, and mobile devices
+              using any modern web browser.
+            </p>
+          </div>
+        
+          <div class="faq-item">
+            <h3>Is the Text Sorter free to use?</h3>
+            <p>
+              Yes. The tool is completely free and can be used without registration
+              or downloads.
+            </p>
+          </div>
+        </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Tools navigation">
+        <h2>Tools</h2>
+        <ul class="tools-nav-footer">
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+          <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+          <li><a href="/text/text-sorter/">Text Sorter</a></li>
+        </ul>
+      </nav>
+
+      <section aria-label="Contact information">
+        <h2>Contact</h2>
+        <ul class="contact-nav-footer">
+          <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
+          <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
+          <li><a href="https://github.com/buffbahun-prog">Github</a></li>
+        </ul>
+      </section>
+
+      <section class="copyright">
+        <p>
+            Built with ❤️ by Rool
+        </p>
+        <p>
+          © 2026 Rool. All rights reserved.
+        </p>
+      </section>
+
+    </footer>
+    <script type="module" src="/dist/text/main.js"></script>
+  </body>
+</html>

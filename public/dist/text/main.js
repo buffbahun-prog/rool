@@ -1,5 +1,7 @@
 import { downloadTextAsFile } from './utils/download.js';
+import { removeDuplicateLines } from './utils/dublicate-line-removee.js';
 import { charCount, generateSlug, lineCount, toAlternatigCase, toCapitalizedCase, toInverseCase, toLowerCase, toSentenceCase, toTitleCase, toUpperCase, wordCount } from './utils/text-converter.js';
+import { sortText } from './utils/text-sorter.js';
 import { formNSentences, formParagraphs, formSentence } from './word-generator.js';
 const url = new URL(window.location.href);
 const pathSegments = url.pathname.split("/").filter(Boolean);
@@ -18,6 +20,8 @@ const textUtilitySubPaths = [
     "slug-generator",
     "lorem-ipsum-generator",
     "nepali-lorem-ipsum-generator",
+    "duplicate-line-remover",
+    "text-sorter",
     ...caseConvertSubPaths,
 ];
 function main() {
@@ -42,25 +46,9 @@ function main() {
                 });
             }
         });
-        // For lorem ipsum generator --------------------------------------------
-        const generatorCountInpElm = document.getElementById("genCount");
-        const generatorButtonElm = document.getElementById("genBtn");
-        if (generatorCountInpElm && generatorButtonElm && consideringTextareaElm) {
-            generatorButtonElm.addEventListener("click", () => {
-                const selectedElm = document.querySelector('input[name="genType"]:checked');
-                if (!selectedElm || !selectedElm.value)
-                    return;
-                if (!generatorCountInpElm.value || +generatorCountInpElm.value <= 0 || +generatorCountInpElm.value > 100) {
-                    popoverUI("error", "The \"Amount to generate\" field is required and should be between 1 to 100.");
-                    return;
-                }
-                const lang = pathSegments[1] === "lorem-ipsum-generator" ? "eng" : "nep";
-                const selectedGenerateType = selectedElm.value;
-                updateDummyGeneratorUI(consideringTextareaElm, selectedGenerateType, Number(generatorCountInpElm.value), lang);
-                updateCountUI(consideringTextareaElm);
-            });
-        }
-        // For lorem ipsum generator --------------------------------------------
+        loremIpsumGenertor(consideringTextareaElm);
+        duplicateLineRemover(inputTextareaElm, consideringTextareaElm);
+        textSorter(inputTextareaElm, consideringTextareaElm);
         if (inputTextareaElm) {
             inputTextareaElm.addEventListener("input", () => {
                 if (outputTextareaElm && caseConvertSubPaths.includes(pathSegments[1])) {
@@ -223,4 +211,88 @@ function updateActionUI(consideringTextareaElm, allTextAreaElms) {
             updateCountUI(consideringTextareaElm);
         });
     }
+}
+function loremIpsumGenertor(consideringTextareaElm) {
+    const generatorCountInpElm = document.getElementById("genCount");
+    const generatorButtonElm = document.getElementById("genBtn");
+    if (generatorCountInpElm && generatorButtonElm && consideringTextareaElm) {
+        generatorButtonElm.addEventListener("click", () => {
+            const selectedElm = document.querySelector('input[name="genType"]:checked');
+            if (!selectedElm || !selectedElm.value)
+                return;
+            if (!generatorCountInpElm.value || +generatorCountInpElm.value <= 0 || +generatorCountInpElm.value > 100) {
+                popoverUI("error", "The \"Amount to generate\" field is required and should be between 1 to 100.");
+                return;
+            }
+            const lang = pathSegments[1] === "lorem-ipsum-generator" ? "eng" : "nep";
+            const selectedGenerateType = selectedElm.value;
+            updateDummyGeneratorUI(consideringTextareaElm, selectedGenerateType, Number(generatorCountInpElm.value), lang);
+            updateCountUI(consideringTextareaElm);
+        });
+    }
+}
+function duplicateLineRemover(inputTextareaElm, consideringTextareaElm) {
+    if (pathSegments[1] !== "duplicate-line-remover")
+        return;
+    const generateBtn = document.getElementById("applyBtn");
+    if (!generateBtn)
+        return;
+    const trimWhitespaceElm = document.getElementById("trimWhitespace");
+    const rmEmptyLinesElm = document.getElementById("removeEmptyLines");
+    if (!trimWhitespaceElm || !rmEmptyLinesElm)
+        return;
+    const onBtnClick = () => {
+        if (!inputTextareaElm || !consideringTextareaElm)
+            return;
+        const selectedCaseElm = document.querySelector('input[name="caseType"]:checked');
+        if (!selectedCaseElm || !selectedCaseElm.value)
+            return;
+        const inputText = inputTextareaElm.value;
+        const isCaseSensetive = selectedCaseElm.value === "caseSensitive" ? true : false;
+        const trimWhitespace = trimWhitespaceElm.checked;
+        const removeEmptyLines = rmEmptyLinesElm.checked;
+        const outputText = removeDuplicateLines(inputText, isCaseSensetive, trimWhitespace, removeEmptyLines);
+        consideringTextareaElm.value = outputText;
+        updateCountUI(consideringTextareaElm);
+    };
+    generateBtn.addEventListener("click", onBtnClick);
+    const ocElement = document.getElementById("oc");
+    if (ocElement)
+        ocElement.addEventListener("click", onBtnClick);
+}
+function textSorter(inputTextareaElm, consideringTextareaElm) {
+    if (pathSegments[1] !== "text-sorter")
+        return;
+    const generateBtn = document.getElementById("applyBtn");
+    if (!generateBtn)
+        return;
+    const sortTypeElm = document.getElementById("sortType");
+    const trimWhitespaceElm = document.getElementById("trimWhitespace");
+    const rmEmptyLinesElm = document.getElementById("removeEmptyLines");
+    const reverseElm = document.getElementById("reverseOrder");
+    const removeDuplicateElm = document.getElementById("rmDup");
+    if (!trimWhitespaceElm || !rmEmptyLinesElm || !sortTypeElm || !reverseElm || !removeDuplicateElm)
+        return;
+    const onBtnClick = () => {
+        if (!inputTextareaElm || !consideringTextareaElm)
+            return;
+        const selectedCaseElm = document.querySelector('input[name="caseType"]:checked');
+        if (!selectedCaseElm || !selectedCaseElm.value)
+            return;
+        const inputText = inputTextareaElm.value;
+        const sortType = sortTypeElm.value;
+        const isCaseSensitive = selectedCaseElm.value === "caseSensitive" ? true : false;
+        const trimWhitespace = trimWhitespaceElm.checked;
+        const removeEmptyLines = rmEmptyLinesElm.checked;
+        const reverse = reverseElm.checked;
+        const removeDuplicate = removeDuplicateElm.checked;
+        const sortOptions = { sortType, isCaseSensitive, trimWhitespace, removeEmptyLines, reverse, removeDuplicate };
+        const outputText = sortText(inputText, sortOptions);
+        consideringTextareaElm.value = outputText;
+        updateCountUI(consideringTextareaElm);
+    };
+    generateBtn.addEventListener("click", onBtnClick);
+    const ocElement = document.getElementById("oc");
+    if (ocElement)
+        ocElement.addEventListener("click", onBtnClick);
 }
