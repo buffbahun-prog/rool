@@ -92,4 +92,17 @@
     </loc>
   </url>
 
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/blogs/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/blogs/project-euler-problem-1/
+    </loc>
+    <lastmod>2026-05-28</lastmod>
+  </url>
+
 </urlset>

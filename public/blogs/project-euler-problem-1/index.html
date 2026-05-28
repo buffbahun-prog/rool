@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Project Euler Problem 1</title>
+
+  <meta
+    name="description"
+    content="Mathematical analysis and optimized solution for Project Euler Problem 1 in C."
+  />
+
+  <meta
+    name="author"
+    content="Buffbahun"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <link
+    rel="canonical"
+    href="https://rool.buffbahun.workers.dev/blogs/project-euler-problem-1/"
+  />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Project Euler Problem 1",
+      "description": "Mathematical analysis and optimized solution for Project Euler Problem 1 in C.",
+      "author": {
+        "@type": "Person",
+        "name": "Buffbahun"
+      },
+      "datePublished": "Thu May 28 2026 05:45:00 GMT+0545 (Nepal Time)",
+      "dateModified": "Sat May 30 2026 05:45:00 GMT+0545 (Nepal Time)",
+      "mainEntityOfPage": "https://rool.buffbahun.workers.dev/blogs/project-euler-problem-1/"
+    }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Project Euler Problem 1" />
+  <meta property="og:description" content="Mathematical analysis and optimized solution for Project Euler Problem 1 in C." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rool.buffbahun.workers.dev/blogs/project-euler-problem-1/" />
+  <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/blog-og.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project Euler Problem 1" />
+  <meta name="twitter:description" content="Mathematical analysis and optimized solution for Project Euler Problem 1 in C." />
+  <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/blog-og.png" />
+
+  <!-- Article metadata -->
+  <meta property="article:published_time" content="Thu May 28 2026 05:45:00 GMT+0545 (Nepal Time)" />
+  <meta property="article:modified_time" content="Sat May 30 2026 05:45:00 GMT+0545 (Nepal Time)" />
+  <meta property="article:author" content="Buffbahun" />
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/assets/favicon.svg"
+  />
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css"
+  />
+</head>
+
+<body>
+
+  <header id="mainHeader" class="main-header">
+      <a href="/" aria-label="Rool home page">
+        <img
+          src="/assets/logo.svg"
+          alt="Rool utility tool logo"
+          width="80"
+        >
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              Text
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
+              <li><a href="/text/sentence-case/">Sentence Case</a></li>
+              <li><a href="/text/lower-case/">Lower Case</a></li>
+              <li><a href="/text/upper-case/">Upper Case</a></li>
+              <li><a href="/text/capitalized-case/">Capitalized Case</a></li>
+              <li><a href="/text/title-case/">Title Case</a></li>
+              <li><a href="/text/alternating-case/">Alternating Case</a></li>
+              <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+              <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+              <li><a href="/text/text-sorter/">Text Sorter</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="navMenuItems" href="/blogs/">Blogs</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+  <main class="blogMain">
+    <h1>Project Euler</h1>
+<h2>Problem 1</h2>
+<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
+<p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
+<p><a href="https://projecteuler.net/problem=1">Problem 1 link</a></p>
+<p>If we look closly on the sum of multiples of either of the numbers, we can common out the multiplier(in this case 3 or 5) and the remaining multiplicand are the sum of natural numbers.</p>
+<p><eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>9</mn><mo>+</mo><mn>12</mn><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>=</mo><mn>3</mn><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">3+6+9+12+... = 3(1+2+3+4+...)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">12</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mord">...</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">...</span><span class="mclose">)</span></span></span></span></eq></p>
+<p>We have formula of sum of natural numbers as:</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>k</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">
+\sum_{k=1}^{n} k = \frac{n(n+1)}{2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.9535em;vertical-align:-1.3021em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8479em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></eqn></section><p>this i have implement in my program as:</p>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> sumToN</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> nth</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (nth </span><span style="color:#F97583">&#x3C;=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">return</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (nth </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> (nth </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">)) </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>So the thing we need to figure out is the <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></eq> upto which web have to sum. From the problem as stated sum of multiples below 1000, if we divide <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1000</mn><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1000-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1000</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></eq>(which is technically below 1000) by the multiplier(3 or 5) we get the quotent as the <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></eq> term. Now getting this <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></eq> term we can get the sum of natural numbers by my above function and have it multiply with the muplipliers(3 and 5) respectively and a final sum should give us the solution. But a detail is missing that is not clearly shown in the example in the problem. We havent taken any account for the common multiples of 3 and 5 thatre added twice.For example 15 is the product of 3 and 5 and this multiple 15 is added twice. And from the statements of the problem we are not suppose of add twice any multiples.So the only way now is to substract the common multiples once so that we are left with just a single common multiple that is summed.</p>
+<p>We can closly observe this these common multiples as:</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>3</mn><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>9</mn><mo separator="true">,</mo><mn>12</mn><mo separator="true">,</mo><mstyle mathcolor="red"><mn>15</mn></mstyle><mo separator="true">,</mo><mn>18</mn><mo separator="true">,</mo><mn>21</mn><mo separator="true">,</mo><mn>24</mn><mo separator="true">,</mo><mn>27</mn><mo separator="true">,</mo><mstyle mathcolor="yellow"><mn>30</mn></mstyle><mo separator="true">,</mo><mn>33</mn></mrow><annotation encoding="application/x-tex">
+3,6,9,12,{\color{red}15},18,21,24,27,{\color{yellow}30},33
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">12</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord" style="color:red;">15</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">18</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">21</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">24</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">27</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord" style="color:yellow;">30</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">33</span></span></span></span></span></eqn></section><section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>5</mn><mo separator="true">,</mo><mn>10</mn><mo separator="true">,</mo><mstyle mathcolor="red"><mn>15</mn></mstyle><mo separator="true">,</mo><mn>20</mn><mo separator="true">,</mo><mn>25</mn><mo separator="true">,</mo><mstyle mathcolor="yellow"><mn>30</mn></mstyle><mo separator="true">,</mo><mn>35</mn></mrow><annotation encoding="application/x-tex">
+5,10,{\color{red}15},20,25,{\color{yellow}30},35
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">10</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord" style="color:red;">15</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">20</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">25</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord" style="color:yellow;">30</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">35</span></span></span></span></span></eqn></section><section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>15</mn><mo>=</mo><mn>3</mn><mo>×</mo><mn>5</mn><mi mathvariant="normal">∣</mi><mn>5</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">
+15 = 3 \times 5 | 5 \times 3
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">15</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5∣5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></span></eqn></section><section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>30</mn><mo>=</mo><mn>3</mn><mo>×</mo><mn>5</mn><mo>×</mo><mn>2</mn><mi mathvariant="normal">∣</mi><mn>5</mn><mo>×</mo><mn>3</mn><mo>×</mo><mn>2</mn><mi mathvariant="normal">∣</mi><mn>15</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">
+30 = 3 \times 5 \times 2 | 5 \times 3 \times 2 | 15 \times 2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">30</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2∣5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2∣15</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span></eqn></section><p>from the above analysis we can see that the lowest common multiple(in this case 15) and its multiples upto <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></eq> term(the same method as for the two numbers above for <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></eq> term). Now how do we properly calculate the LCM(short for Lowest Common Multiple) between any two natural numbers? From further analysis we have found that LCM is the product of these two numbers divided by the HCF(Highest Common Factor) of these two numbers.</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>L</mi><mi>C</mi><mi>M</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mi>u</mi><mi>m</mi><mn>1</mn><mo>×</mo><mi>n</mi><mi>u</mi><mi>m</mi><mn>2</mn></mrow><mrow><mi>H</mi><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>n</mi><mi>u</mi><mi>m</mi><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mi>u</mi><mi>m</mi><mn>2</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+LCM = \frac{num1 \times num2}{HCF(num1, num2)}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2574em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord">2</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></eqn></section><p>In my code I have implement it as:</p>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> lcm</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> num1</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">int</span><span style="color:#FFAB70"> num2</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (num1 </span><span style="color:#F97583">&#x3C;=</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> num2 </span><span style="color:#F97583">&#x3C;=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (num1 </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> num2) </span><span style="color:#F97583">/</span><span style="color:#B392F0"> hcf</span><span style="color:#E1E4E8">(num1, num2);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>Now to calculate the HCF between two natural numbers we could loop the two numbers starting from 1 to the smallest between these two numbers and inside this loop get the factors of the two numbers respectively by using the modulu operator amd checking the condition whether it gives the value zero or not. If the modulu between one of the number and the loop variable number accounts to zero then the loop variable number is definatively  factor of that number. After list of factors are collected between these two numbers respectively then we can extract the common numbers between this two list and finally the total multiplication of the common list is the HCF. But there is even more effecient and elite euclid's algorithm for calculating HCF. the algorithm works as:</p>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span>1. Take two positive numbers a and b, where a > b > 0</span></span>
+<span class="line"><span>2. Get the remainder/modulo between a and b as r</span></span>
+<span class="line"><span>3. Check the remainder:</span></span>
+<span class="line"><span>    If r = 0 then b is the HCF</span></span>
+<span class="line"><span>    If r != 0,repeat from step 2 with the new numbers as a = b and b = r</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>In my code I have implemented this algorithm as:</p>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> hcf</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> num1</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">int</span><span style="color:#FFAB70"> num2</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (num1 </span><span style="color:#F97583">&#x3C;=</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> num2 </span><span style="color:#F97583">&#x3C;=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (num2 </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> num1)</span></span>
+<span class="line"><span style="color:#B392F0">        swap</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">num1, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">num2);</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (num1 </span><span style="color:#F97583">%</span><span style="color:#E1E4E8"> num2 </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> num2;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#B392F0"> hcf</span><span style="color:#E1E4E8">(num2, num1 </span><span style="color:#F97583">%</span><span style="color:#E1E4E8"> num2);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>As we can now get all the calculations required for this problem, we now get the sum of natural numbers upto $n^{th} terms(based on the multipliers) for both the numbers and their LCM respectively. First we multiply the sum of natural numbers with the respective multipliers(a, b and LCM(a, b)) and sum the product of the two numbers nd substract the sum with the product that we got from the LCM part such as:</p>
+<p><eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>=</mo><mi>a</mi><mo>×</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>O</mi><mi>f</mi><mi>N</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>r</mi><mi>a</mi><mi>l</mi><mi>N</mi><mi>u</mi><mi>m</mi><mi>b</mi><mi>e</mi><mi>r</mi><mi>s</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mo>+</mo><mi>b</mi><mo>×</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>O</mi><mi>f</mi><mi>N</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>r</mi><mi>a</mi><mi>l</mi><mi>N</mi><mi>u</mi><mi>m</mi><mi>b</mi><mi>e</mi><mi>r</mi><mi>s</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mo>−</mo><mi>l</mi><mi>c</mi><mi>m</mi><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo><mo>×</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>O</mi><mi>f</mi><mi>N</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>r</mi><mi>a</mi><mi>l</mi><mi>N</mi><mi>u</mi><mi>m</mi><mi>b</mi><mi>e</mi><mi>r</mi><mi>s</mi><mo stretchy="false">(</mo><mi>l</mi><mi>c</mi><mi>m</mi><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">solution = a \times sumOfNatiralNumbers(a) + b \times sumOfNatiralNumbers(b) - lcm(a,b) \times sumOfNatiralNumbers(lcm(a,b))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">so</span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mb</span><span class="mord mathnormal" style="margin-right:0.0278em;">er</span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mb</span><span class="mord mathnormal" style="margin-right:0.0278em;">er</span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal">c</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mb</span><span class="mord mathnormal" style="margin-right:0.0278em;">er</span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal">c</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mclose">))</span></span></span></span></eq></p>
+<p>In the code the way I have implemented this solution such as:</p>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> num1 </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> num2 </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> numsLcm </span><span style="color:#F97583">=</span><span style="color:#B392F0"> lcm</span><span style="color:#E1E4E8">(num1, num2);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> sumBelow </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1000</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> num1Nth </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (sumBelow </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> num1;</span></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> num2Nth </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (sumBelow </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> num2;</span></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> lcmNth </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (sumBelow </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> numsLcm;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> num1Sum </span><span style="color:#F97583">=</span><span style="color:#B392F0"> sumToN</span><span style="color:#E1E4E8">(num1Nth);</span></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> num2Sum </span><span style="color:#F97583">=</span><span style="color:#B392F0"> sumToN</span><span style="color:#E1E4E8">(num2Nth);</span></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> lcmSum </span><span style="color:#F97583">=</span><span style="color:#B392F0"> sumToN</span><span style="color:#E1E4E8">(lcmNth);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  int</span><span style="color:#E1E4E8"> solution </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (num1 </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> num1Sum) </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> (num2 </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> num2Sum) </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> (numsLcm </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> lcmSum);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Problem 1 solutions: </span><span style="color:#79B8FF">%d</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, solution);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+
+  </main>
+
+  <footer id="mainFooter" >
+      <nav aria-label="Tools navigation">
+        <h2>Tools</h2>
+        <ul class="tools-nav-footer">
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+          <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+          <li><a href="/text/text-sorter/">Text Sorter</a></li>
+        </ul>
+      </nav>
+
+      <section aria-label="Contact information">
+        <h2>Contact</h2>
+        <ul class="contact-nav-footer">
+          <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
+          <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
+          <li><a href="https://github.com/buffbahun-prog">Github</a></li>
+        </ul>
+      </section>
+
+      <section class="copyright">
+        <p>
+            Built with ❤️ by Rool
+        </p>
+        <p>
+          © 2026 Rool. All rights reserved.
+        </p>
+      </section>
+
+    </footer>
+
+</body>
+</html>

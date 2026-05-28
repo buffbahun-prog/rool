@@ -27,5 +27,13 @@
   "devDependencies": {
     "typescript": "^6.0.3",
     "wrangler": "^4.94.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.5",
+    "gray-matter": "^4.0.3",
+    "katex": "^0.17.0",
+    "markdown-it": "^14.2.0",
+    "markdown-it-texmath": "^1.0.0",
+    "shiki": "^4.1.0"
   }
 }

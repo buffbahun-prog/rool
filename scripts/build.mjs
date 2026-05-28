@@ -12,5 +12,6 @@ execSync("tsc", { stdio: "inherit" });
 // 3. fix imports
 console.log("🔧 Fixing import paths...");
 execSync("node scripts/fix-imports.mjs", { stdio: "inherit" });
+execSync("node scripts/blogs.mjs", { stdio: "inherit" });
 
 console.log("✅ Build complete");
