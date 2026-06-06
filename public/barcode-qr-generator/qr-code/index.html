@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      QR Code Generator | Rool
+    </title>
+
+    <meta
+      name="description"
+      content="Generate QR codes instantly from text, URLs, phone numbers, Wi-Fi credentials, and more. Choose error correction levels and download high-quality QR codes for free."
+    />
+
+    <meta
+      name="keywords"
+      content="qr code generator,free qr code generator,qr maker,create qr code,qr code creator,custom qr code,error correction level qr,url qr code,text qr code,wifi qr code,online qr generator"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="canonical" href="https://rool.buffbahun.workers.dev/barcode-qr-generator/qr-code/" />
+
+    <meta name="robots" content="index, follow" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "QR Code Generator",
+      "url": "https://rool.buffbahun.workers.dev/barcode-qr-generator/qr-code/",
+      "description": "Free online QR code generator with configurable error correction levels. Generate QR codes from text, URLs, contact information, and more.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rool",
+        "url": "https://rool.buffbahun.workers.dev/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "QR Code Generator",
+      "url": "https://rool.buffbahun.workers.dev/barcode-qr-generator/qr-code/",
+      "description": "Generate QR codes instantly with support for multiple error correction levels and downloadable output.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Rool",
+        "url": "https://rool.buffbahun.workers.dev/"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a QR code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A QR code is a two-dimensional barcode that stores information such as URLs, text, contact details, or Wi-Fi credentials and can be scanned using a smartphone or QR scanner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does QR code error correction mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Error correction allows a QR code to remain readable even if part of it is damaged or obscured. Higher error correction levels increase resilience but also make the QR code denser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which error correction level should I choose?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Level L is suitable for most uses. Choose M, Q, or H if the QR code may be printed, resized, partially covered, or exposed to wear and damage."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <meta
+      property="og:title"
+      content="QR Code Generator - Free Online QR Maker | Rool"
+    />
+    <meta
+      property="og:description"
+      content="Create QR codes instantly with customizable error correction levels. Generate QR codes for URLs, text, Wi-Fi, and more."
+    />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:url"
+      content="https://rool.buffbahun.workers.dev/barcode-qr-generator/qr-code/"
+    />
+    <meta
+      property="og:site_name"
+      content="Rool"
+    />
+    <meta
+      property="og:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/qr-code-generator.png"
+    />
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+    <meta
+      property="og:image:height"
+      content="630"
+    />
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:title"
+      content="QR Code Generator - Free Online QR Maker | Rool"
+    />
+    <meta
+      name="twitter:description"
+      content="Generate QR codes online for free. Supports custom error correction levels and downloadable QR images."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/qr-code-generator.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="QR Code Generator tool by Rool"
+    />
+</head>
+  <body>
+    <header class="main-header">
+      <a href="/" aria-label="Rool home page">
+        <img
+          src="/assets/logo.svg"
+          alt="Rool utility tool logo"
+          width="80"
+        >
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              Text
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
+              <li><a href="/text/sentence-case/">Sentence Case</a></li>
+              <li><a href="/text/lower-case/">Lower Case</a></li>
+              <li><a href="/text/upper-case/">Upper Case</a></li>
+              <li><a href="/text/capitalized-case/">Capitalized Case</a></li>
+              <li><a href="/text/title-case/">Title Case</a></li>
+              <li><a href="/text/alternating-case/">Alternating Case</a></li>
+              <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+              <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+              <li><a href="/text/text-sorter/">Text Sorter</a></li>
+            </ul>
+          </li>
+                    <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              QR and Barcode
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/barcode-qr-generator/qr-code/">QR Code</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="navMenuItems" href="/blogs/">Blogs</a>
+          </li>
+        </ul>
+      </nav>
+      </header>
+  
+      <main>
+        <header class="hero">
+        <h1>Qr code generator</h1>
+            <p>
+Generate QR codes instantly from text, URLs, phone numbers, emails, Wi-Fi credentials, and more.
+Choose from four error correction levels (L, M, Q, H) and download your QR code for free.
+</p>
+        </header>
+      <div id="chrInpCont" class="textAreaCont">
+        <div class="textInputCont">
+          <div class="textAndBtns">
+            <div class="qr" style="width: 60vh;">
+                <dami-qrcode id="qr" value="" errorcorrection="L"></dami-qrcode>
+            </div>
+            <div class="fomrInpCont qr">              
+              <div>
+            <label for="errorcr">Error Level: </label>
+            <select name="" id="errorcr">
+              <option value="L">L</option>
+              <option value="M">M</option>
+              <option value="Q">Q</option>
+              <option value="H">H</option>
+            </select>
+          </div>
+          <div>
+            <label for="qrdata">Text</label>
+            <input type="text" id="qrdata">
+          </div>
+              <div id="errorPop">
+                <h3>Error</h3>
+                <p id="errPopMsg"></p>
+              </div>
+            </div>
+            <div class="action-btns">
+            <button class="copy" id="shareBtn" aria-label="Share text" title="Share">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <path d="M8.59 13.51 15.42 17.49"></path>
+                  <path d="M15.41 6.51 8.59 10.49"></path>
+                </svg>
+            </button>
+            <button class="copy" id="downloadBtn" aria-label="Download qr" title="Download">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <path d="M7 10l5 5 5-5"></path>
+                  <path d="M12 15V3"></path>
+                </svg>
+            </button>
+            <button class="copy" id="clearBtn" aria-label="Clear text" title="Clear">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 6h18"></path>
+                  <path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"></path>
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                </svg>
+            </button>
+          </div>
+          </div>
+        </div>
+      </div>
+          
+        <div>
+          <section>
+  <h2>
+    Free Online QR Code Generator
+  </h2>
+  <p>
+    This free online QR Code Generator allows you to instantly create QR codes from text, URLs,
+    email addresses, phone numbers, Wi-Fi credentials, and other information. Generate
+    high-quality QR codes with configurable error correction levels and download them for use
+    in print, marketing materials, websites, business cards, or product packaging.
+  </p>
+</section>
+
+<section>
+  <h2>
+    How QR Code Generation Works
+  </h2>
+  <p>
+    QR codes encode information into a two-dimensional matrix barcode that can be scanned by
+    smartphones, tablets, and dedicated QR scanners. When you enter your data, the generator
+    converts it into a standardized QR code format, applies the selected error correction level,
+    and renders a scannable image that can be shared digitally or printed for physical use.
+  </p>
+</section>
+
+<section>
+  <h2>
+    Key Features
+  </h2>
+  <ul>
+    <li><strong>Multiple Error Correction Levels:</strong> Choose between L, M, Q, and H correction levels based on your reliability requirements.</li>
+    <li><strong>Instant QR Generation:</strong> Create QR codes immediately as you enter or modify your data.</li>
+    <li><strong>Supports Various Data Types:</strong> Generate QR codes for text, URLs, emails, phone numbers, and more.</li>
+    <li><strong>High-Quality Output:</strong> Produce clear, scannable QR codes suitable for both digital and print applications.</li>
+    <li><strong>Privacy Friendly:</strong> All QR code generation happens directly within your browser.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>
+    Understanding Error Correction Levels
+  </h2>
+  <p>
+    QR codes include built-in error correction, allowing them to remain readable even when
+    partially damaged, dirty, or obscured. Higher error correction levels improve resilience
+    but increase the complexity and density of the QR code.
+  </p>
+
+  <ul>
+    <li><strong>L (Low):</strong> Recovers up to approximately 7% of damaged data.</li>
+    <li><strong>M (Medium):</strong> Recovers up to approximately 15% of damaged data.</li>
+    <li><strong>Q (Quartile):</strong> Recovers up to approximately 25% of damaged data.</li>
+    <li><strong>H (High):</strong> Recovers up to approximately 30% of damaged data.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>
+    Why Use QR Codes?
+  </h2>
+  <p>
+    QR codes provide a fast and convenient way to share information without requiring users
+    to manually type URLs, phone numbers, passwords, or other details. They are widely used
+    in marketing campaigns, product packaging, digital payments, event tickets, restaurant
+    menus, and contactless information sharing.
+  </p>
+</section>
+
+<section>
+  <h2>
+    Common Use Cases
+  </h2>
+  <ul>
+    <li><strong>Website Links:</strong> Direct users to webpages, landing pages, portfolios, or online stores.</li>
+    <li><strong>Business Cards:</strong> Share contact information quickly through a scannable code.</li>
+    <li><strong>Wi-Fi Access:</strong> Allow visitors to connect to a network without manually entering credentials.</li>
+    <li><strong>Marketing Materials:</strong> Add QR codes to flyers, posters, brochures, and advertisements.</li>
+    <li><strong>Product Packaging:</strong> Link customers to manuals, support pages, or promotional content.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>
+    Generation Example
+  </h2>
+  <p>
+    Here's a simple example of creating a QR code:
+  </p>
+
+  <ul>
+    <li><strong>Input Data:</strong> https://example.com</li>
+    <li><strong>Error Correction Level:</strong> M (Medium)</li>
+    <li><strong>Generated Result:</strong> A QR code that directs users to the specified website when scanned.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>
+    Frequently Asked Questions
+  </h2>
+
+  <article>
+    <h3>
+      What can I store in a QR code?
+    </h3>
+    <p>
+      QR codes can store many types of information including URLs, plain text, email addresses,
+      phone numbers, contact details, geographic coordinates, and Wi-Fi network credentials.
+    </p>
+  </article>
+
+  <article>
+    <h3>
+      Which error correction level should I choose?
+    </h3>
+    <p>
+      For most situations, the Medium (M) level provides an excellent balance between reliability
+      and QR code size. If the code may be exposed to wear, damage, or branding overlays,
+      consider using Q or H levels.
+    </p>
+  </article>
+
+  <article>
+    <h3>
+      Are QR codes generated on my device?
+    </h3>
+    <p>
+      Yes. The QR code generation process runs entirely within your browser. Your data is not
+      uploaded to external servers during generation.
+    </p>
+  </article>
+
+  <article>
+    <h3>
+      Can I print the generated QR code?
+    </h3>
+    <p>
+      Absolutely. Generated QR codes can be downloaded and used in printed materials such as
+      posters, business cards, product labels, menus, and brochures.
+    </p>
+  </article>
+
+  <article>
+    <h3>
+      Why is my QR code becoming more complex?
+    </h3>
+    <p>
+      Larger amounts of data and higher error correction levels require more modules within
+      the QR code. As a result, the code becomes denser and may require a larger display or
+      print size for optimal scanning performance.
+    </p>
+  </article>
+
+  <article>
+    <h3>
+      Other Related Tools
+    </h3>
+    <p>
+      Looking for additional utilities? Try our
+      <a href="/text/slug-generator/">Slug Generator</a>,
+      <a href="/text/case-convert/">Case Converter</a>,
+      or
+      <a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a>
+      for more productivity and development tools.
+    </p>
+  </article>
+</section>
+        </div>
+    </main>
+
+    <footer>
+      <nav aria-label="Tools navigation">
+        <h2>Tools</h2>
+        <ul class="tools-nav-footer">
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+          <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+          <li><a href="/text/text-sorter/">Text Sorter</a></li>
+          <li><a href="/barcode-qr-generator/qr-code/">QR Code</a></li>
+        </ul>
+      </nav>
+
+      <section aria-label="Contact information">
+        <h2>Contact</h2>
+        <ul class="contact-nav-footer">
+          <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
+          <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
+          <li><a href="https://github.com/buffbahun-prog">Github</a></li>
+        </ul>
+      </section>
+
+      <section class="copyright">
+        <p>
+            Built with ❤️ by Rool
+        </p>
+        <p>
+          © 2026 Rool. All rights reserved.
+        </p>
+      </section>
+
+    </footer>
+    <script type="module" src="/dist/barcode-qr-generator/index.js"></script>
+  </body>
+</html>

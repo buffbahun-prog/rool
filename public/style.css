@@ -151,6 +151,18 @@ p {
   justify-content: flex-start;
   align-self: flex-start;
   gap: 10px;
+  /* flex-wrap: wrap; */
+}
+
+.fomrInpCont.qr {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fomrInpCont.qr input {
+  min-width: 40vw;
+  height: 25px;
 }
 
 .action-btns {
@@ -413,7 +425,7 @@ main {
 
 main h1 {
   text-align: start;
-  font-size: 86px;
+  font-size: 56px;
 }
 
 main header p {
@@ -435,13 +447,14 @@ main > section.tool-grid {
 }
 
 footer {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 footer {
   border-radius: 10px;
   padding: 20px 60px;
   margin: 0 20px;
+  margin-top: 40px;
   margin-bottom: 10px;
   border: 1px solid rgba(34, 211, 238, 0.5);
 }

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Building My Own Operating System Day 1 and 2</title>
+
+  <meta
+    name="description"
+    content="My journey on learning and building my own operating system. Blog on buffer cache, double linked list and hash queue."
+  />
+
+  <meta
+    name="author"
+    content="Buffbahun"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <link
+    rel="canonical"
+    href="https://rool.buffbahun.workers.dev/blogs/BMOOSD_1_2/"
+  />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Building My Own Operating System Day 1 and 2",
+      "description": "My journey on learning and building my own operating system. Blog on buffer cache, double linked list and hash queue.",
+      "author": {
+        "@type": "Person",
+        "name": "Buffbahun"
+      },
+      "datePublished": "Tue Jun 02 2026 05:45:00 GMT+0545 (Nepal Time)",
+      "dateModified": "Tue Jun 02 2026 05:45:00 GMT+0545 (Nepal Time)",
+      "mainEntityOfPage": "https://rool.buffbahun.workers.dev/blogs/BMOOSD_1_2/"
+    }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Building My Own Operating System Day 1 and 2" />
+  <meta property="og:description" content="My journey on learning and building my own operating system. Blog on buffer cache, double linked list and hash queue." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rool.buffbahun.workers.dev/blogs/BMOOSD_1_2/" />
+  <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/blog-og.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Building My Own Operating System Day 1 and 2" />
+  <meta name="twitter:description" content="My journey on learning and building my own operating system. Blog on buffer cache, double linked list and hash queue." />
+  <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/blog-og.png" />
+
+  <!-- Article metadata -->
+  <meta property="article:published_time" content="Tue Jun 02 2026 05:45:00 GMT+0545 (Nepal Time)" />
+  <meta property="article:modified_time" content="Tue Jun 02 2026 05:45:00 GMT+0545 (Nepal Time)" />
+  <meta property="article:author" content="Buffbahun" />
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/assets/favicon.svg"
+  />
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css"
+  />
+</head>
+
+<body>
+
+  <header id="mainHeader" class="main-header">
+      <a href="/" aria-label="Rool home page">
+        <img
+          src="/assets/logo.svg"
+          alt="Rool utility tool logo"
+          width="80"
+        >
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="menu-list">
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              Text
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
+              <li><a href="/text/sentence-case/">Sentence Case</a></li>
+              <li><a href="/text/lower-case/">Lower Case</a></li>
+              <li><a href="/text/upper-case/">Upper Case</a></li>
+              <li><a href="/text/capitalized-case/">Capitalized Case</a></li>
+              <li><a href="/text/title-case/">Title Case</a></li>
+              <li><a href="/text/alternating-case/">Alternating Case</a></li>
+              <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+              <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+              <li><a href="/text/text-sorter/">Text Sorter</a></li>
+            </ul>
+          </li>
+                    <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              QR and Barcode
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/barcode-qr-generator/qr-code/">QR Code</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="navMenuItems" href="/blogs/">Blogs</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+  <main class="blogMain">
+    <h1>Building My Own Operating System</h1>
+<h2>Day 1 and 2</h2>
+<p>Today was an eye-opening day for me. I learned what a Buffer Cache is. Imagine you want to read/modify a file. The usual process is that the system loads the file blocks from the specific file system in the storage to the main memory. Then you read or apply the changes. Now, on file modification, it needs to write the changes back to the storage. Storage I/O is slow in comparison to the main memory. The latency for I/O operations in storage makes a huge difference and adds up when, instead of one or a few files, we are operating on multiple hundreds of files. The solution for this specific limitation is implemented in the Unix system as Buffer Cache. Buffer Cache is just some memory allocated in the main memory for caching/holding the data of a certain file for a certain amount of time. The primary algorithm used with the Buffer Cache to make it efficient is the Least Recently Used (LRU) algorithm.</p>
+<p>As the name implies, the algorithm favors the oldest cache that will not be used and replaces it with new block data. The main data structure that we need to understand to properly implement this algorithm is the Doubly Linked List. Before this, first we understand what a Linked List is. It's just a chain of data that is also pointing to the next adjacent data in the chain.</p>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span>   [a] -> [b] -> [c] -></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Now a Doubly Linked List is almost the same as a Linked List but with an additional pointer to the previous adjacent data in the chain.</p>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span>   [a] &#x3C;-> [b] &#x3C;-> [c] &#x3C;-></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>So whats the usefulness of this data structure in compared to the simple linked list? With this structure its very esy to add and remove elemnts form any position in the chain. Suppose there is a chain of [a] to [c]. Now we want to insert [b] between [a] and [c]. Now if we only have access to one of the element either [a] or [c] we can insert [b]:
+So what's the usefulness of this data structure compared to the simple Linked List? With this structure, it's very easy to add and remove elements from any position in the chain. Suppose there is a chain from [a] to [c]. Now we want to insert [b] between [a] and [c]. Now if we only have access to one of the elements, either [a] or [c], we can insert [b]:</p>
+<ol>
+<li>Change [a]'s next pointer from [c] to [b].</li>
+<li>Change [c]'s previous pointer from [a] to [b] (we can get the [c] element easily as [a] previously had its next pointer to [c]).</li>
+<li>Change [b]'s previous pointer to [a] and its next pointer to [c].</li>
+</ol>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span>              .-----.</span></span>
+<span class="line"><span>              |     |      </span></span>
+<span class="line"><span>    NULL &#x3C;--- |  b  | ---> NULL</span></span>
+<span class="line"><span>              |_____|</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>       .-----.        .-----.</span></span>
+<span class="line"><span>       |     | -----> |     |</span></span>
+<span class="line"><span> &#x3C;---  |  a  | &#x3C;----- |  c  | -----></span></span>
+<span class="line"><span>       |_____|        |_____|</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span></code></pre>
+<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span>              .-----.</span></span>
+<span class="line"><span>              |     |      </span></span>
+<span class="line"><span>            / |  b  | \</span></span>
+<span class="line"><span>           /  |_____|  \</span></span>
+<span class="line"><span>           v    A  A    v</span></span>
+<span class="line"><span>       .-----. /   \  .-----.</span></span>
+<span class="line"><span>       |     |/     \ |     |</span></span>
+<span class="line"><span> &#x3C;---  |  a  |       \|  c  | -----></span></span>
+<span class="line"><span>       |_____|        |_____|</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Its real usefulness comes when we want to remove an element from the chain. For removing an element, we need to have two pointers to its neighbors (previous and next element) so that when removing the element we can join the previous and next elements so that it stays a chain. With just a Linked List, we would have the next element pointer, but to get the previous pointer we would have to loop across the chain to find the previous element. But with a Doubly Linked List, we already have pointers to both of its adjacent previous/next elements.</p>
+<p>Hash Queue is another important data structure we will be implementing, so it's rudimentary to understand it now. It's just a list of Doubly Linked Lists which is sequential and indexed from 0 to (hash - 1). Why do we need this? I think an example will help us here. Suppose we have 1000 buffers and all are linked in a chain with one big Doubly Linked List. Now we want the buffer with block number 500. To get it with our list, we loop across the chain, check the block number of the buffer, if it matches return it, else continue the loop by checking the next pointer of the buffer. This is not quite efficient.</p>
+<p>We can make this efficient with a mathematical trick and an additional list. Say we now have a sequential list up to index n. The elements of the list are pointers to the start/head of a Doubly Linked List. We now put each buffer with block number x at the tail of the list at index:</p>
+<p>index = x % n</p>
+<p>The modulo operator gives the remainder of the operands and always gives a number between (0 to n - 1).</p>
+<p>Now suppose we have a total of 5 headers in the sequential list. To find the buffer with block number 500 we can do:</p>
+<p>500 % 5 = 0</p>
+<p>which results in 0, which is the index where we are sure the buffer must be. As you can see, it reduced the loop operation significantly. Nice, right?</p>
+<p>Ok, I think my head is heavy with today's session. With this data structure understanding on our side, I will implement these data structures and also their basic operations (insert/remove) in the next session.</p>
+<p>Thank you. Until next time.</p>
+
+  </main>
+
+  <footer id="mainFooter" >
+      <nav aria-label="Tools navigation">
+        <h2>Tools</h2>
+        <ul class="tools-nav-footer">
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+          <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+          <li><a href="/text/text-sorter/">Text Sorter</a></li>
+          <li><a href="/barcode-qr-generator/qr-code/">QR Code</a></li>
+        </ul>
+      </nav>
+
+      <section aria-label="Contact information">
+        <h2>Contact</h2>
+        <ul class="contact-nav-footer">
+          <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
+          <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
+          <li><a href="https://github.com/buffbahun-prog">Github</a></li>
+        </ul>
+      </section>
+
+      <section class="copyright">
+        <p>
+            Built with ❤️ by Rool
+        </p>
+        <p>
+          © 2026 Rool. All rights reserved.
+        </p>
+      </section>
+
+    </footer>
+
+</body>
+</html>

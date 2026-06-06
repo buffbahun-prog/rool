@@ -11,8 +11,16 @@ const IMPORT_REGEX =
 const DYNAMIC_IMPORT_REGEX =
   /(import\s*\(\s*["'])(\.\/[^"']+?)(["']\s*\))/g;
 
+const OTHER_IMPORT_REGEX = 
+  /(import\s+["'])(\.\/[^"']+?)(["'])/g;
+
+const ANOTHER_IMPORT_REGEX = 
+  /(import\s+\{[^}]+\}\s+from\s+["'])(\.{1,2}\/[^"']+?)(["'])/g;
+
 function fixFile(filePath) {
   let code = fs.readFileSync(filePath, "utf8");
+
+  console.log(filePath);
 
   let changed = false;
 
@@ -26,6 +34,8 @@ function fixFile(filePath) {
 
   code = code.replace(IMPORT_REGEX, replacer);
   code = code.replace(DYNAMIC_IMPORT_REGEX, replacer);
+  code = code.replace(OTHER_IMPORT_REGEX, replacer);
+  code = code.replace(ANOTHER_IMPORT_REGEX, replacer);
 
   if (changed) {
     fs.writeFileSync(filePath, code, "utf8");

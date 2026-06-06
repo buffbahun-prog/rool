@@ -7,7 +7,7 @@
     "outDir": "public/dist",
     "strict": true,
     "skipLibCheck": true,
-    "lib": ["ES2022", "DOM"]
+    "lib": ["ES2023", "DOM"]
   },
   "include": ["src"]
 }
