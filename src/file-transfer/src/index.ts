@@ -901,9 +901,11 @@ roomJoinBtn?.addEventListener("click", async () => {
       fpe.elms.dwnldBtnElm.addEventListener("click", async () => {
         if (fpe.elms?.dwnldBtnElm) {
           fpe.elms.dwnldBtnElm.disabled = true;
-          const fileHandle = recieverWRTC?.onFileDownload(fpe.fileId);
+          const fileHandleName = recieverWRTC?.onFileDownload(fpe.fileId);
+          if (!fileHandleName) return;
+          const root = await navigator.storage.getDirectory();
+          const fileHandle = await root.getFileHandle(fileHandleName);
           console.log(fileHandle);
-          if (fileHandle) {
         const file = await fileHandle.getFile();
         const url = URL.createObjectURL(file);
         const downloadElm = document.createElement("a") as HTMLAnchorElement;
@@ -916,7 +918,6 @@ roomJoinBtn?.addEventListener("click", async () => {
 
         document.body.removeChild(downloadElm);
         URL.revokeObjectURL(url);
-    }
           fpe.elms.dwnldBtnElm.disabled = false;
         }
       });

@@ -312,12 +312,12 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
             if (!fileWritable) throw new Error("worker: file writable not initialized.");
             if (payload.fileId !== fileWritable.metadata.fileId) return;
 
-            const file = fileWritable.fileHandle;
+            const fileName = fileWritable.fileHandle.name;
 
             const response: WorkerResponse = {
                 action: action,
                 status: "SUCCESS",
-                result: {fileId: fileWritable.metadata.fileId, file}
+                result: {fileId: fileWritable.metadata.fileId, fileName}
             }
 
             self.postMessage(response);

@@ -67,7 +67,7 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
   transferPauseAck = false;
   filePauseAck: Map<number, boolean> = new Map();
 
-  fileHandlesForDownload: Map<number, FileSystemFileHandle> = new Map();
+  fileHandlesForDownload: Map<number, string> = new Map();
   
   private speedCalc: SpeedCalculator;
 
@@ -409,7 +409,7 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
         });
   }
 
-  onFileDownload(fileId: number): FileSystemFileHandle | undefined {
+  onFileDownload(fileId: number): string | undefined {
     return this.fileHandlesForDownload.get(fileId);
   }
 
@@ -572,8 +572,8 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
                 }
                 case WorkerAction.GetFileDownload: {
                     if (status === "SUCCESS" && result) {
-                        const {fileId, file} = result;
-                        this.fileHandlesForDownload.set(fileId, file);
+                        const {fileId, fileName} = result;
+                        this.fileHandlesForDownload.set(fileId, fileName);
                     }
                     break;
                 }

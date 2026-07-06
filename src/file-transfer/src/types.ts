@@ -272,7 +272,7 @@ export type WorkerResponse = {action: WorkerAction.GetNextChunk; status: 'SUCCES
                            | {action: WorkerAction.RetryMissingChunks; status: 'SUCCESS' | 'ERROR'; result?: {fileId: number}, error?: string}
                            | {action: WorkerAction.GetFileHash; status: 'SUCCESS' | 'ERROR'; result?: {fileId: number, hash: string}, error?: string}
                            | {action: WorkerAction.FileHashProgress; status: 'SUCCESS' | 'ERROR'; result?: {fileId: number, bytesWritten: number, chunkSize: number, start?: boolean}, error?: string}
-                           | {action: WorkerAction.GetFileDownload; status: 'SUCCESS' | 'ERROR'; result?: {fileId: number, file: FileSystemFileHandle}, error?: string}
+                           | {action: WorkerAction.GetFileDownload; status: 'SUCCESS' | 'ERROR'; result?: {fileId: number, fileName: string}, error?: string}
                            | {action: WorkerAction.NextChunkReady; status: undefined; result: undefined, error: undefined}
                            | {action: WorkerAction.SendForRetry; status: undefined; result: undefined, error: undefined}
 
