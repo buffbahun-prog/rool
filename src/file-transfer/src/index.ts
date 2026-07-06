@@ -393,7 +393,7 @@ localFileUploadBtn.addEventListener("click", async () => {
     fileElm.hidden = true;
     fileElm.type = "file";
     fileElm.multiple =  true;
-    document.appendChild(fileElm);
+    document.body.appendChild(fileElm);
     fileElm.click();
     console.error("User cancelled or browser doesn't support API", err);
   }
