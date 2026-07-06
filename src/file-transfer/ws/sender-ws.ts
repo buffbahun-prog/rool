@@ -39,9 +39,10 @@ export class SenderWS extends TypedEmitter<WSEvents> {
         this.onMessageRecieved(serverMsg);
       };
 
-    } catch (err) {
+    } catch (err: any) {
       this.emit("error", err as Error);
       console.log("err", err);
+      alert("error: " + err.message)
     }
   }
 
