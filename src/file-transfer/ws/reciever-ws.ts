@@ -20,7 +20,8 @@ export class RecieverWS extends TypedEmitter<WSEvents> {
       if (this.roomConnectWS) return;
 
       this.emit("roomJoining", null);
-      this.roomConnectWS = await this.createWebSocket(`ws://localhost:8787/room/${this.roomCode}`);
+    //   this.roomConnectWS = await this.createWebSocket(`ws://localhost:8787/room/${this.roomCode}`);
+      this.roomConnectWS = await this.createWebSocket(`wss://rool.buffbahun.workers.dev/room/${this.roomCode}`);
       this.emit("roomJoin", {code: roomCode});
         
       this.roomConnectWS.onmessage = (msg: MessageEvent<string>) => {

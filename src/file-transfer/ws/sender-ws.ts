@@ -13,7 +13,8 @@ export class SenderWS extends TypedEmitter<WSEvents> {
 
   async init() {
     try {
-      const res = await fetch("http://localhost:8787/api/create");
+      const res = await fetch("https://rool.buffbahun.workers.dev/api/create");
+    //   const res = await fetch("http://localhost:8787/api/create");
       const data: {code: string} = await res.json();
 
       this.roomCode =  data.code;
@@ -23,7 +24,8 @@ export class SenderWS extends TypedEmitter<WSEvents> {
       if (this.roomConnectWS) return;
 
       this.emit("roomJoining", null);
-      this.roomConnectWS = await this.createWebSocket(`ws://localhost:8787/room/${this.roomCode}`);
+      this.roomConnectWS = await this.createWebSocket(`wss://rool.buffbahun.workers.dev/room/${this.roomCode}`);
+    //   this.roomConnectWS = await this.createWebSocket(`ws://localhost:8787/room/${this.roomCode}`);
 
       this.emit("roomJoin", {code: data.code});
         
