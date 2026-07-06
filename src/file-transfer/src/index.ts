@@ -389,6 +389,12 @@ localFileUploadBtn.addEventListener("click", async () => {
     
     updateLocalFileView();
   } catch (err) {
+    const fileElm = document.createElement("input") as HTMLInputElement;
+    fileElm.hidden = true;
+    fileElm.type = "file";
+    fileElm.multiple =  true;
+    document.appendChild(fileElm);
+    fileElm.click();
     console.error("User cancelled or browser doesn't support API", err);
   }
 });
