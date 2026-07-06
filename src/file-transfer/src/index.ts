@@ -377,7 +377,7 @@ localFileUploadBackBtn.addEventListener("click", () => {
 const localFileUploadBtn = document.getElementById("localFileDrpzn") as HTMLDivElement;
 
 // Global state: only store handles, not File objects!
-let fileHandles: FileSystemFileHandle[] | File[] = [];
+let fileHandles: (FileSystemFileHandle | File)[] = [];
 localFileUploadBtn.addEventListener("click", async () => {
   try {
     //@ts-ignore
@@ -395,6 +395,19 @@ localFileUploadBtn.addEventListener("click", async () => {
     fileElm.multiple =  true;
     document.body.appendChild(fileElm);
     fileElm.click();
+
+    fileElm.addEventListener("change", (evt) => {
+    const input = evt.target as HTMLInputElement;
+
+    if (!input.files) return;
+
+    for (const file of input.files) {
+        fileHandles.push(file);
+    }
+
+    fileElm.remove(); // Optional: clean up the temporary input
+});
+
     console.error("User cancelled or browser doesn't support API", err);
   }
 });
@@ -658,7 +671,7 @@ createRoomBtn?.addEventListener("click", async () => {
   if (infoBarText) infoBarText.textContent = "Creating Room";
   if (infoBar) infoBar.classList.add("show-info");
   senderWS = new SenderWS();
-  senderWRTC = new PeerTransfer(PeerType.Sender ,fileHandles);
+  senderWRTC = new PeerTransfer(PeerType.Sender ,fileHandles as FileSystemFileHandle[] | File[]);
 
   senderWS.on("roomCreate", (payload) => {
     const code = payload.code;
