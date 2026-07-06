@@ -339,10 +339,69 @@ header.main-header {
   align-items: center;
 }
 
+header.main-header .hambgr {
+  display: none;
+  border: solid 2px white;
+  cursor: pointer;
+  padding: 5px 8px;
+}
+
+@media (max-width: 450px) {
+  header.main-header {
+    justify-content: space-between;
+  }
+
+  header.main-header .hambgr {
+    display: block;
+  }
+
+  header.main-header nav {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    top: 60px;
+    left: 0;
+    background-color: black;
+    backdrop-filter: blur(10px);
+    background-color: rgba(15, 23, 42, .95);
+    border: 1px solid rgba(34, 211, 238, 0.3)
+  }
+
+  header.main-header nav > ul.menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    gap: 20px;
+  }
+  
+  header.main-header nav > ul.menu-list > li > .menu-card {
+    /* background-color: rgba(15, 23, 42, .95); */
+    /* backdrop-filter: blur(10px); */
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    color: white;
+    padding: 25px 15px;
+    /* position: absolute; */
+    top: 37px;
+    left: -2px;
+    display: none;
+  }
+
+  footer .tools-nav-footer, .company-nav-footer, .contact-nav-footer {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    list-style: none;
+    row-gap: 20px;
+    margin: 0;
+  }
+}
+
 nav > ul.menu-list {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0;
   list-style: none;

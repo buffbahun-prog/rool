@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      File Transfer | Rool
+    </title>
+
+    <meta
+      name="description"
+      content="Free online alternating case converter tool. Convert text to aLtErNaTiNg CaSe instantly and analyze text with word count, character count, line count, and sentence support with Unicode."
+    />
+
+    <meta
+      name="keywords"
+      content="alternating case converter, alternating case, random case text, text case converter, weird text generator, word counter, character counter, line counter, text analyzer"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="canonical" href="https://rool.buffbahun.workers.dev/text/alternating-case/" />
+
+    <meta name="robots" content="index, follow" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Alternating Case Converter",
+      "url": "https://rool.buffbahun.workers.dev/text/alternating-case/",
+      "description": "Free online alternating case converter and text analyzer tool.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rool",
+        "url": "https://rool.buffbahun.workers.dev/"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Alternating Case Converter"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is alternating case?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Alternating case is a text format where letters switch between lowercase and uppercase in sequence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool support Unicode text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it supports Unicode, emojis, and multilingual input."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this alternating case converter is completely free to use."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <meta property="og:site_name" content="Rool" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Alternating Case Converter | Rool" />
+
+    <meta
+      property="og:description"
+      content="Convert text to aLtErNaTiNg CaSe instantly with Unicode-aware formatting and text analysis."
+    />
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/alternating-case/" />
+
+    <meta property="og:site_name" content="Rool" />
+
+    <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/alternating-case.png" />
+
+    <meta property="og:image:width" content="1200" />
+
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="Alternating Case Converter | Rool" />
+
+    <meta
+      name="twitter:description"
+      content="Convert text to aLtErNaTiNg CaSe instantly with Unicode-aware formatting and analysis."
+    />
+
+    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/alternating-case.png" />
+    <meta name="twitter:image:alt" content="Alternating Case Converter tool by Rool" />
+
+  </head>
+  <body>
+    <div id="errorPop">
+        <h3 id="errorPopTitle"></h3>
+        <p id="errPopMsg"></p>
+    </div>
+    
+    <div id="privacyPopover" popover="manual">
+  <h2 class="popover-title">🔒 Verify Connection Privacy</h2>
+  
+  <p class="popover-instruction">
+    To confirm your file transfer is private, check if the code below matches the code on the remote device's screen.
+  </p>
+
+  <div class="safetyCodeCont">
+    <span class="safety-code" id="safetyNum">123-456</span>
+    <button class="copy" id="scCopyBtn" aria-label="Copy Code" title="Copy Security Code">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+            <button class="copy" id="scShareBtn" aria-label="Share Security Code" title="Share Security Code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <path d="M8.59 13.51 15.42 17.49"></path>
+                  <path d="M15.41 6.51 8.59 10.49"></path>
+                </svg>
+            </button>
+  </div>
+
+  <p class="popover-warning">
+    ⚠️ Mismatched codes usually mean your network is being monitored or intercepted. Proceed with caution.
+  </p>
+
+  <div class="button-group">
+    <button class="btn-match" id="privacyBtnMatch">
+      Yes, Codes Match <span class="subtext">(Recommended)</span>
+    </button>
+    <button class="btn-bypass" id="privacyBtnBypass">
+      Connect Anyway <span class="subtext">(Unsecured)</span>
+    </button>
+  </div>
+</div>
+
+    <header class="main-header">
+      <a href="/" aria-label="Rool home page">
+        <img
+          src="/assets/logo.svg"
+          alt="Rool utility tool logo"
+          width="80"
+          loading="lazy"
+        >
+      </a>
+
+      <div id="hamMenu" class="hambgr">
+        Menu
+      </div>
+
+      <nav id="menuList" aria-label="Main navigation">
+        <ul class="menu-list">
+          <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              Text
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/text/word-count/">Word Counter</a></li>
+              <li><a href="/text/case-convert/">Case Converter</a></li>
+              <li><a href="/text/sentence-case/">Sentence Case</a></li>
+              <li><a href="/text/lower-case/">Lower Case</a></li>
+              <li><a href="/text/upper-case/">Upper Case</a></li>
+              <li><a href="/text/capitalized-case/">Capitalized Case</a></li>
+              <li><a href="/text/title-case/">Title Case</a></li>
+              <li><a href="/text/alternating-case/">Alternating Case</a></li>
+              <li><a href="/text/inverse-case/">Inverse Case</a></li>
+              <li><a href="/text/slug-generator/">Slug Generator</a></li>
+              <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+              <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+              <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+              <li><a href="/text/text-sorter/">Text Sorter</a></li>
+            </ul>
+          </li>
+                    <li>
+            <button
+              class="navMenuItems"
+              aria-expanded="false"
+              aria-controls="text-tools-menu"
+            >
+              QR and Barcode
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              id="text-tools-menu"
+              class="menu-card"
+            >
+              <li><a href="/barcode-qr-generator/qr-code/">QR Code</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="navMenuItems" href="/blogs/">Blogs</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- <header class="hero">
+          <h1>
+              File Transfer
+          </h1>
+      
+          <p>
+            
+          </p>
+      </header> -->
+      <div class="main-cont">
+
+    <div id="transferLanding" class="animate-home-in">
+      <!-- <div id="connType" class="conn-type">
+        <div id="localType" class="selected">Local</div>
+        <div id="globalType">Global</div>
+      </div> -->
+      <div id="local" class="card animate-view-in">
+        <p class="node-info">
+            <!-- Make sure both devices are on same Wi-Fi or hotspot -->
+        </p>
+        <ul class="node-list">
+          <li id="sendFileLocal" class="shimmer">
+            <div class="action-text">
+              <img src="upload.svg" width="24px" alt="">
+              <span>Send File</span>
+            </div>
+            <div>
+              <img src="forward.svg" alt="">
+            </div>
+          </li>
+          <li id="recieveFileLocal" class="shimmer">
+            <div class="action-text">
+              <img src="download.svg" width="24px" alt="">
+              <span>Recieve File</span>
+            </div>
+            <div>
+              <img src="forward.svg" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="global" class="card hidden animate-view-in">
+        <!-- <p class="node-info">Make sure both devices are on same Wi-Fi or hotspot</p> -->
+        <ul class="node-list">
+          <li id="sendFileGlobal" class="shimmer">
+            <div class="action-text">
+              <img src="upload.svg" width="24px" alt="">
+              <span>Send File</span>
+            </div>
+            <div>
+              <img src="forward.svg" alt="">
+            </div>
+          </li>
+          <li id="recieveFileGlobal" class="shimmer">
+            <div class="action-text">
+              <img src="download.svg" width="24px" alt="">
+              <span>Recieve File</span>
+            </div>
+            <div>
+              <img src="forward.svg" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="localCardFileUpload" class="card animate-home-in">
+      <div id="localFileUploadBackBtn" class="back-btn"><img src="back.svg" width="8px" alt=""> <span>Back</span></div>
+      <p class="node-info">
+        <!-- Make sure both devices are on same Wi-Fi or hotspot -->
+    </p>
+      <input id="localFileInput" type="file" multiple hidden>
+      <div id="localFileDrpzn" class="file-upload-cont shimmer">
+          <img src="folder.svg" width="64px" alt="">
+          <div>
+            <span class="file-upload-heading">Select Files</span>
+            <span class="file-upload-desc">Tap to choose from your device</span>
+          </div>
+      </div>
+      <div class="selection-summary">
+        <div>
+          <span>TOTAL VOLUME</span>
+          <span id="totalVolSummary"></span>
+        </div>
+        <div>
+          <span>TOTAL FILES</span>
+          <span id="totalFilesSummary"></span>
+        </div>
+      </div>
+      <ul id="localFileList">
+      </ul>
+      <div id="localFileUploadNextBtn" class="next-btn">
+        <div class="action-text">
+            <span>Next</span>
+        </div>
+      </div>
+    </div>
+    <div id="qrExchangeCard" class="animate-home-in">
+      <div id="qrExchangeBackBtn" class="back-btn"><img src="back.svg" width="8px" alt=""> <span>Back</span></div>
+      <div id="qrExchangeChoose" class="conn-type">
+        <div id="showQr">Ready to Share</div>
+        <div id="scanQr" class="hidden">Ready to Join</div>
+      </div>
+      <div id="showQrCard" class="card animate-view-in">
+        <div id="infoBar">
+        <p class="status-dot"></p>
+        <span id="infoBarText"></span>
+        </div>
+        <p class="node-info">Generate a secure connection code below, then share it with the recipient to link your devices.</p>
+        <div class="roomCodeCard">
+            <div id="createRoomCodeCont" class="roomCodeCont hidden">
+                <span id="createdRoomCodeText"></span>
+                <button class="copy" id="copyBtn" aria-label="Copy URL" title="Copy URL">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+            <button class="copy" id="shareBtn" aria-label="Share URL" title="Share URL">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="12"
+                  height="12"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <path d="M8.59 13.51 15.42 17.49"></path>
+                  <path d="M15.41 6.51 8.59 10.49"></path>
+                </svg>
+            </button>
+            </div>
+            <button id="createRoomBtn">Generate Connection Code</button>
+        </div>
+      </div>
+
+      <div id="scanQrCard" class="card animate-view-in hidden">
+        <div id="infoBarR">
+        <p class="status-dot"></p>
+        <span id="infoBarTextR"></span>
+        </div>
+        <p class="node-info">Enter the 5-digit connection code provided by the sender to securely link your devices.</p>
+        <div class="roomCodeCard">
+          <div class="pin-container">
+  <input name="pin" class="pin" maxlength="1" type="text" />
+  <input name="pin" class="pin" maxlength="1" type="text" />
+  <input name="pin" class="pin" maxlength="1" type="text" />
+  <input name="pin" class="pin" maxlength="1" type="text" />
+  <input name="pin" class="pin" maxlength="1" type="text" />
+</div>
+       <button id="roomJoinBtn">Connect and Receive</button>
+        </div>
+      </div>
+    </div>
+    <div id="localCardFileTransfer" class="card animate-home-in">
+      <div id="transferCancleBtn" class="cancle-btn"><img src="cross.svg" width="10px" alt=""> <span>Cancle</span></div>
+      <div id="peerPauseBar">
+        <p class="status-dot"></p>
+        <span id="peerPauseText">Paused by sender</span>
+      </div>
+
+      <!-- <div id="webgl-container"></div> -->
+
+      <div class="info-sec">
+        <!-- <div class="sub-card">
+          <p class="top-heading">Uploading</p>
+          <p class="description" id="uploadProgress">50%</p>
+        </div>
+
+        <div class="sub-card">
+          <p class="top-heading">Total File Size</p>
+          <p class="description" id="fileSize" style="color:#C084FC;">123.5 KB</p>
+        </div>
+
+        <div class="sub-card">
+          <p class="top-heading">Upload Rate</p>
+          <p class="description" id="uploadRate" style="color:#ef60b1;">5 KB/s</p>
+        </div> -->
+      </div>
+
+      <div class="has-file relative">
+        <div id="pauseToggle" class="transfer-action">Pause</div>
+        <div id="preview" class="car">
+          <!-- <div class="selection-summary">
+            <div>
+              <span>TOTAL VOLUME</span>
+              <span id="previewVolSummary"></span>
+            </div>
+            <div>
+              <span>TOTAL FILES</span>
+              <span id="previewFilesSummary"></span>
+            </div>
+          </div> -->
+          <ul id="previewFileList" class="has-file">
+            
+          </ul>
+          <div class="in-row">
+            <div id="downloadBtn" class="transfer-action">Download</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </main>
+
+    <footer>
+      <nav aria-label="Tools navigation">
+        <h2>Tools</h2>
+        <ul class="tools-nav-footer">
+          <li><a href="/text/word-count/">Word Counter</a></li>
+          <li><a href="/text/case-convert/">Case Converter</a></li>
+          <li><a href="/text/slug-generator/">Slug Generator</a></li>
+          <li><a href="/text/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+          <li><a href="/text/nepali-lorem-ipsum-generator/">Nepali Lorem Ipsum Generator</a></li>
+          <li><a href="/text/duplicate-line-remover/">Duplicate Line Remover</a></li>
+          <li><a href="/text/text-sorter/">Text Sorter</a></li>
+          <li><a href="/barcode-qr-generator/qr-code/">QR Code</a></li>
+        </ul>
+      </nav>
+
+       
+
+      <section aria-label="Contact information">
+        <h2>Contact</h2>
+        <ul class="contact-nav-footer">
+          <li><a href="mailto:buffbahun@gmail.com">Email</a></li>
+          <li><a href="tel:+9779861086724">Phone</a></li>
+          <li><a href="https://www.linkedin.com/in/asim-sapkota-b903ab227/?skipRedirect=true">Linkdin</a></li>
+          <li><a href="https://github.com/buffbahun-prog">Github</a></li>
+        </ul>
+      </section>
+
+      <section class="copyright">
+        <p>
+            Built with ❤️ by Rool
+        </p>
+        <p>
+          © 2026 Rool. All rights reserved.
+        </p>
+      </section>
+
+    </footer>
+
+    <template id="pieProgressTemplate">
+      <li class="fileCard">
+                  <div class="uploadPrg">
+                    <div class="uploadImg">
+                        <svg viewBox="0 0 200 200" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+
+                              <filter class="shadowFilter" x="-20%" y="-20%" width="140%" height="140%">
+
+                                <feComponentTransfer in="SourceAlpha">
+                                
+                                  <feFuncA type="linear" slope="1"/>
+                                
+                                </feComponentTransfer>
+                            
+                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                            
+
+                            
+                                <feOffset dx="0" dy="4"/>
+                            
+
+                            
+                                <feComposite operator="out" in2="SourceAlpha" result="inverse"/>
+                            
+                                <feFlood flood-color="#000000" flood-opacity="1" result="color"/>
+                            
+                                <feComposite operator="in" in2="inverse" result="shadow"/>
+                            
+
+                            
+                                <feComposite operator="over" in2="SourceGraphic"/>
+                            
+                              </filter>
+                          
+                            </defs>
+                            <circle class="bgTrack" cx="100" cy="100" r="80" stroke-width="3px" stroke="#5C605C3D" fill="transparent"/>
+                            <path class="progressWedge" d="M 100 100 
+                                    L 100 20 
+                                    A 80 80 0 0 1 100.01 20
+                                    Z" 
+                                  fill="#23EE9955"  
+                            />
+                        </svg>
+                    </div>
+
+                    <div class="flex">
+                        <p class="status-dot"></p>
+                        <span class="uploadStatus"></span>
+                    </div>
+                  </div>
+                  <div class="finfo">
+                    <div class="fileNameTxt">file Name</div>
+                    <div>
+                        <span class="fileSizeTxt">0 KB</span>
+                        <span><img src="./dot.svg" width="5px" alt=""></span>
+                        <span class="fileTypeTxt"></span>
+                    </div>
+                    <div>
+                        <span class="progressSpeed">0 KB/s</span>
+                        <span><img src="./dot.svg" width="5px" alt=""></span>
+                        <span class="progressTime">Unknown</span>
+                        <span><img src="./dot.svg" width="5px" alt=""></span>
+                        <span class="progressPercentage">0%</span>
+                    </div>
+                  </div>
+                  <button class="next-btn pauseBtn">
+                    <!-- <div class="action-text"> -->
+                        <span class="pauseBtnTxt">Pause</span>
+                    <!-- </div> -->
+                </button>
+                  <button disabled class="next-btn dwnldBtn">
+                    <!-- <div class="action-text"> -->
+                        <img src="./download-dark.svg" width="24px" alt="">
+                        <span>Download</span>
+                    <!-- </div> -->
+                </button>
+                  <div class="sel">
+                    <div></div>
+                    <!-- <img src="./check.svg" width="30px" alt=""> -->
+                  </div>  
+                </li>
+    </template>
+
+    <script type="module" src="/dist/file-transfer/src/index.js"></script>
+     <script>
+        const hamMenu = document.getElementById("hamMenu");
+        const navList = document.getElementById("menuList");
+
+        let menuShow = false;
+
+        hamMenu.addEventListener("click", () => {
+            menuShow = !menuShow;
+            menuShow ? hamMenu.textContent = "X" : hamMenu.textContent = "Menu";
+            menuShow ? navList.style.display = "block" : navList.style.display = "none";
+        });
+        // const arcPath = document.getElementById("prgArc");
+        // const r = 80;
+        // const cx = 100;
+        // const cy = 100;
+
+        // let degreeAngle = Math.PI;
+
+        // if (degreeAngle >= 2 * Math.PI) {
+        //     degreeAngle = 2 * Math.PI - 0.001; 
+        // } 
+
+        // const x1 = cx;
+        // const y1 = cy - r; 
+
+        // const x2 = cx + (r * Math.cos(degreeAngle - Math.PI / 2));
+        // const y2 = cy + (r * Math.sin(degreeAngle - Math.PI / 2));
+
+        // const largeArcFlag = degreeAngle > Math.PI ? 1 : 0;
+
+        // const d = `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+        // arcPath.setAttribute("d", d);
+     </script>
+     <!-- <script ></script> -->
+  </body>
+</html>

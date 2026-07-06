@@ -1,0 +1,69 @@
+{
+  "pageTitle": "Free Alternating Case Converter - Alternate Uppercase & Lowercase Text",
+  "brandName": "Rool",
+  "metaDescription": "Convert text to alternating case instantly with this free online alternating case converter. Alternate uppercase and lowercase letters, support Unicode text, emojis, and multilingual input. Includes word, character, and line count.",
+  "canonicalUrl": "https://rool.buffbahun.workers.dev/text/alternating-case/",
+  "author": "Buffbahun",
+  "themeColor": "#1b1b1b",
+  "faviconPath": "/assets/favicon.svg",
+  "appleFaviconPath": "/assets/favicon.svg",
+
+  "siteType": "website",
+
+  "ogDescription": "Free online alternating case converter. Instantly alternate uppercase and lowercase letters in any text. Supports Unicode, emojis, and multilingual content.",
+
+  "ogImage": "https://rool.buffbahun.workers.dev/assets/og/alternating-case.png",
+
+  "twitterImage": "https://rool.buffbahun.workers.dev/assets/og/alternating-case.png",
+
+  "twitterDescription": "Convert text to alternating case online. Alternate uppercase and lowercase letters instantly with support for Unicode text and emojis.",
+
+  "utilityName": "Alternating Case Converter | Rool",
+
+  "faq": {
+           "@context": "https://schema.org",
+           "@type": "FAQPage",
+           "mainEntity": [
+             {
+               "@type": "Question",
+               "name": "What is alternating case?",
+               "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "Alternating case is a text style where letters alternate between lowercase and uppercase characters, such as aLtErNaTiNg CaSe."
+               }
+             },
+             {
+               "@type": "Question",
+               "name": "How do I convert text to alternating case?",
+               "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "Paste your text into the input box and the tool will automatically convert it into alternating uppercase and lowercase letters."
+               }
+             },
+             {
+               "@type": "Question",
+               "name": "Does this alternating case converter support Unicode and emojis?",
+               "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "Yes. The tool supports Unicode text, multilingual content, accented characters, and emojis."
+               }
+             },
+             {
+               "@type": "Question",
+               "name": "Is this alternating case converter free?",
+               "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "Yes. The tool is completely free to use with no registration required."
+               }
+             },
+             {
+               "@type": "Question",
+               "name": "Can I use alternating case text on social media?",
+               "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "Yes. Alternating case text can be used on social media platforms, chat applications, forums, and other websites that support standard text input."
+               }
+             }
+           ]
+         }
+}

@@ -1,0 +1,20 @@
+{
+    "menu": [
+        {
+           "menuTitle": "Text",
+            "submenu": [
+                {
+                    "navTitle": "Alternating Case",
+                    "navUrl": "/text/alternating-case/"            
+                }
+            ]
+        },
+        {
+
+        },
+        {
+            "navTitle": "Blogs",
+            "navUrl": "/blogs/"
+        }
+    ]
+}
