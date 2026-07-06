@@ -405,8 +405,8 @@ localFileUploadBtn.addEventListener("click", async () => {
         fileHandles.push(file);
     }
 
-    fileElm.remove(); // Optional: clean up the temporary input
     updateLocalFileView();
+    fileElm.remove(); // Optional: clean up the temporary input
 });
 
     console.error("User cancelled or browser doesn't support API", err);
@@ -803,20 +803,6 @@ createRoomBtn?.addEventListener("click", async () => {
     }
   });
 
-  // senderWRTC.on("speed", (payload) => {
-  //   const {fileId, bytesPerSecond} = payload;
-  //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-  //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-  //   filePrgElm.elms.progressSpeedElm.textContent = `${formatFileSize(bytesPerSecond, 0)}/s`;
-  // });
-
-  // senderWRTC.on("timeLeft", (payload) => {
-  //   const {time, fileId} = payload;
-  //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-  //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-  //   filePrgElm.elms.progressTimeElm.textContent = formatTimeLeft(time);
-  // });
-
   senderWRTC.on("fileUploadComplete", (payload) => {
     const {fileId} = payload;
     const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
@@ -1034,8 +1020,24 @@ roomJoinBtn?.addEventListener("click", async () => {
     downloadBtn.classList.add("disabled");
     fileProgressElms.map((fpe) => fpe.fileId)
     .filter(fi => selectedFileIdsForDwnld.get(fi))
-    .forEach(fi => {
-      recieverWRTC?.onFileDownload(fi);
+    .forEach(async (fi) => {
+      const fileHandleName = recieverWRTC?.onFileDownload(fi);
+          if (!fileHandleName) return;
+          const root = await navigator.storage.getDirectory();
+          const fileHandle = await root.getFileHandle(fileHandleName);
+          console.log(fileHandle);
+        const file = await fileHandle.getFile();
+        const url = URL.createObjectURL(file);
+        const downloadElm = document.createElement("a") as HTMLAnchorElement;
+        downloadElm.href = url;
+        downloadElm.download = file.name;
+        downloadElm.style.display = "none";
+
+        document.body.appendChild(downloadElm);
+        downloadElm.click();
+
+        document.body.removeChild(downloadElm);
+        URL.revokeObjectURL(url);
     });
     downloadBtn.classList.remove("disabled");
   });
