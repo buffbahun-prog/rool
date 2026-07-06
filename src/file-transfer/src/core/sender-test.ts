@@ -409,24 +409,8 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
         });
   }
 
-  async onFileDownload(fileId: number) {
-    const fileHandle = this.fileHandlesForDownload.get(fileId);
-    if (fileHandle) {
-        const file = await fileHandle.getFile();
-        const url = URL.createObjectURL(file);
-        const downloadElm = document.createElement("a") as HTMLAnchorElement;
-        downloadElm.href = url;
-        downloadElm.download = file.name;
-        downloadElm.style.display = "none";
-
-        document.body.appendChild(downloadElm);
-        downloadElm.click();
-
-        document.body.removeChild(downloadElm);
-        URL.revokeObjectURL(url);
-    } else {
-        this.emit("error", new Error(`Cant find file for fileId: ${fileId}`));
-    }
+  onFileDownload(fileId: number): FileSystemFileHandle | undefined {
+    return this.fileHandlesForDownload.get(fileId);
   }
 
   private async initWorkers() {

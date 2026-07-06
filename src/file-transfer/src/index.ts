@@ -901,7 +901,22 @@ roomJoinBtn?.addEventListener("click", async () => {
       fpe.elms.dwnldBtnElm.addEventListener("click", async () => {
         if (fpe.elms?.dwnldBtnElm) {
           fpe.elms.dwnldBtnElm.disabled = true;
-          await recieverWRTC?.onFileDownload(fpe.fileId);
+          const fileHandle = recieverWRTC?.onFileDownload(fpe.fileId);
+          console.log(fileHandle);
+          if (fileHandle) {
+        const file = await fileHandle.getFile();
+        const url = URL.createObjectURL(file);
+        const downloadElm = document.createElement("a") as HTMLAnchorElement;
+        downloadElm.href = url;
+        downloadElm.download = file.name;
+        downloadElm.style.display = "none";
+
+        document.body.appendChild(downloadElm);
+        downloadElm.click();
+
+        document.body.removeChild(downloadElm);
+        URL.revokeObjectURL(url);
+    }
           fpe.elms.dwnldBtnElm.disabled = false;
         }
       });
