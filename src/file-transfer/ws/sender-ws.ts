@@ -58,6 +58,15 @@ export class SenderWS extends TypedEmitter<WSEvents> {
         }, { once: true });
         ws.addEventListener("close", async (evt) => {
             this.roomConnectWS = await this.createWebSocket(`wss://rool.buffbahun.workers.dev/room/${this.roomCode}`);
+            this.roomConnectWS.onmessage = (msg: MessageEvent<string>) => {
+        const serverMsgStr = msg.data
+        if (!serverMsgStr) {
+            this.emit("error", new Error("Response from server is empty"));
+            return;
+        }
+        const serverMsg: WSMessageEvent = JSON.parse(serverMsgStr);
+        this.onMessageRecieved(serverMsg);
+      };
             if (this.offer) this.sendOffer(this.offer);
             this.candidates.forEach(cd => this.sendSenderCandidates(cd));
         })

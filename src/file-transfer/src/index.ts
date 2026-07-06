@@ -673,7 +673,7 @@ createRoomBtn?.addEventListener("click", async () => {
 
   senderWS.on("roomJoin", async () => {
     if (infoBarText) infoBarText.textContent = "Joined Room";
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // await new Promise(resolve => setTimeout(resolve, 2000));
     if (infoBarText) infoBarText.textContent = "Waiting Reciever Join Room";
   });
 
