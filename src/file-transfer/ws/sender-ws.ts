@@ -5,6 +5,9 @@ export class SenderWS extends TypedEmitter<WSEvents> {
   private roomConnectWS: WebSocket | null;
   private roomCode: string | null;
 
+  private offer: string | null = null;
+  private candidates: string[] = [];
+
   constructor() {
     super();
     this.roomConnectWS = null;
@@ -18,7 +21,6 @@ export class SenderWS extends TypedEmitter<WSEvents> {
       const data: {code: string} = await res.json();
 
       this.roomCode =  data.code;
-      await new Promise(resolve => setTimeout(resolve, 2000));
       this.emit("roomCreate", {code: data.code});
 
       if (this.roomConnectWS) return;
@@ -51,13 +53,13 @@ export class SenderWS extends TypedEmitter<WSEvents> {
     await new Promise<void>((resolve, reject) => {
         ws.addEventListener("open", () => resolve(), { once: true });
         ws.addEventListener("error", (evt) => {
-            alert("err:" + evt.type);
             ws.close();
             reject(new Error("Connection failed"))
         }, { once: true });
         ws.addEventListener("close", async (evt) => {
-            alert("here");
             this.roomConnectWS = await this.createWebSocket(`wss://rool.buffbahun.workers.dev/room/${this.roomCode}`);
+            if (this.offer) this.sendOffer(this.offer);
+            this.candidates.forEach(cd => this.sendSenderCandidates(cd));
         })
     });
 
@@ -120,10 +122,12 @@ export class SenderWS extends TypedEmitter<WSEvents> {
   }
 
   sendSenderCandidates(candidates: string) {
+    this.candidates.push(candidates);
     this.sendToServer(WSMessageType.senderCandidates, candidates);
   }
 
   sendOffer(offer: string) {
+    this.offer = offer;
     this.sendToServer(WSMessageType.Offer, offer);
   }
 }
