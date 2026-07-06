@@ -50,11 +50,13 @@ export class SenderWS extends TypedEmitter<WSEvents> {
 
     await new Promise<void>((resolve, reject) => {
         ws.addEventListener("open", () => resolve(), { once: true });
-        ws.addEventListener("error", () => {
+        ws.addEventListener("error", (evt) => {
+            alert("err:" + evt.type);
             ws.close();
             reject(new Error("Connection failed"))
         }, { once: true });
         ws.addEventListener("close", async (evt) => {
+            alert("here");
             this.roomConnectWS = await this.createWebSocket(`wss://rool.buffbahun.workers.dev/room/${this.roomCode}`);
         })
     });
