@@ -406,6 +406,7 @@ localFileUploadBtn.addEventListener("click", async () => {
     }
 
     fileElm.remove(); // Optional: clean up the temporary input
+    updateLocalFileView();
 });
 
     console.error("User cancelled or browser doesn't support API", err);
