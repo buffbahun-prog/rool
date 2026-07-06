@@ -123,6 +123,10 @@
     <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/alternating-case.png" />
     <meta name="twitter:image:alt" content="Alternating Case Converter tool by Rool" />
 
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+  <script>
+    new window.VConsole();
+  </script>
   </head>
   <body>
     <div id="errorPop">
@@ -641,6 +645,15 @@
             menuShow ? hamMenu.textContent = "X" : hamMenu.textContent = "Menu";
             menuShow ? navList.style.display = "block" : navList.style.display = "none";
         });
+
+        function log(msg) {
+      const container = document.getElementById('log');
+      const p = document.createElement('p');
+      p.textContent = msg;
+      container.appendChild(p);
+    }
+
+    window.log = log;
         // const arcPath = document.getElementById("prgArc");
         // const r = 80;
         // const cx = 100;
