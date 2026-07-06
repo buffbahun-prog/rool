@@ -596,6 +596,10 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
                     break;
 
             }
+
+            if (error) {
+                console.log("worker errors", error);
+            }
         });
 
         const localTransferKeyReq: WorkerRequest = {

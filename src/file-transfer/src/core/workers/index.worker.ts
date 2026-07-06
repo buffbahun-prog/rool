@@ -319,8 +319,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
                 status: "SUCCESS",
                 result: {fileId: fileWritable.metadata.fileId, file}
             }
-
-            console.log("worker" ,file);
+            
             self.postMessage(response);
 
         } catch (err: any) {
