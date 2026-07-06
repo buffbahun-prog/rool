@@ -319,14 +319,14 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
                 status: "SUCCESS",
                 result: {fileId: fileWritable.metadata.fileId, file}
             }
-            
+
             self.postMessage(response);
 
         } catch (err: any) {
             const response: WorkerResponse = {
                 action: action,
                 status: "ERROR",
-                error: err.message,
+                error: "get download error " + err.message,
             }
             console.error(err, "here");
             self.postMessage(response);
