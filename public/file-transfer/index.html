@@ -2,131 +2,194 @@
 <html lang="en">
   <head>
 
+    <title>Free Secure Peer-to-Peer File Transfer | End-to-End Encrypted | Rool</title>
+
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>
-      File Transfer | Rool
-    </title>
 
     <meta
       name="description"
-      content="Free online alternating case converter tool. Convert text to aLtErNaTiNg CaSe instantly and analyze text with word count, character count, line count, and sentence support with Unicode."
+      content="Transfer files securely between devices with end-to-end encryption. No uploads, no cloud storage, no login, and no installation required. Fast peer-to-peer file transfer for files of any size."
     />
 
     <meta
       name="keywords"
-      content="alternating case converter, alternating case, random case text, text case converter, weird text generator, word counter, character counter, line counter, text analyzer"
+      content="peer to peer file transfer, secure file transfer, encrypted file transfer, browser file transfer, transfer large files, send files online, WebRTC file transfer, direct file transfer, free file transfer, serverless file sharing, transfer files between devices, end-to-end encrypted file sharing"
     />
 
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <meta name="author" content="Buffbahun" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#1b1b1b" />
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="canonical" href="https://rool.buffbahun.workers.dev/file-transfer/" />
 
-    <link rel="canonical" href="https://rool.buffbahun.workers.dev/text/alternating-case/" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/favicon.svg" />
 
-    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Free Secure Peer-to-Peer File Transfer | Rool"
+    />
+    <meta
+      property="og:description"
+      content="Transfer files directly between devices using secure peer-to-peer technology. End-to-end encrypted, verifiable, cross-platform, free, and requires no account or installation."
+    />
+    <meta
+      property="og:url"
+      content="https://rool.buffbahun.workers.dev/file-transfer/"
+    />
+    <meta
+      property="og:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/file-transfer.png"
+    />
+    <meta property="og:site_name" content="Rool" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Free Secure Peer-to-Peer File Transfer | Rool"
+    />
+    <meta
+      name="twitter:description"
+      content="Send files directly between devices with end-to-end encryption. No uploads, no cloud storage, no login, and completely free."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rool.buffbahun.workers.dev/assets/og/file-transfer.png"
+    />
+
+    <!-- Application -->
+    <meta name="application-name" content="Rool" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Rool File Transfer"
+    />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- WebApplication Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Alternating Case Converter",
-      "url": "https://rool.buffbahun.workers.dev/text/alternating-case/",
-      "description": "Free online alternating case converter and text analyzer tool.",
-      "applicationCategory": "UtilityApplication",
+      "name": "Rool Secure Peer-to-Peer File Transfer",
+      "url": "https://rool.buffbahun.workers.dev/file-transfer/",
+      "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Rool",
-        "url": "https://rool.buffbahun.workers.dev/"
-      },
-      "mainEntity": {
-        "@type": "SoftwareApplication",
-        "name": "Alternating Case Converter"
-      },
+      "browserRequirements": "Requires JavaScript and a modern browser with WebRTC support.",
+      "description": "Transfer files securely between devices using peer-to-peer technology with end-to-end encryption. No uploads, no cloud storage, no login, and no installation required.",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-      }
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Buffbahun"
+      },
+      "featureList": [
+        "Peer-to-peer file transfer",
+        "End-to-end encryption",
+        "Cryptographic file verification",
+        "No cloud storage",
+        "No login required",
+        "Unlimited file size",
+        "Multiple file transfer",
+        "Pause and resume transfers",
+        "Cross-platform",
+        "Browser-based",
+        "Free to use"
+      ]
     }
     </script>
 
+    <!-- FAQ Schema -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is alternating case?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Alternating case is a text format where letters switch between lowercase and uppercase in sequence."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does this tool support Unicode text?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, it supports Unicode, emojis, and multilingual input."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this tool free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, this alternating case converter is completely free to use."
-            }
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Are my files uploaded to your servers?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"No. Files are transferred directly between the sender and receiver using a secure peer-to-peer connection. Our server is only used to establish the connection and never stores your files."
           }
-        ]
-      }
+        },
+        {
+          "@type":"Question",
+          "name":"Is the file transfer encrypted?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. Every file is encrypted before transmission using end-to-end encryption. Only the intended recipient can decrypt the transferred data."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Can I transfer large files?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. Files are transferred in chunks, allowing efficient transfer of very large files. There are no artificial file size limits."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Can I pause and resume transfers?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. Large transfers can be paused and resumed without starting over."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Do I need to create an account?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"No. No registration, login, or email address is required."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Does it work on mobile devices?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. It works across modern desktop and mobile browsers that support WebRTC."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"How are transferred files verified?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Every transferred file is cryptographically verified after the transfer completes to ensure its integrity."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Is this service free?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. The service is completely free with no subscriptions or hidden fees."
+          }
+        }
+      ]
+    }
     </script>
 
-    <meta property="og:site_name" content="Rool" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Alternating Case Converter | Rool" />
-
-    <meta
-      property="og:description"
-      content="Convert text to aLtErNaTiNg CaSe instantly with Unicode-aware formatting and text analysis."
-    />
-
-    <meta property="og:type" content="website" />
-
-    <meta property="og:url" content="https://rool.buffbahun.workers.dev/text/alternating-case/" />
-
-    <meta property="og:site_name" content="Rool" />
-
-    <meta property="og:image" content="https://rool.buffbahun.workers.dev/assets/og/alternating-case.png" />
-
-    <meta property="og:image:width" content="1200" />
-
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <meta name="twitter:title" content="Alternating Case Converter | Rool" />
-
-    <meta
-      name="twitter:description"
-      content="Convert text to aLtErNaTiNg CaSe instantly with Unicode-aware formatting and analysis."
-    />
-
-    <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/alternating-case.png" />
-    <meta name="twitter:image:alt" content="Alternating Case Converter tool by Rool" />
-
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <!-- <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
   <script>
     new window.VConsole();
-  </script>
+  </script> -->
   </head>
   <body>
     <div id="errorPop">
@@ -284,6 +347,9 @@
             </ul>
           </li>
           <li>
+            <a class="navMenuItems" href="/file-transfer/">File Transfer</a>
+          </li>
+<li>
             <a class="navMenuItems" href="/blogs/">Blogs</a>
           </li>
         </ul>
@@ -450,11 +516,11 @@
         <p class="node-info">Enter the 5-digit connection code provided by the sender to securely link your devices.</p>
         <div class="roomCodeCard">
           <div class="pin-container">
-  <input name="pin" class="pin" maxlength="1" type="text" />
-  <input name="pin" class="pin" maxlength="1" type="text" />
-  <input name="pin" class="pin" maxlength="1" type="text" />
-  <input name="pin" class="pin" maxlength="1" type="text" />
-  <input name="pin" class="pin" maxlength="1" type="text" />
+  <input id="pin0" name="pin" class="pin" maxlength="1" type="text" />
+  <input id="pin1" name="pin" class="pin" maxlength="1" type="text" />
+  <input id="pin2" name="pin" class="pin" maxlength="1" type="text" />
+  <input id="pin3" name="pin" class="pin" maxlength="1" type="text" />
+  <input id="pin4" name="pin" class="pin" maxlength="1" type="text" />
 </div>
        <button id="roomJoinBtn">Connect and Receive</button>
         </div>

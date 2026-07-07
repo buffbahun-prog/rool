@@ -94,6 +94,12 @@
 
   <url>
     <loc>
+      https://rool.buffbahun.workers.dev/file-transfer/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
       https://rool.buffbahun.workers.dev/blogs/
     </loc>
   </url>
