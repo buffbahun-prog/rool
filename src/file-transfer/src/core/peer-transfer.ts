@@ -121,8 +121,13 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
             console.log("iceConnectionState:", this.pc.iceConnectionState);
         });
 
-        this.pc.addEventListener("icegatheringstatechange", () => {
+        this.pc.addEventListener("icegatheringstatechange", async () => {
             console.log("iceGatheringState:", this.pc.iceGatheringState);
+            if (this.peerType === PeerType.Sender && this.pc.iceConnectionState === "completed") {
+                const offer = await this.pc.createOffer();
+                await this.pc.setLocalDescription(offer);
+                this.emit("offer", { value: JSON.stringify(this.pc.localDescription) });
+            }
         });
 
         this.pc.addEventListener("icecandidateerror", (e) => {
@@ -130,11 +135,6 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
         });
 
         if (this.peerType === PeerType.Sender) {
-            const offer = await this.pc.createOffer();
-            await this.pc.setLocalDescription(offer);
-
-            this.emit("offer", { value: JSON.stringify(this.pc.localDescription) });
-
             this.dataChannelEvents();
         } else {
             this.pc.ondatachannel = (event) => {
@@ -151,6 +151,14 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
     } catch (err) {
         this.emit("error", err as Error);
     }
+  }
+
+  getConnectionState() {
+    return this.pc.connectionState;
+  }
+
+  async reconnect() {
+
   }
 
   private dataChannelEvents() {
