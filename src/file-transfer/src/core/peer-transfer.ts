@@ -602,6 +602,14 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
             }
         });
 
+        worker.addEventListener("error", (evt) => {
+            console.error("worker error", evt.error);
+        });
+
+        worker.addEventListener("messageerror", (evt) => {
+            console.error("worker message error", evt);
+        });
+
         const localTransferKeyReq: WorkerRequest = {
             action: WorkerAction.GetLocalTransferKey,
             payload: {

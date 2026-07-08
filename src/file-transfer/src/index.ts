@@ -16,7 +16,7 @@ import { FileMetadata, PeerType, TransferState, ViewPage} from "./types";
 import { TypedEmitter } from "./core/emmiter";
 import { SenderWS } from "../ws/sender-ws";
 import { RecieverWS } from "../ws/reciever-ws";
-import { PeerTransfer } from "./core/sender-test";
+import { PeerTransfer } from "./core/peer-transfer";
 import { createSignature, generateSigningKeyPair, verifySignature } from "./crypto/encrypt-decrypt";
 import { SHA256 } from "./utils/hasher";
 // import { RecieverTest } from "./core/reciever-test";

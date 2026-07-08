@@ -2,7 +2,7 @@ import { decryptData, encryptData } from "../../crypto/encrypt-decrypt";
 import { FileMetadata, WorkerAction, WorkerRequest, WorkerResponse, type ChunkPayload, type SenderFileRecord } from "../../types";
 import { createChunkBitmap, getMissingChunks, isBitmapComplete, isChunkReceived, setChunkReceived } from "../../utils/convert";
 import { SHA256 } from "../../utils/hasher";
-import { encodeChunksBitmap } from "../sender-test";
+import { encodeChunksBitmap } from "../peer-transfer";
 import { decodeChunkPayload, encodeChunkPayload} from "../transfer";
 
 let localTransferKey: CryptoKey | null = null;
