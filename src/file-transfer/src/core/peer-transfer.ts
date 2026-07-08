@@ -161,7 +161,6 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
     };
 
     this.dataChannel.onmessage = (event) => {
-        console.log("here first message", event.data);
         if (!(event.data instanceof ArrayBuffer)) return;
         const payload = new Uint8Array(event.data);
         this.onRecieveData(payload);
@@ -218,6 +217,12 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
     await this.pc.setRemoteDescription(
         JSON.parse(answerJson)
     );
+
+    for (const candidate of this.pendingCandidates) {
+        await this.pc.addIceCandidate(candidate);
+    }
+
+    this.pendingCandidates = [];
   }
 
   onTransferPause() {
