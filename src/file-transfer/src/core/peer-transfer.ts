@@ -113,19 +113,21 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
             }
         };
 
-        this.pc.onconnectionstatechange = (evt) => {
-            if (this.pc.connectionState === "connecting") {
-                console.log("perrs are connecting....");
-            } else if (this.pc.connectionState === "connected") {
-                console.log("peers connected.");
-            } else if (this.pc.connectionState === "disconnected") {
-                console.log("peers disconnected.");
-            } else if (this.pc.connectionState === "failed") {
-                console.log("peers connection failed.", evt);
-            } else if (this.pc.connectionState === "closed") {
-                console.log("peers connection closed.")
-            }
-        };
+        this.pc.addEventListener("connectionstatechange", () => {
+            console.log("connectionState:", this.pc.connectionState);
+        });
+
+        this.pc.addEventListener("iceconnectionstatechange", () => {
+            console.log("iceConnectionState:", this.pc.iceConnectionState);
+        });
+
+        this.pc.addEventListener("icegatheringstatechange", () => {
+            console.log("iceGatheringState:", this.pc.iceGatheringState);
+        });
+
+        this.pc.addEventListener("icecandidateerror", (e) => {
+            console.log("ICE candidate error:", e);
+        });
 
         if (this.peerType === PeerType.Sender) {
             const offer = await this.pc.createOffer();
