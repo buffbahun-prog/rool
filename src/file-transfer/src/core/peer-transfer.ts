@@ -113,7 +113,7 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
             }
         };
 
-        this.pc.onconnectionstatechange = () => {
+        this.pc.onconnectionstatechange = (evt) => {
             if (this.pc.connectionState === "connecting") {
                 console.log("perrs are connecting....");
             } else if (this.pc.connectionState === "connected") {
@@ -121,7 +121,7 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
             } else if (this.pc.connectionState === "disconnected") {
                 console.log("peers disconnected.");
             } else if (this.pc.connectionState === "failed") {
-                console.log("peers connection failed.");
+                console.log("peers connection failed.", evt);
             } else if (this.pc.connectionState === "closed") {
                 console.log("peers connection closed.")
             }
