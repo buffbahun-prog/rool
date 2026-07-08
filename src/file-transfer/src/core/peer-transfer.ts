@@ -184,6 +184,8 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
         ? candidates
         : [candidates];
 
+    console.log("candidates", list);
+
     for (const c of list) {
         const candidateObj = JSON.parse(c);
     
@@ -228,6 +230,12 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
     await this.pc.setRemoteDescription(
         JSON.parse(answerJson)
     );
+
+    for (const candidate of this.pendingCandidates) {
+        await this.pc.addIceCandidate(candidate);
+    }
+
+    this.pendingCandidates = [];
   }
 
   onTransferPause() {
