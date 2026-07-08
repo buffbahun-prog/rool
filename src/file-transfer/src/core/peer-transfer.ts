@@ -214,15 +214,10 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
   }
 
   async setAnswer(answerJson: string) {
+    console.log(answerJson, "answer");
     await this.pc.setRemoteDescription(
         JSON.parse(answerJson)
     );
-
-    for (const candidate of this.pendingCandidates) {
-        await this.pc.addIceCandidate(candidate);
-    }
-
-    this.pendingCandidates = [];
   }
 
   onTransferPause() {
