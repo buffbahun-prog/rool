@@ -699,6 +699,10 @@ createRoomBtn?.addEventListener("click", async () => {
     if (infoBarText) infoBarText.textContent = "Exchanging Peer Informations";
   });
 
+  senderWS.on("recieverCandidates", (payload) => {
+    senderWRTC?.addRemoteCandidate(payload.value);
+  })
+
   senderWRTC.on("offer", (payload) => {
     const offerJson = payload.value;
     if (!senderWS || !offerJson) return;
