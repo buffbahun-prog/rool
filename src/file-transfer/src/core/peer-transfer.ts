@@ -210,11 +210,12 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
   private async createAnswer() {
     const answer = await this.pc.createAnswer();
     await this.pc.setLocalDescription(answer);
+    console.log("create answer");
     this.emit("answer", { value: JSON.stringify(this.pc.localDescription) });
   }
 
   async setAnswer(answerJson: string) {
-    console.log(answerJson, "answer");
+    console.log(answerJson, "set answer");
     await this.pc.setRemoteDescription(
         JSON.parse(answerJson)
     );
