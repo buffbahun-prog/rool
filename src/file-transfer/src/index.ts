@@ -700,6 +700,7 @@ createRoomBtn?.addEventListener("click", async () => {
   });
 
   senderWS.on("recieverCandidates", (payload) => {
+    console.log("reciever candidates", payload);
     senderWRTC?.addRemoteCandidate(payload.value);
   })
 
