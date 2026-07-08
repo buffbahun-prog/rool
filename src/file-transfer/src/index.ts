@@ -682,8 +682,6 @@ createRoomBtn?.addEventListener("click", async () => {
       return;
     }
     
-    //const createRoomCodeCont = document.getElementById("createRoomCodeCont");
-    // createRoomCodeCont?.classList.remove("hidden");
     if (createdRoomCodeText) createdRoomCodeText.textContent = code;
   });
 
@@ -693,7 +691,6 @@ createRoomBtn?.addEventListener("click", async () => {
 
   senderWS.on("roomJoin", async () => {
     if (infoBarText) infoBarText.textContent = "Joined Room";
-    // await new Promise(resolve => setTimeout(resolve, 2000));
     if (infoBarText) infoBarText.textContent = "Waiting Reciever Join Room";
   });
 
@@ -845,7 +842,7 @@ roomJoinBtn?.addEventListener("click", async () => {
     console.log("offer", payload.value);
     recieverWRTC?.setOffer(payload.value);
     // recieverWS?.sendAnswer("This is answer");
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // await new Promise(resolve => setTimeout(resolve, 2000));
     if (infoBarTextR) infoBarTextR.textContent = "Exchanging Peer Infomations";
   });
 
@@ -1000,20 +997,6 @@ roomJoinBtn?.addEventListener("click", async () => {
       filePrgElm.elms.pauseBtnElm.classList.toggle("paused", paused);
     }
   });
-
-  // recieverWRTC.on("speed", (payload) => {
-  //   const {fileId, bytesPerSecond} = payload;
-  //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-  //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-  //   filePrgElm.elms.progressSpeedElm.textContent = `${formatFileSize(bytesPerSecond, 0)}/s`;
-  // });
-
-  // recieverWRTC.on("timeLeft", (payload) => {
-  //   const {time, fileId} = payload;
-  //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-  //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-  //   filePrgElm.elms.progressTimeElm.textContent = formatTimeLeft(time);
-  // });
 
   downloadBtn.addEventListener("click", () => {
     if (downloadBtn.classList.contains("disabled")) return;
