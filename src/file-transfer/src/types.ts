@@ -151,6 +151,10 @@ export interface TransferEvents {
 
   fileState: FileTransferState;
 
+  gatheringComplete: {
+    complete: boolean;
+  };
+
   offer: {
     value: string;
   };

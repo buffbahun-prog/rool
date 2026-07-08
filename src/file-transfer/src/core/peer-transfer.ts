@@ -123,6 +123,9 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
 
         this.pc.addEventListener("icegatheringstatechange", () => {
             console.log("iceGatheringState:", this.pc.iceGatheringState);
+            if (this.peerType === PeerType.Sender && this.pc.iceGatheringState === "complete") {
+                this.emit("gatheringComplete", {complete: true});
+            }
         });
 
         this.pc.addEventListener("icecandidateerror", (e) => {

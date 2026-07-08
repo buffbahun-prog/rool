@@ -702,6 +702,12 @@ createRoomBtn?.addEventListener("click", async () => {
   senderWS.on("recieverCandidates", (payload) => {
     console.log("reciever candidates", payload);
     senderWRTC?.addRemoteCandidate(payload.value);
+  });
+
+  senderWRTC.on("gatheringComplete", (payload) => {
+    if (!payload.complete) return;
+    const createRoomCodeCont = document.getElementById("createRoomCodeCont");
+    createRoomCodeCont?.classList.remove("hidden");
   })
 
   senderWRTC.on("offer", (payload) => {
@@ -815,10 +821,7 @@ createRoomBtn?.addEventListener("click", async () => {
   });
 
   await senderWS.init();
-  await senderWRTC.initWRTC();  
-
-  const createRoomCodeCont = document.getElementById("createRoomCodeCont");
-  createRoomCodeCont?.classList.remove("hidden");
+  await senderWRTC.initWRTC();
 });
 
 roomJoinBtn?.addEventListener("click", async () => {
