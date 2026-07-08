@@ -25,8 +25,8 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
     prevState: FileTransferState;
   }> = new Map();
 
-  private static readonly MAX_BUFFER = 1024 * 1024;
-  private static readonly MIN_BUFFER = 512 * 1024;
+  private static readonly MAX_BUFFER = 512 * 1024;
+  private static readonly MIN_BUFFER = 256 * 1024;
 
   private static readonly CHUNK_SIZE = 64 * 1024;
 
