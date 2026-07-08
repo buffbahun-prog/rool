@@ -161,6 +161,7 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
     };
 
     this.dataChannel.onmessage = (event) => {
+        console.log("here first message", event.data);
         if (!(event.data instanceof ArrayBuffer)) return;
         const payload = new Uint8Array(event.data);
         this.onRecieveData(payload);
