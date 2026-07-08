@@ -194,6 +194,7 @@ export class PeerTransfer extends TypedEmitter<TransferEvents> {
   }
 
   async setOffer(offerJson: string) {
+    console.log("offer set", offerJson)
     await this.pc.setRemoteDescription(
         JSON.parse(offerJson)
     );
