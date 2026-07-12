@@ -41,8 +41,8 @@
         "@type": "Person",
         "name": "Buffbahun"
       },
-      "datePublished": "Mon Jun 01 2026 05:45:00 GMT+0545 (Nepal Time)",
-      "dateModified": "Mon Jun 01 2026 05:45:00 GMT+0545 (Nepal Time)",
+      "datePublished": "Sat Jul 11 2026 05:45:00 GMT+0545 (Nepal Time)",
+      "dateModified": "Sat Jul 11 2026 05:45:00 GMT+0545 (Nepal Time)",
       "mainEntityOfPage": "https://rool.buffbahun.workers.dev/blogs/BMOOSD_0/"
     }
   </script>
@@ -61,8 +61,8 @@
   <meta name="twitter:image" content="https://rool.buffbahun.workers.dev/assets/og/blog-og.png" />
 
   <!-- Article metadata -->
-  <meta property="article:published_time" content="Mon Jun 01 2026 05:45:00 GMT+0545 (Nepal Time)" />
-  <meta property="article:modified_time" content="Mon Jun 01 2026 05:45:00 GMT+0545 (Nepal Time)" />
+  <meta property="article:published_time" content="Sat Jul 11 2026 05:45:00 GMT+0545 (Nepal Time)" />
+  <meta property="article:modified_time" content="Sat Jul 11 2026 05:45:00 GMT+0545 (Nepal Time)" />
   <meta property="article:author" content="Buffbahun" />
 
   <link
@@ -178,19 +178,35 @@
   <main class="blogMain">
     <h1>Building My Own Operating System</h1>
 <h2>Day 0</h2>
-<p>Started building my own operating system in Rust, day 0. I am starting my journey first by getting deep and intuitive knowledge in system design and filling my gaps in architecture and Unix systems along the way. I have started studying the system design of the System V kernel. Pretty old, I know, but the core philosophy and its simplicity will be very helpful for better understanding and getting an intuition of this world. For this specific purpose, I have started a deep dive into &quot;The Design of the Unix Operating System&quot; by Bach. I am in my initial stage, but already this book's vibe is greatly matching with my learning style. It has no nonsense bullshit side-quest kind of thing and tries to go deep on the main topic. A lot of data structures, logical graphs, and algorithms. C'mon, I love algorithms. Today, with my study, I got some surface knowledge on the two most important modules of the Unix system: the file system module and the process management module.</p>
-<p>The file system module helps create an illusion for the user that the disk/primary storage is a hierarchical and managed bookkeeping of all the data in files and directories. For this illusion to be constructed, the file system heavily relies on the following data structures: User File Descriptor Table, File Table, and Inode Table. Let's first inspect the Inode Table. The Unix kernel identifies a file/directory using an inode number and its underlying structure. Inode, short for Index Node, is an index/pointer to the list of actual raw data on the disk along with other info like how large the file is and where to find other indexes/pointers for the blocks in the storage that constitute the file.</p>
-<p>Let's now look at the User File Descriptor Table. It's a data structure that contains entries/indexes for all the open files in a specific process. When we call the open and creat system calls, the kernel returns file descriptors for these system calls that are indexed in the User File Descriptor Table. Now, when calling the read and write system calls from that process, the kernel uses these file descriptors to access the index in the User File Descriptor Table, which gives a pointer to the File Table and which ultimately gives the inode from the Inode Table of the file that we intended to use in the process.</p>
-<p>Now let's look at the File Table. It's basically a global kernel data structure that helps in sharing access to a file between processes. We will surely explore more on this and other data structures of the file system in the later series when we deep dive into the file system module.</p>
-<p>The file system data structures, especially the inode list, need to be stored somewhere in the primary storage. So let's look at how these logical structures are mapped onto the actual disk. From the point of view of the kernel, a system may have one or multiple physical disks, but on the logical side, multiple disks can be treated as one logical disk or, in another case, one disk can be divided into multiple logical disks as the administrator/user intends.</p>
-<p>A physical disk with a file system has a layout as follows:</p>
-<pre class="shiki github-dark" style="background-color:#24292e;color:#e1e4e8" tabindex="0"><code><span class="line"><span>   |------------|-------------|---=======--|---=======--|</span></span>
-<span class="line"><span>   | boot block | super block | inode list | data block |</span></span>
-<span class="line"><span>   |------------|-------------|---=======--|---=======--|</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>The boot block contains code/data that is necessary to bootstrap the system when we power on the system. At least one of the file systems on the system contains the actual code; others may have dummy data or be empty with the required space allocated. It usually is present at the beginning of the disk. The super block contains information about the file system, such as how large the file system is, how many files it is capable of storing, where to find free spaces on the disk's file system, etc. The super block is followed by the inode list table, which has entries of the inode data structure that contains pointers to the actual data blocks for the specific file the inode is referring to. It also contains the owner/group information and the permissions of the file and other stuff that we will look at in detail when we deep dive into this topic. The inode list is followed by the data block section, which is the actual raw data of a specific file. The data block section is logically divided into predefined chunks of bytes so that access to data in a file and accessing a file is homogeneous, e.g., 512 bytes, 1 KB.</p>
-<p>Uff, we have covered a lot for today. Though it's a surface-level introduction to the modules and their submodules, it will help us navigate further and understand better when we have a closer look at these topics. So have a nice day. Hope you find this information useful. One thing I will emphasize is that I am not an expert in any of these fields. I am learning from scratch, and there will be many mistakes, I admit. So I am taking this as documentation of my learning journey. Thank you.</p>
-<p><a href="/blogs/BMOOSD_1_2/">Next Article</a></p>
+<p>This is a series of mine documenting my time building an actual, usable operating system. Sounds crazy, right? Yes. At first, I was feeling overwhelmed and didn't know how to start or even where to start from. In my head, it actually feels impossible right now that one day I will build an actual OS from scratch. But we have to at least take the first step towards the goal.</p>
+<p>I don't remember where I heard it, but the saying goes, &quot;If a goal scares you even thinking about it, that's the thing you should be doing.&quot; I think I heard it from a random reel. 😆</p>
+<p>Okay, enough of that. Let me tell you about my initial plans, which I have already started.</p>
+<p>I have started reading a book titled &quot;The Design of the UNIX Operating System&quot; by Maurice J. Bach. It's a very old book, probably published during the early days of UNIX. But there are a few things that stand out for my use case.</p>
+<p>First of all, because it is old and describes the internals of UNIX System V, which was one of the early versions of UNIX, the overall system is much simpler. That makes it easier for me to get started and understand the concepts over time.</p>
+<p>The other thing I like about this book is that it contains many diagrams, algorithm explanations in pseudocode, and detailed descriptions. I really like this style of teaching. I also like the author's way of doing a deep dive into each topic. It is very helpful for me since I am ultimately trying to build an OS, even if it's just a toy one.</p>
+<p>Today I finished reading the preface and the first chapter.</p>
+<p>Already, I have learned some new things. I had no idea about the execution levels at the hardware level. There are at least two execution levels: user mode and kernel mode.</p>
+<p>When a user program is running, it executes in user mode. When the program encounters or makes a system call, the execution switches to kernel mode. Now the kernel can execute the requested operation, whether it's disk I/O, a network request, or something else. After completing the request, execution switches back to user mode.</p>
+<p>Not only do system calls switch execution from user mode to kernel mode, but interrupts and exceptions do as well, such as clock interrupts, disk interrupts, and software interrupts.</p>
+<p>The other fascinating thing that I learned today, which I found very important, is the philosophy behind building the UNIX system.</p>
+<p>The idea is to build small, primitive programs that do only one job, but do it really well, and then encourage building more complex programs by combining these primitives together.</p>
+<p>It is something I have encountered while using Linux and programming over all these years, but I had never really thought about it from this perspective. This is one of the reasons C is still in use and UNIX/Linux are so widely used and loved by people.</p>
+<p>Following this philosophy, the UNIX kernel only contains the functionality that is absolutely required by the system. Everything else is the responsibility of user space, where applications are built using the primitives and services provided by the kernel.</p>
+<p>This allows people to modify existing programs or build their own versions according to their needs. For example, the shell exists entirely in user space, allowing anyone to create or modify their own shell implementation.</p>
+<p>This chapter also lightly introduced the file system module of the kernel.</p>
+<p>It is a hierarchical file system with its origin at the root, denoted by the '/' character. To locate a file, we traverse from the root to that specific file in the directory tree. This sequence is called the path of the file.</p>
+<p>Another fascinating concept is the UNIX philosophy that everything is treated as a file, including devices, peripherals, and terminal devices.</p>
+<p>This abstraction allows user-space programs to interact with hardware without knowing anything about the underlying drivers or hardware implementation. Programs can access devices almost the same way they access regular files in the file system.</p>
+<p>Now we have a basic understanding that the kernel does most of the heavy lifting. It creates and manages the file system, manages processes, manages main memory, and protects the file system and files using various mechanisms that we will explore throughout this series.</p>
+<p>In simple terms, the UNIX kernel provides a simple and consistent execution environment for our programs. It allows multiple programs to coexist on the system while also providing an intuitive and consistent way to manage our data through the file system.</p>
+<p>Starting with the core philosophy and a general overview of the UNIX system is enough for today because I have already learned many new things.</p>
+<p>I will continue this series by documenting my journey every day as I learn, understand, and implement my own operating system from scratch. Slowly and gradually, we will move towards that goal—at least, that's the plan.</p>
+<p>One more thing: I am in no way an expert in this field. I am simply a curious individual trying to learn as much as possible, and this is my first time documenting anything. I think you can probably tell that from my writing too. But I hope to improve with consistency and effort.</p>
+<p>If you have any feedback that could help me improve, please send me an email. I am always open to positive and constructive feedback.</p>
+<p>Okay, see you next time.</p>
+<p>Have a good one.</p>
+<p>Cheers.</p>
+<p><a href="/blogs/BMOOSD_1/">Next Article</a></p>
 
   </main>
 

@@ -3,20 +3,23 @@ import { WSMessageType } from "../src/types.js";
 export class SenderWS extends TypedEmitter {
     constructor() {
         super();
+        this.offer = null;
+        this.candidates = [];
         this.roomConnectWS = null;
         this.roomCode = null;
     }
     async init() {
         try {
-            const res = await fetch("http://localhost:8787/api/create");
+            const res = await fetch("https://rool.buffbahun.workers.dev/api/create");
+            //   const res = await fetch("http://localhost:8787/api/create");
             const data = await res.json();
             this.roomCode = data.code;
-            await new Promise(resolve => setTimeout(resolve, 2000));
             this.emit("roomCreate", { code: data.code });
             if (this.roomConnectWS)
                 return;
             this.emit("roomJoining", null);
-            this.roomConnectWS = await this.createWebSocket(`ws://localhost:8787/room/${this.roomCode}`);
+            this.roomConnectWS = await this.createWebSocket(`wss://rool.buffbahun.workers.dev/room/${this.roomCode}`);
+            //   this.roomConnectWS = await this.createWebSocket(`ws://localhost:8787/room/${this.roomCode}`);
             this.emit("roomJoin", { code: data.code });
             this.roomConnectWS.onmessage = (msg) => {
                 const serverMsgStr = msg.data;
@@ -37,7 +40,25 @@ export class SenderWS extends TypedEmitter {
         const ws = new WebSocket(url);
         await new Promise((resolve, reject) => {
             ws.addEventListener("open", () => resolve(), { once: true });
-            ws.addEventListener("error", () => reject(new Error("Connection failed")), { once: true });
+            ws.addEventListener("error", (evt) => {
+                ws.close();
+                reject(new Error("Connection failed"));
+            }, { once: true });
+            ws.addEventListener("close", async (evt) => {
+                this.roomConnectWS = await this.createWebSocket(`wss://rool.buffbahun.workers.dev/room/${this.roomCode}`);
+                this.roomConnectWS.onmessage = (msg) => {
+                    const serverMsgStr = msg.data;
+                    if (!serverMsgStr) {
+                        this.emit("error", new Error("Response from server is empty"));
+                        return;
+                    }
+                    const serverMsg = JSON.parse(serverMsgStr);
+                    this.onMessageRecieved(serverMsg);
+                };
+                if (this.offer)
+                    this.sendOffer(this.offer);
+                this.candidates.forEach(cd => this.sendSenderCandidates(cd));
+            });
         });
         return ws;
     }
@@ -100,9 +121,11 @@ export class SenderWS extends TypedEmitter {
         }
     }
     sendSenderCandidates(candidates) {
+        this.candidates.push(candidates);
         this.sendToServer(WSMessageType.senderCandidates, candidates);
     }
     sendOffer(offer) {
+        this.offer = offer;
         this.sendToServer(WSMessageType.Offer, offer);
     }
 }

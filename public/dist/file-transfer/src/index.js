@@ -6,7 +6,7 @@ import { formatFileSize, formatTimeLeft, getFileCategory, } from "./utils/conver
 import { PeerType, ViewPage } from "./types.js";
 import { SenderWS } from "../ws/sender-ws.js";
 import { RecieverWS } from "../ws/reciever-ws.js";
-import { PeerTransfer } from "./core/sender-test.js";
+import { PeerTransfer } from "./core/peer-transfer.js";
 // const worker = new Worker(
 //   new URL("./core/workers/index.worker.ts", import.meta.url),
 //   {  type: "module"}
@@ -300,6 +300,22 @@ localFileUploadBtn.addEventListener("click", async () => {
         updateLocalFileView();
     }
     catch (err) {
+        const fileElm = document.createElement("input");
+        fileElm.hidden = true;
+        fileElm.type = "file";
+        fileElm.multiple = true;
+        document.body.appendChild(fileElm);
+        fileElm.click();
+        fileElm.addEventListener("change", (evt) => {
+            const input = evt.target;
+            if (!input.files)
+                return;
+            for (const file of input.files) {
+                fileHandles.push(file);
+            }
+            updateLocalFileView();
+            fileElm.remove(); // Optional: clean up the temporary input
+        });
         console.error("User cancelled or browser doesn't support API", err);
     }
 });
@@ -536,8 +552,6 @@ createRoomBtn?.addEventListener("click", async () => {
             createRoomBtn.removeAttribute("disabled");
             return;
         }
-        //const createRoomCodeCont = document.getElementById("createRoomCodeCont");
-        // createRoomCodeCont?.classList.remove("hidden");
         if (createdRoomCodeText)
             createdRoomCodeText.textContent = code;
     });
@@ -548,7 +562,6 @@ createRoomBtn?.addEventListener("click", async () => {
     senderWS.on("roomJoin", async () => {
         if (infoBarText)
             infoBarText.textContent = "Joined Room";
-        await new Promise(resolve => setTimeout(resolve, 2000));
         if (infoBarText)
             infoBarText.textContent = "Waiting Reciever Join Room";
     });
@@ -556,6 +569,10 @@ createRoomBtn?.addEventListener("click", async () => {
         senderWRTC?.setAnswer(payload.value);
         if (infoBarText)
             infoBarText.textContent = "Exchanging Peer Informations";
+    });
+    senderWS.on("recieverCandidates", (payload) => {
+        console.log("reciever candidates", payload);
+        senderWRTC?.addRemoteCandidate(payload.value);
     });
     senderWRTC.on("offer", (payload) => {
         const offerJson = payload.value;
@@ -646,18 +663,6 @@ createRoomBtn?.addEventListener("click", async () => {
             filePrgElm.elms.pauseBtnElm.classList.toggle("paused", paused);
         }
     });
-    // senderWRTC.on("speed", (payload) => {
-    //   const {fileId, bytesPerSecond} = payload;
-    //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-    //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-    //   filePrgElm.elms.progressSpeedElm.textContent = `${formatFileSize(bytesPerSecond, 0)}/s`;
-    // });
-    // senderWRTC.on("timeLeft", (payload) => {
-    //   const {time, fileId} = payload;
-    //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-    //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-    //   filePrgElm.elms.progressTimeElm.textContent = formatTimeLeft(time);
-    // });
     senderWRTC.on("fileUploadComplete", (payload) => {
         const { fileId } = payload;
         const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
@@ -700,7 +705,7 @@ roomJoinBtn?.addEventListener("click", async () => {
         console.log("offer", payload.value);
         recieverWRTC?.setOffer(payload.value);
         // recieverWS?.sendAnswer("This is answer");
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
         if (infoBarTextR)
             infoBarTextR.textContent = "Exchanging Peer Infomations";
     });
@@ -750,7 +755,22 @@ roomJoinBtn?.addEventListener("click", async () => {
             fpe.elms.dwnldBtnElm.addEventListener("click", async () => {
                 if (fpe.elms?.dwnldBtnElm) {
                     fpe.elms.dwnldBtnElm.disabled = true;
-                    await recieverWRTC?.onFileDownload(fpe.fileId);
+                    const fileHandleName = recieverWRTC?.onFileDownload(fpe.fileId);
+                    if (!fileHandleName)
+                        return;
+                    const root = await navigator.storage.getDirectory();
+                    const fileHandle = await root.getFileHandle(fileHandleName);
+                    console.log(fileHandle);
+                    const file = await fileHandle.getFile();
+                    const url = URL.createObjectURL(file);
+                    const downloadElm = document.createElement("a");
+                    downloadElm.href = url;
+                    downloadElm.download = file.name;
+                    downloadElm.style.display = "none";
+                    document.body.appendChild(downloadElm);
+                    downloadElm.click();
+                    document.body.removeChild(downloadElm);
+                    URL.revokeObjectURL(url);
                     fpe.elms.dwnldBtnElm.disabled = false;
                 }
             });
@@ -822,26 +842,29 @@ roomJoinBtn?.addEventListener("click", async () => {
             filePrgElm.elms.pauseBtnElm.classList.toggle("paused", paused);
         }
     });
-    // recieverWRTC.on("speed", (payload) => {
-    //   const {fileId, bytesPerSecond} = payload;
-    //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-    //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-    //   filePrgElm.elms.progressSpeedElm.textContent = `${formatFileSize(bytesPerSecond, 0)}/s`;
-    // });
-    // recieverWRTC.on("timeLeft", (payload) => {
-    //   const {time, fileId} = payload;
-    //   const filePrgElm = fileProgressElms.find(fpe => fpe.fileId === fileId);
-    //   if (!filePrgElm?.elms) throw new Error("No file with fileId: " + fileId + " found");
-    //   filePrgElm.elms.progressTimeElm.textContent = formatTimeLeft(time);
-    // });
     downloadBtn.addEventListener("click", () => {
         if (downloadBtn.classList.contains("disabled"))
             return;
         downloadBtn.classList.add("disabled");
         fileProgressElms.map((fpe) => fpe.fileId)
             .filter(fi => selectedFileIdsForDwnld.get(fi))
-            .forEach(fi => {
-            recieverWRTC?.onFileDownload(fi);
+            .forEach(async (fi) => {
+            const fileHandleName = recieverWRTC?.onFileDownload(fi);
+            if (!fileHandleName)
+                return;
+            const root = await navigator.storage.getDirectory();
+            const fileHandle = await root.getFileHandle(fileHandleName);
+            console.log(fileHandle);
+            const file = await fileHandle.getFile();
+            const url = URL.createObjectURL(file);
+            const downloadElm = document.createElement("a");
+            downloadElm.href = url;
+            downloadElm.download = file.name;
+            downloadElm.style.display = "none";
+            document.body.appendChild(downloadElm);
+            downloadElm.click();
+            document.body.removeChild(downloadElm);
+            URL.revokeObjectURL(url);
         });
         downloadBtn.classList.remove("disabled");
     });

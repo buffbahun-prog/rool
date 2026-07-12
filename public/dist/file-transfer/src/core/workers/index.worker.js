@@ -2,7 +2,7 @@ import { decryptData, encryptData } from "../../crypto/encrypt-decrypt.js";
 import { WorkerAction } from "../../types.js";
 import { createChunkBitmap, getMissingChunks, isBitmapComplete, isChunkReceived, setChunkReceived } from "../../utils/convert.js";
 import { SHA256 } from "../../utils/hasher.js";
-import { encodeChunksBitmap } from "../sender-test.js";
+import { encodeChunksBitmap } from "../peer-transfer.js";
 import { decodeChunkPayload, encodeChunkPayload } from "../transfer.js";
 let localTransferKey = null;
 let remoteTransferKey = null;
@@ -18,7 +18,7 @@ const bufferQueue = {
     reader: 0,
     writer: 0,
 };
-const MAX_QUEUE = 16;
+const MAX_QUEUE = 10;
 let isQueueFillRunning = false;
 let isQueuePopRunning = false;
 let queueSpaceResolver = null;
@@ -313,11 +313,11 @@ self.onmessage = async (e) => {
                     throw new Error("worker: file writable not initialized.");
                 if (payload.fileId !== fileWritable.metadata.fileId)
                     return;
-                const file = fileWritable.fileHandle;
+                const fileName = fileWritable.fileHandle.name;
                 const response = {
                     action: action,
                     status: "SUCCESS",
-                    result: { fileId: fileWritable.metadata.fileId, file }
+                    result: { fileId: fileWritable.metadata.fileId, fileName }
                 };
                 self.postMessage(response);
             }
@@ -325,7 +325,7 @@ self.onmessage = async (e) => {
                 const response = {
                     action: action,
                     status: "ERROR",
-                    error: err.message,
+                    error: "get download error " + err.message,
                 };
                 console.error(err, "here");
                 self.postMessage(response);
