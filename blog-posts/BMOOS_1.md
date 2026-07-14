@@ -2,8 +2,8 @@
 title: Building My Own Operating System Day 1
 description: My journey on learning and building my own operating system. Blog on details on file system module and process system module.
 author: Buffbahun
-published: 2026-07-13
-updated: 2026-07-13
+published: 2026-07-12
+updated: 2026-07-12
 tags:
   - algorithms
   - system desing

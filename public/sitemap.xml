@@ -115,14 +115,21 @@
     <loc>
       https://rool.buffbahun.workers.dev/blogs/BMOOSD_0/
     </loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-11</lastmod>
   </url>
 
   <url>
     <loc>
-      https://rool.buffbahun.workers.dev/blogs/BMOOSD_1_2/
+      https://rool.buffbahun.workers.dev/blogs/BMOOSD_1/
     </loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-07-12</lastmod>
+  </url>
+
+  <url>
+    <loc>
+      https://rool.buffbahun.workers.dev/blogs/BMOOSD_2/
+    </loc>
+    <lastmod>2026-07-13</lastmod>
   </url>
 
 </urlset>
