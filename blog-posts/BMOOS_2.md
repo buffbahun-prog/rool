@@ -1,5 +1,5 @@
 ---
-title: Building My Own Operating System Day 0
+title: Building My Own Operating System Day 2
 description: My journey on learning and building my own operating system. Blog on buffer cache, double linked list, hash queues.
 author: Buffbahun
 published: 2026-07-13
